@@ -1,0 +1,10 @@
+.dark-wave {
+    background-color: rgb(238, 238, 238, 0.8);
+}
+h4,
+p {
+    font-family: "Inter", sans-serif;
+}
+p {
+    color: rgb(102, 102, 102);
+}
