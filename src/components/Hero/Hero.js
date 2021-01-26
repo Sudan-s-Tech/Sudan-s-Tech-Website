@@ -31,7 +31,7 @@ export default function CenteredGrid() {
         </Grid>
         <Grid item xs={9}>
         </Grid>
-        <h1><b>Build Your Future With Us.</b></h1>
+        <h1 className="gradient-text"><b>Build Your Future <span >With Us</span>.</b></h1>
         <p style={{textAlign:'left' , fontSize:30 , margin:'1% 20% 1% 0%'}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </p>
         <Grid item xs={2} align="left">
         <Button variant="contained" href="#contained-buttons" style={{backgroundColor:'#7289DA' , color:'white'}}>
