@@ -1,10 +1,10 @@
 import React from 'react'
-
+import logo from '../../assets/logo.png'
 export default function Navbar() {
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#"><img src={logo} style={{width:'50px' , paddingRight:5}}/>Sudan's Tech</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,7 +13,6 @@ export default function Navbar() {
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#">Features</a>
       <a class="nav-item nav-link" href="#">Pricing</a>
-      <a class="nav-item nav-link disabled" href="#">Disabled</a>
     </div>
   </div>
 </nav>
