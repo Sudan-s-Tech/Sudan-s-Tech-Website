@@ -16,7 +16,7 @@ export default function Features() {
                     <img src={Learn} style={{width:'100%', padding:50}} />
                 </Grid>
                 <Grid xs={6} style={{ marginTop:100 , paddingRight:80}}>
-                    <h2 style={{textAlign:'left'}}>Project-based, active learning</h2>
+                    <h1 style={{textAlign:'left'}}>Project-based, active learning</h1>
                     <p style={{textAlign:'left'}}>Learn by doing with real-world projects and other hands-on exercises that lead to real skills mastery.</p>
                 </Grid>
             </Grid>
@@ -26,7 +26,7 @@ export default function Features() {
                 
                 <Grid container className="dark-wave"  >
                 <Grid xs={6} style={{ padding:50 }}>
-                <h2 style={{textAlign:'left'}}>Learn on your schedule</h2>
+                <h1 style={{textAlign:'left'}}>Learn on your schedule</h1>
                     <p style={{textAlign:'left'}}>Self-paced learning - whenever and wherever you want. Graduate while learning part-time for 10 hrs/week.</p>
               
                 </Grid>
@@ -34,16 +34,20 @@ export default function Features() {
                 <img src={Time} style={{width:'100%'}} />
                      </Grid>
                 </Grid>
+
+
                 <div style={{width:'100%'}} >
                     <img src={Wave2} />
                 </div>
+
+                
                 <Grid container>
                 <Grid xs={6}>
                     <img src={Job} style={{width:'100%', padding:50}} />
                 </Grid>
                 <Grid xs={6} style={{ marginTop:100 , paddingRight:80}}>
-                    <h2 style={{textAlign:'left'}}>Project-based, active learning</h2>
-                    <p style={{textAlign:'left'}}>Learn by doing with real-world projects and other hands-on exercises that lead to real skills mastery.</p>
+                    <h1 style={{textAlign:'left'}}>Get real employable skills</h1>
+                    <p style={{textAlign:'left'}}>Our quality curriculum is designed with top-tier industry partners, not academics, so you learn the high-impact skills that top companies want.</p>
                 </Grid>
 
                 <div style={{width:'100%'}} >
@@ -52,8 +56,8 @@ export default function Features() {
                 
                 <Grid container className="dark-wave"  >
                 <Grid xs={6} style={{ padding:50 }}>
-                <h2 style={{textAlign:'left'}}>Learn on your schedule</h2>
-                    <p style={{textAlign:'left'}}>Self-paced learning - whenever and wherever you want. Graduate while learning part-time for 10 hrs/week.</p>
+                <h1 style={{textAlign:'left'}}>The help you need, when you need it</h1>
+                    <p style={{textAlign:'left'}}>Reach out to our mentors 24/7 and have your coding questions answered quickly so you can keep learning.</p>
               
                 </Grid>
                 <Grid xs={6} >
