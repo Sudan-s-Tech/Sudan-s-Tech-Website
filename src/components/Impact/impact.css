@@ -1,0 +1,15 @@
+.impact-main {
+    background-color: #212121;
+    color: white;
+    height: 100vh;
+}
+.impact-main .col-md-4 {
+    border-left: 3px solid tomato;
+    margin-top: 10%;
+    margin-left: 13%;
+}
+.impact-main h1 {
+    background: linear-gradient(to right, #fc466b, #3f5efb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

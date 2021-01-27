@@ -2,6 +2,7 @@ h2,
 h1 {
     font-family: "Inter", sans-serif;
     text-align: left;
+    /* color: white; */
 }
 .gradient-text span {
     background: -webkit-linear-gradient(#12c2e9, #c471ed, #f64f59);

@@ -7,6 +7,7 @@
 }
 .techstack {
     margin-top: 10%;
+    margin-bottom: 10%;
     display: flex;
     flex-direction: column;
 }
@@ -29,7 +30,9 @@
 }
 
 .slider {
-    background: white;
+    /* background: white; */
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
     height: 100px;
     margin: auto;
