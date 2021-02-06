@@ -1,5 +1,5 @@
 import React from 'react'
-import EventCard from './EventCard/Eventcard'
+import TrainingCard from './TrainingCard'
 import Hero from '../Hero/Hero'
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -34,34 +34,20 @@ export default function Events() {
 
     return (
         <div>
-            <Hero subheading={'SudansTech'} heading={'Our Events do the '} gradient={'Talk'} para={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "}  />
+            <Hero subheading={'SudansTech'} heading={'Our goal is to be the #1 learning resource for '} gradient={'Training courses'} para={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "}  />
             <FormControl className={classes.formControl}>
-        <InputLabel htmlFor="age-native-simple">Show All Events</InputLabel>
-        <Select
-          native
-          value={state.age}
-          onChange={handleChange}
-          inputProps={{
-            name: 'age',
-            id: 'age-native-simple',
-          }}
-        >
-          <option aria-label="None" value="" />
-          <option value={10}>Upcoming</option>
-          <option value={20}>Ongoing</option>
-          <option value={30}>Past</option>
-        </Select>
+        
       </FormControl>
         <div className="container">
         <div className="row">
           <div className="col-md-4">
-          <EventCard tag={'upcoming'} color={'secondary'}/>
+          <TrainingCard tag={'upcoming'} color={'secondary'} imgurl={'https://www.eweek.com/imagesvr_ez/b2bezp/2019/10/Machine.learning3.JPG?alias=article_hero'}/>
           </div>
           <div className="col-md-4">
-          <EventCard tag={'ongoing'} color={'warning'}/>
+          <TrainingCard tag={'ongoing'} color={'warning'} imgurl={"https://miro.medium.com/max/840/1*RJMxLdTHqVBSijKmOO5MAg.jpeg"} />
           </div>
           <div className="col-md-4">
-          <EventCard tag={'past'} color={'success'}/>
+          <TrainingCard tag={'past'} color={'success'}  imgurl={'https://www.eweek.com/imagesvr_ez/b2bezp/2019/10/Machine.learning3.JPG?alias=article_hero'}/>
           </div>
       </div>
       </div>

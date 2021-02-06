@@ -1,0 +1,11 @@
+.gradient-footer {
+    background: -webkit-linear-gradient(#3494e6, #ec6ead);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-footer span {
+    background: -webkit-linear-gradient(#eb3349, #f45c43) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}

@@ -1,0 +1,35 @@
+.feedback-div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.9);
+    background-image: url(../../assets/stars.svg),
+        radial-gradient(
+            at center bottom,
+            /* rgba(17, 236, 229, 0.73) 0%, */ #ef4775 0%,
+            rgba(29, 38, 53, 0) 69%
+        );
+}
+.textf {
+    border: 1px solid rgba(17, 236, 229, 0.73) !important;
+    border-radius: 5px;
+}
+.textf:focus-within {
+    border: 0px solid #fff !important;
+}
+.MuiOutlinedInput-input {
+    color: rgba(17, 236, 229, 0.73) !important;
+}
+.col-md-4 input {
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    outline: 0;
+    height: 50px;
+    width: 70%;
+    color: white;
+}
+
+.col-md-4 button {
+    border: 1px solid #fff;
+    color: white;
+}
