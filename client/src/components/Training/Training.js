@@ -7,7 +7,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import NativeSelect from "@material-ui/core/NativeSelect";
-
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
@@ -46,13 +46,16 @@ export default function Events() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-4">
-                        <TrainingCard
-                            tag={"upcoming"}
-                            color={"secondary"}
-                            imgurl={
-                                "https://www.eweek.com/imagesvr_ez/b2bezp/2019/10/Machine.learning3.JPG?alias=article_hero"
-                            }
-                        />
+                        <Link to="/register/cyber">
+                            {" "}
+                            <TrainingCard
+                                tag={"upcoming"}
+                                color={"secondary"}
+                                imgurl={
+                                    "https://www.eweek.com/imagesvr_ez/b2bezp/2019/10/Machine.learning3.JPG?alias=article_hero"
+                                }
+                            />
+                        </Link>
                     </div>
                     <div className="col-md-4">
                         <TrainingCard

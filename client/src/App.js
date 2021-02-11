@@ -11,8 +11,11 @@ import Footer from "./components/footer/Footer";
 import Feedback from "./components/Feedback/Feedback";
 import Contact from "./components/Contact/Contact";
 import Sponsors from "./components/Sponsors/Sponsors";
+import Coursepage from "./components/Coursepage/Coursepage";
+import Nav from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
+    let name;
     return (
         <div className="App">
             <Router>
@@ -52,6 +55,10 @@ function App() {
                     <Sponsors />
                     <Feedback />
                     <Footer />
+                </Route>
+                <Route path="/register/:name" exact={true}>
+                    <Nav />
+                    <Coursepage name={name} />
                 </Route>
             </Router>
         </div>

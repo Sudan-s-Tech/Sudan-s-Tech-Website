@@ -1,0 +1,19 @@
+.MuiList-padding {
+    background-color: #424242 !important;
+    color: white !important;
+}
+.MuiAccordion-rounded {
+    background-color: #424242 !important;
+}
+
+.MuiTypography-body1 {
+    color: tomato;
+}
+.MuiTypography-body2 {
+    color: white !important;
+}
+.course-head h1 {
+    background: -webkit-linear-gradient(#34e89e, #0f3443) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}

@@ -18,10 +18,10 @@ export default function Feedback() {
                 <div className="col-md-4">
                     <form>
                         <div class="form-group">
-                            <input required={true} />
+                            <input required={true} placeholder="Email" />
                         </div>
                         <div class="form-group">
-                            <input required={true} />
+                            <textarea required={true} placeholder="Message" />
                         </div>
 
                         <Button variant="outlined">Submit</Button>

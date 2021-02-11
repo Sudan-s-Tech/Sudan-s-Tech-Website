@@ -51,6 +51,11 @@ export default function Events() {
                         >
                             <TextField
                                 id="outlined-basic"
+                                label="Name"
+                                variant="outlined"
+                            />
+                            <TextField
+                                id="outlined-basic"
                                 label="Email"
                                 variant="outlined"
                             />
@@ -59,7 +64,7 @@ export default function Events() {
                                 label="Multiline"
                                 multiline
                                 rows={4}
-                                defaultValue="Default Value"
+                                defaultValue="Write your message here..."
                                 variant="outlined"
                             />
                         </FormControl>

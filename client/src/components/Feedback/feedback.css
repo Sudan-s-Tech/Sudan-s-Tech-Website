@@ -28,6 +28,15 @@
     width: 70%;
     color: white;
 }
+.col-md-4 textarea {
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    outline: 0;
+    height: 50px;
+    width: 70%;
+    color: white;
+}
 
 .col-md-4 button {
     border: 1px solid #fff;
