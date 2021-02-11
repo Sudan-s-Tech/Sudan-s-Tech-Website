@@ -12,7 +12,7 @@ export default function Feedback() {
             <div className="row">
                 <div className="col-md-8">
                     <h1 style={{ color: "white" }}>
-                        Lorem ipsordi djuyej uehnbdj
+                        We would love to hear back from you!
                     </h1>
                 </div>
                 <div className="col-md-4">

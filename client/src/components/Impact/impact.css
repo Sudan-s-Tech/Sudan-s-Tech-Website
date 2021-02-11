@@ -1,7 +1,7 @@
 .impact-main {
     background-color: #212121;
     color: white;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .impact-main .col-md-4 {
     border-left: 3px solid tomato;

@@ -1,5 +1,4 @@
 import React from "react";
-import TrainingCard from "./TrainingCard";
 import Hero from "../Hero/Hero";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -7,7 +6,8 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import NativeSelect from "@material-ui/core/NativeSelect";
-
+import Sp1 from "../../assets/sp.png";
+import Sp2 from "../../assets/sp2.png";
 const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(2),
     },
 }));
-export default function Events() {
+export default function Sponsors() {
     const [state, setState] = React.useState({
         age: "",
         name: "hai",
@@ -36,40 +36,24 @@ export default function Events() {
         <div>
             <Hero
                 subheading={"SudansTech"}
-                heading={"We are known for our "}
-                gradient={"Training courses"}
+                heading={"Our supporting "}
+                gradient={"Sponsors"}
                 para={
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "
                 }
             />
-            <FormControl className={classes.formControl}></FormControl>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4">
-                        <TrainingCard
-                            tag={"upcoming"}
-                            color={"secondary"}
-                            imgurl={
-                                "https://www.eweek.com/imagesvr_ez/b2bezp/2019/10/Machine.learning3.JPG?alias=article_hero"
-                            }
+                    <div className="col-md-12">
+                        <img
+                            src={Sp1}
+                            style={{ width: "20%", marginTop: "10%" }}
                         />
                     </div>
-                    <div className="col-md-4">
-                        <TrainingCard
-                            tag={"ongoing"}
-                            color={"warning"}
-                            imgurl={
-                                "https://miro.medium.com/max/840/1*RJMxLdTHqVBSijKmOO5MAg.jpeg"
-                            }
-                        />
-                    </div>
-                    <div className="col-md-4">
-                        <TrainingCard
-                            tag={"past"}
-                            color={"success"}
-                            imgurl={
-                                "https://www.eweek.com/imagesvr_ez/b2bezp/2019/10/Machine.learning3.JPG?alias=article_hero"
-                            }
+                    <div className="col-md-12">
+                        <img
+                            src={Sp2}
+                            style={{ width: "20%", marginTop: "10%" }}
                         />
                     </div>
                 </div>

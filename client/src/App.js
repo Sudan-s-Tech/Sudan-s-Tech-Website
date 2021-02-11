@@ -9,6 +9,8 @@ import Events from "./components/Events/Events";
 import Training from "./components/Training/Training";
 import Footer from "./components/footer/Footer";
 import Feedback from "./components/Feedback/Feedback";
+import Contact from "./components/Contact/Contact";
+import Sponsors from "./components/Sponsors/Sponsors";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
     return (
@@ -38,6 +40,16 @@ function App() {
                 </Route>
                 <Route path="/trainings" exact={true}>
                     <Training />
+                    <Feedback />
+                    <Footer />
+                </Route>
+                <Route path="/contact" exact={true}>
+                    <Contact />
+                    <Feedback />
+                    <Footer />
+                </Route>
+                <Route path="/sponsors" exact={true}>
+                    <Sponsors />
                     <Feedback />
                     <Footer />
                 </Route>
