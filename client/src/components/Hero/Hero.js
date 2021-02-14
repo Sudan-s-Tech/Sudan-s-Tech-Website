@@ -49,27 +49,36 @@ export default function CenteredGrid(props) {
                 >
                     {props.para}
                 </p>
-                <Grid item xs={2} align="left">
-                    <Button
-                        className="hero-btn"
-                        variant="contained"
-                        href="#contained-buttons"
-                        style={{ backgroundColor: "#7289DA", color: "white" }}
-                    >
-                        Join our Discord
-                    </Button>
-                </Grid>
-                <Grid item xs={2} align="left">
-                    <Button
-                        className="hero-btn"
-                        variant="contained"
-                        href="#contained-buttons"
-                        style={{ backgroundColor: "#111827", color: "white" }}
-                    >
-                        See Our Github
-                    </Button>
-                </Grid>
-                <Grid item xs={8}></Grid>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-12 d-flex justify-content-left">
+                            <Button
+                                // className="hero-btn"
+                                variant="contained"
+                                href="#contained-buttons"
+                                style={{
+                                    backgroundColor: "#7289DA",
+                                    color: "white",
+                                    marginTop: "2%",
+                                }}
+                            >
+                                Join our Discord
+                            </Button>
+                            <Button
+                                className="ml-5"
+                                variant="contained"
+                                href="#contained-buttons"
+                                style={{
+                                    backgroundColor: "#111827",
+                                    color: "white",
+                                    marginTop: "2%",
+                                }}
+                            >
+                                See Our Github
+                            </Button>
+                        </div>
+                    </div>
+                </div>
             </Grid>
         </div>
     );

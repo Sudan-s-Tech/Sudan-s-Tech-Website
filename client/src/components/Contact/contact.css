@@ -1,3 +1,10 @@
 .MuiOutlinedInput-input {
     color: black !important;
+    overflow-x: visible !important;
+}
+.MuiFormControl-root {
+    overflow-x: visible !important;
+}
+.MuiInputBase-input {
+    overflow-x: visible !important;
 }
