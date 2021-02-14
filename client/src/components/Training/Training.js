@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TrainingCard from "./TrainingCard";
 import Hero from "../Hero/Hero";
 import { makeStyles } from "@material-ui/core/styles";
@@ -8,6 +8,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import { Link } from "react-router-dom";
+import axios from "axios";
 const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
@@ -18,18 +19,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 export default function Events() {
-    const [state, setState] = React.useState({
-        age: "",
-        name: "hai",
-    });
+    const [trainings, setTraining] = useState([]);
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        setState({
-            ...state,
-            [name]: event.target.value,
-        });
-    };
+    useEffect(async () => {
+        axios
+            .get("https://sudanstechapi.herokuapp.com/trainings")
+            .then((res) => {
+                setTraining(res.data);
+            });
+    }, []);
+
     const classes = useStyles();
 
     return (
@@ -42,8 +41,7 @@ export default function Events() {
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "
                 }
             />
-            <FormControl className={classes.formControl}></FormControl>
-            <div className="container">
+            {/* <div className="container">
                 <div className="row">
                     <div className="col-md-4">
                         <Link to="/register/cyber">
@@ -75,6 +73,26 @@ export default function Events() {
                             }
                         />
                     </div>
+                </div>
+            </div> */}
+            <div className="container">
+                <div className="row">
+                    {trainings.map((item) => {
+                        return (
+                            <div className="col-md-4">
+                                <TrainingCard
+                                    color={"secondary"}
+                                    title={item.title}
+                                    date={item.duration}
+                                    level={item.level}
+                                    lesson={item.lesson}
+                                    desc={item.description}
+                                    imgurl={item.imageurl}
+                                    link="/register/cyber"
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>

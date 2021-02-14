@@ -2,13 +2,13 @@ h2 {
     font-family: "Inter", sans-serif;
     text-align: left;
     /* color: white; */
-    font-size: clamp(30px, 40px, 80px);
+    font-size: clamp(30px, 40px, 80px) !important;
 }
 h1 {
     font-family: "Inter", sans-serif;
     text-align: left;
     /* color: white; */
-    font-size: clamp(30px, 80px, 80px);
+    font-size: clamp(30px, 80px, 80px) !important;
 }
 .gradient-text span {
     background: -webkit-linear-gradient(#12c2e9, #c471ed, #f64f59);
