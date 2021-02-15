@@ -1,17 +1,26 @@
 h2 {
     font-family: "Inter", sans-serif;
     text-align: left;
-    /* color: white; */
     font-size: clamp(30px, 40px, 80px) !important;
 }
 h1 {
     font-family: "Inter", sans-serif;
     text-align: left;
-    /* color: white; */
-    font-size: clamp(30px, 80px, 80px) !important;
+    /* font-size: clamp(0.5em, 4em, 6em) !important; */
+    font-size: 5em;
 }
 .gradient-text span {
     background: -webkit-linear-gradient(#12c2e9, #c471ed, #f64f59);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 750px) {
+    h1 {
+        font-size: 3em;
+        padding-right: 2%;
+    }
+    .MuiButton-root {
+        font-size: 10px !important;
+    }
 }

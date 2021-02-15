@@ -52,7 +52,7 @@ export default function CenteredGrid(props) {
                     {props.para}
                 </p>
                 {props.btn == true ? (
-                    <div className="container" style={{ marginLeft: 0 }}>
+                    <div className="container-fluid" style={{ marginLeft: 0 }}>
                         <div className="row">
                             <div className="col-sm-12 d-flex justify-content-left">
                                 <Button
@@ -69,13 +69,13 @@ export default function CenteredGrid(props) {
                                         src={Disc}
                                         style={{
                                             width: "30px",
-                                            marginRight: 10,
+                                            marginRight: 1,
                                         }}
                                     />
                                     Join our Discord
                                 </Button>
                                 <Button
-                                    className="ml-5"
+                                    className="ml-1"
                                     variant="contained"
                                     href="#contained-buttons"
                                     style={{
@@ -88,7 +88,7 @@ export default function CenteredGrid(props) {
                                         src={Git}
                                         style={{
                                             width: "30px",
-                                            marginRight: 10,
+                                            marginRight: 1,
                                         }}
                                     />
                                     See Our Github
