@@ -28,7 +28,7 @@ export default function Events() {
     const classes = useStyles();
 
     return (
-        <div>
+        <div className="contact-us-div">
             <Hero
                 subheading={"SudansTech"}
                 heading={"We keep our doors open "}
@@ -43,31 +43,9 @@ export default function Events() {
                         <img src={Pic} style={{ width: "80%" }} />
                     </div>
                     <div className="col-md-5">
-                        <FormControl
-                            className={classes.formControl}
-                            className={classes.root}
-                            noValidate
-                            autoComplete="off"
-                        >
-                            <TextField
-                                id="outlined-basic"
-                                label="Name"
-                                variant="outlined"
-                            />
-                            <TextField
-                                id="outlined-basic"
-                                label="Email"
-                                variant="outlined"
-                            />
-                            <TextField
-                                id="outlined-multiline-static"
-                                label="Multiline"
-                                multiline
-                                rows={4}
-                                defaultValue="Write your message here..."
-                                variant="outlined"
-                            />
-                        </FormControl>
+                        <input type="text" placeholder="Name" />
+                        <input type="email" placeholder="Email" />
+                        <textarea placeholder="Write your message here..."></textarea>
                     </div>
                 </div>
             </div>

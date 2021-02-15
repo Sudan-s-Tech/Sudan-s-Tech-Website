@@ -39,48 +39,60 @@ export default function Coursepage() {
         axios
             .get("https://sudans-tech.firebaseio.com/training.json")
             .then((res) => {
-                setCourse(res);
-                Object.keys(res.data).map((i) => {
-                    // console.log([res.data[i].items]);
-                    [res.data[i].items].map((j) => {
-                        // console.log(j);
-                        j.map((k) => {
-                            // console.log(k.title);
-                            console.log(k.items);
-                            if (k.items) {
-                                k.items.map((o) => {
-                                    console.log(o.title);
-                                });
-                            }
-                        });
-                    });
+                // setCourse(res.data);
+                // console.log(res.data);
+                Object.keys(course).map((i) => {
+                    if (course[i].title == "Machine Learning") {
+                        setCourse(course[i].items);
+                        console.log(course);
+                    }
                 });
-                // render = res.data[0].modules.map((i) => {
-                //                       var arr = Object.entries(i);
-                //     for (var a in arr) {
-                //         if (arr[a][1] != i.title) console.log(arr[a][1]);
-                //     }
-                // });
             });
     }, []);
 
-    // console.log(course);
+    const classes = useStyles();
+    {
+        render = course.map((j) => {
+            // console.log(j);
+            return j.map((k) => {
+                <div>
+                    {k.title}
+
+                    {k.items ? (
+                        k.items.map((o) => {
+                            return <h4>{o.title}</h4>;
+                        })
+                    ) : (
+                        <div></div>
+                    )}
+                </div>;
+            });
+        });
+    }
+
     // {
-    //     course.map((u) => {
-    //         render = (
-    //             <div>
-    //                 <h1>{u.title}</h1>
-    //                 {(arr = Object.entries(u))}
-    //                 {arr.map((y) => {
-    //                     console.log(y[1]);
-    //                     <h1>{y[1]}</h1>;
-    //                 })}
-    //             </div>
-    //         );
+    //     Object.keys(course).map((i) => {
+    //         [course[i].items].map((j) => {
+    //             console.log(j);
+    //             render = j.map((k) => {
+    //                 return (
+    //                     <div>
+    //                         {k.title}
+
+    //                         {k.items ? (
+    //                             k.items.map((o) => {
+    //                                 return <h4>{o.title}</h4>;
+    //                             })
+    //                         ) : (
+    //                             <div></div>
+    //                         )}
+    //                     </div>
+    //                 );
+    //             });
+    //         });
     //     });
     // }
 
-    const classes = useStyles();
     return (
         <div className="course-main-div">
             <div
@@ -253,9 +265,10 @@ export default function Coursepage() {
             <div className=" syllabus container" style={{ marginTop: "8em" }}>
                 <h2>Syllabus</h2>
 
-                <div className={classes.root}>
-                    {/* {render} */}
-                    <Accordion>
+                <div>
+                    {render}
+
+                    {/* <Accordion>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
@@ -278,7 +291,7 @@ export default function Coursepage() {
                                 </ul>
                             </Typography>
                         </AccordionDetails>
-                    </Accordion>
+                    </Accordion> */}
                 </div>
             </div>
         </div>

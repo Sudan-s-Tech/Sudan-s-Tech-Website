@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import Logo from "../../assets/logo.svg";
 import "./hero.css";
 import Nav from "../Navbar/Navbar";
+import Disc from "../../assets/discord.svg";
+import Git from "../../assets/git.svg";
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -43,42 +45,60 @@ export default function CenteredGrid(props) {
                 <p
                     style={{
                         textAlign: "left",
-                        fontSize: 30,
+                        fontSize: 20,
                         margin: "1% 20% 1% 0%",
                     }}
                 >
                     {props.para}
                 </p>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-sm-12 d-flex justify-content-left">
-                            <Button
-                                // className="hero-btn"
-                                variant="contained"
-                                href="#contained-buttons"
-                                style={{
-                                    backgroundColor: "#7289DA",
-                                    color: "white",
-                                    marginTop: "2%",
-                                }}
-                            >
-                                Join our Discord
-                            </Button>
-                            <Button
-                                className="ml-5"
-                                variant="contained"
-                                href="#contained-buttons"
-                                style={{
-                                    backgroundColor: "#111827",
-                                    color: "white",
-                                    marginTop: "2%",
-                                }}
-                            >
-                                See Our Github
-                            </Button>
+                {props.btn == true ? (
+                    <div className="container" style={{ marginLeft: 0 }}>
+                        <div className="row">
+                            <div className="col-sm-12 d-flex justify-content-left">
+                                <Button
+                                    // className="hero-btn"
+                                    variant="contained"
+                                    href="#contained-buttons"
+                                    style={{
+                                        backgroundColor: "#7289DA",
+                                        color: "white",
+                                        marginTop: "2%",
+                                    }}
+                                >
+                                    <img
+                                        src={Disc}
+                                        style={{
+                                            width: "30px",
+                                            marginRight: 10,
+                                        }}
+                                    />
+                                    Join our Discord
+                                </Button>
+                                <Button
+                                    className="ml-5"
+                                    variant="contained"
+                                    href="#contained-buttons"
+                                    style={{
+                                        backgroundColor: "#FFF",
+                                        color: "#212121",
+                                        marginTop: "2%",
+                                    }}
+                                >
+                                    <img
+                                        src={Git}
+                                        style={{
+                                            width: "30px",
+                                            marginRight: 10,
+                                        }}
+                                    />
+                                    See Our Github
+                                </Button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                ) : (
+                    <div></div>
+                )}
             </Grid>
         </div>
     );

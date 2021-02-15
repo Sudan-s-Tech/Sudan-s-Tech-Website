@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 export default function Navbar() {
     return (
         <div>
@@ -18,44 +19,52 @@ export default function Navbar() {
                     class="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
-                    data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div
-                    class="collapse navbar-collapse d-flex justify-content-end"
-                    id="navbarNavAltMarkup"
-                >
-                    <div class="navbar-nav">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
                         <Link to="/">
-                            <a class="nav-item nav-link active" href="#">
-                                Home <span class="sr-only">(current)</span>
-                            </a>
+                            <li>
+                                <a class="nav-link active" href="#">
+                                    Home <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
                         </Link>
                         <Link to="/Events">
-                            <a class="nav-item nav-link" href="#">
-                                Events
-                            </a>
+                            <li>
+                                <a class="nav-link" href="#">
+                                    Events
+                                </a>
+                            </li>
                         </Link>
                         <Link to="/trainings">
-                            <a class="nav-item nav-link" href="#">
-                                Trainings
-                            </a>
+                            <li>
+                                <a class="nav-link" href="#">
+                                    Trainings
+                                </a>
+                            </li>
                         </Link>
                         <Link to="/contact">
-                            <a class="nav-item nav-link" href="#">
-                                Contact us
-                            </a>
+                            <li>
+                                {" "}
+                                <a class="nav-link" href="#">
+                                    Contact us
+                                </a>
+                            </li>
                         </Link>
                         <Link to="/sponsors">
-                            <a class="nav-item nav-link" href="#">
-                                Sponsors
-                            </a>
+                            <li>
+                                <a class="nav-link" href="#">
+                                    Sponsors
+                                </a>
+                            </li>
                         </Link>
-                    </div>
+                    </ul>
                 </div>
             </nav>
         </div>

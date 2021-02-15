@@ -9,3 +9,15 @@
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
+.footer-div .col-sm-1 img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.footer-div .col-sm-1 img:hover {
+    /* transform: rotate(30) !important; */
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

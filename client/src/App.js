@@ -21,11 +21,12 @@ function App() {
             <Router>
                 <Route path="/" exact={true}>
                     <Home
+                        btn={true}
                         subheading={"SudansTech"}
                         heading={"Build Your Future "}
                         gradient={"With Us"}
                         para={
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "
+                            "Sudan’s Technocrats(Tech) Foundation,J&K First Ever Tech Community which aims to focus on reducing the Technology gap between Industry and Students of India and is Registered section-8 company Rules under govt. Of India .Sudan's Technocrats(Tech) Foundation is a non-profit initiative aimed at making use of 21st-century technologies and learning methods to foster a fresh breed of highly skilled young people empowered with technical and social skills."
                         }
                     />
                     <Features />
@@ -38,12 +39,12 @@ function App() {
                 </Route>
                 <Route path="/events" exact={true}>
                     <Events />
-                    <Feedback />
+
                     <Footer />
                 </Route>
                 <Route path="/trainings" exact={true}>
                     <Training />
-                    <Feedback />
+
                     <Footer />
                 </Route>
                 <Route path="/contact" exact={true}>

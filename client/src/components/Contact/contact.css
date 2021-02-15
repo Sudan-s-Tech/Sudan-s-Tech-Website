@@ -1,10 +1,20 @@
-.MuiOutlinedInput-input {
-    color: black !important;
-    overflow-x: visible !important;
+.contact-us-div input {
+    outline: 0;
+    border: 1px solid blue;
+    border-radius: 8px;
+    padding: 3% 5%;
+    display: block;
+    margin-top: 5%;
+    background-color: #dadeeb;
+    width: 100%;
 }
-.MuiFormControl-root {
-    overflow-x: visible !important;
-}
-.MuiInputBase-input {
-    overflow-x: visible !important;
+.contact-us-div textarea {
+    outline: 0;
+    border: 1px solid blue;
+    border-radius: 8px;
+    padding: 3% 5%;
+    display: block;
+    margin-top: 5%;
+    background-color: #dadeeb;
+    width: 100%;
 }
