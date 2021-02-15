@@ -75,8 +75,8 @@ export default function Events() {
                     </div>
                 </div>
             </div> */}
-            <div className="container">
-                <div className="row">
+            <div className="container" style={{ marginBottom: 100 }}>
+                <div className="row" align="center">
                     {trainings.map((item) => {
                         return (
                             <div className="col-md-4">

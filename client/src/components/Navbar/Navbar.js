@@ -64,6 +64,13 @@ export default function Navbar() {
                                 </a>
                             </li>
                         </Link>
+                        <Link to="/team">
+                            <li>
+                                <a class="nav-link" href="#">
+                                    Team
+                                </a>
+                            </li>
+                        </Link>
                     </ul>
                 </div>
             </nav>

@@ -13,6 +13,7 @@ import Contact from "./components/Contact/Contact";
 import Sponsors from "./components/Sponsors/Sponsors";
 import Coursepage from "./components/Coursepage/Course";
 import Nav from "./components/Navbar/Navbar";
+import Team from "./components/Team/Team";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
     let name;
@@ -44,7 +45,6 @@ function App() {
                 </Route>
                 <Route path="/trainings" exact={true}>
                     <Training />
-
                     <Footer />
                 </Route>
                 <Route path="/contact" exact={true}>
@@ -55,6 +55,10 @@ function App() {
                 <Route path="/sponsors" exact={true}>
                     <Sponsors />
                     <Feedback />
+                    <Footer />
+                </Route>
+                <Route path="/team" exact={true}>
+                    <Team />
                     <Footer />
                 </Route>
                 <Route path="/register/:name" exact={true}>

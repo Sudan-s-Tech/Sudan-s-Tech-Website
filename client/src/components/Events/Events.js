@@ -8,6 +8,8 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import axios from "axios";
+import Button from "@material-ui/core/Button";
+
 const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
@@ -40,7 +42,7 @@ export default function Events() {
     const classes = useStyles();
 
     return (
-        <div>
+        <div style={{ marginBottom: 100 }}>
             <Hero
                 subheading={"SudansTech"}
                 heading={"Our Events do the "}
@@ -49,27 +51,30 @@ export default function Events() {
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "
                 }
             />
-            <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="age-native-simple">
-                    Show All Events
-                </InputLabel>
-                <Select
-                    native
-                    value={state.age}
-                    onChange={handleChange}
-                    inputProps={{
-                        name: "age",
-                        id: "age-native-simple",
-                    }}
-                >
-                    <option aria-label="None" value="" />
-                    <option value={10}>Upcoming</option>
-                    <option value={20}>Ongoing</option>
-                    <option value={30}>Past</option>
-                </Select>
-            </FormControl>
+            <Button
+                variant="outlined"
+                color="primary"
+                style={{ margin: "1px 10px" }}
+            >
+                Past
+            </Button>
+            <Button
+                variant="outlined"
+                color="secondary"
+                style={{ margin: "1px 10px" }}
+            >
+                Ongoing
+            </Button>
+            <Button
+                variant="outlined"
+                color="primary"
+                style={{ margin: "1px 10px" }}
+            >
+                Upcoming
+            </Button>
+
             <div className="container">
-                <div className="row">
+                <div className="row" align="center">
                     {events.map((item) => {
                         return (
                             <div className="col-md-4">

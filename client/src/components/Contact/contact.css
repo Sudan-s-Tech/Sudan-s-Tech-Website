@@ -1,6 +1,6 @@
 .contact-us-div input {
     outline: 0;
-    border: 1px solid blue;
+    border: 1.5px solid #6c63ff;
     border-radius: 8px;
     padding: 3% 5%;
     display: block;
@@ -10,7 +10,7 @@
 }
 .contact-us-div textarea {
     outline: 0;
-    border: 1px solid blue;
+    border: 1.5px solid #6c63ff;
     border-radius: 8px;
     padding: 3% 5%;
     display: block;
