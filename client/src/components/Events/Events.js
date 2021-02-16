@@ -2,11 +2,6 @@ import React, { useEffect, useState } from "react";
 import EventCard from "./EventCard/Eventcard";
 import Hero from "../Hero/Hero";
 import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import NativeSelect from "@material-ui/core/NativeSelect";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
 
@@ -19,27 +14,14 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(2),
     },
 }));
-var result;
 
 export default function Events() {
-    const [state, setState] = useState({
-        age: "",
-        name: "hai",
-    });
     const [events, setEvent] = useState([]);
     useEffect(async () => {
         axios.get("https://sudanstechapi.herokuapp.com/events").then((res) => {
             setEvent(res.data);
         });
     }, []);
-    const handleChange = (event) => {
-        const name = event.target.name;
-        setState({
-            ...state,
-            [name]: event.target.value,
-        });
-    };
-    const classes = useStyles();
 
     return (
         <div style={{ marginBottom: 100 }}>

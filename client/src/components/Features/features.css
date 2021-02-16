@@ -13,3 +13,6 @@ p {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.features-div h1 {
+    font-size: 3em;
+}

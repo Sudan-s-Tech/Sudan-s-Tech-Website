@@ -21,7 +21,7 @@
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-li a {
+.footer-div a {
     color: white !important;
     text-decoration: none;
 }

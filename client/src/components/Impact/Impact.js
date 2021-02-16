@@ -9,7 +9,7 @@ export default function Impact() {
                     We're dedicated to improving the experience and performance
                     of the developers.
                 </h6>
-                <div className="row" align="center">
+                <div className="row stats" align="center">
                     <div className="col-md-4">
                         <h1>1300+</h1>
                         <h5 style={{ textAlign: "left" }}> 🧑‍🤝‍🧑 Participants</h5>
@@ -21,7 +21,7 @@ export default function Impact() {
                         </h5>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row stats">
                     <div className="col-md-4">
                         <h1>30+</h1>
                         <h5 style={{ textAlign: "left" }}>👨🏻‍🏫 Workshops</h5>

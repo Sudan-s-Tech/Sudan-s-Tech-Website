@@ -19,84 +19,84 @@ export default function Team() {
                 <div className="row">
                     <div className="col-md-3">
                         <figure className="snip1584">
-                            <img src={image} />
+                            <img src={image} alt="" />
                             <figcaption>
                                 <h3>Apun Mishra</h3>
                                 <h5>Best web dev</h5>
                             </figcaption>
-                            <a href="#"></a>
+                            {/* <a href="#"></a> */}
                         </figure>
                     </div>
                     <div className="col-md-3">
                         <figure className="snip1584">
-                            <img src={image} />
+                            <img src={image} alt="" />
                             <figcaption>
                                 <h3>Apun Mishra</h3>
                                 <h5>Best web dev</h5>
                             </figcaption>
-                            <a href="#"></a>
+                            {/* <a href="#"></a> */}
                         </figure>
                     </div>
                     <div className="col-md-3">
                         <figure className="snip1584">
-                            <img src={image} />
+                            <img src={image} alt="" />
                             <figcaption>
                                 <h3>Apun Mishra</h3>
                                 <h5>Best web dev</h5>
                             </figcaption>
-                            <a href="#"></a>
+                            {/* <a href="#"></a> */}
                         </figure>
                     </div>
                     <div className="col-md-3">
                         <figure className="snip1584">
-                            <img src={image} />
+                            <img src={image} alt="" />
                             <figcaption>
                                 <h3>Apun Mishra</h3>
                                 <h5>Best web dev</h5>
                             </figcaption>
-                            <a href="#"></a>
+                            {/* <a href="#"></a> */}
                         </figure>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-3">
                         <figure className="snip1584">
-                            <img src={image} />
+                            <img src={image} alt="" />
                             <figcaption>
                                 <h3>Apun Mishra</h3>
                                 <h5>Best web dev</h5>
                             </figcaption>
-                            <a href="#"></a>
+                            {/* <a href="#"></a> */}
                         </figure>
                     </div>
                     <div className="col-md-3">
                         <figure className="snip1584">
-                            <img src={image} />
+                            <img src={image} alt="" />
                             <figcaption>
                                 <h3>Apun Mishra</h3>
                                 <h5>Best web dev</h5>
                             </figcaption>
-                            <a href="#"></a>
+                            {/* <a href="#"></a> */}
                         </figure>
                     </div>
                     <div className="col-md-3">
                         <figure className="snip1584">
-                            <img src={image} />
+                            <img src={image} alt="" />
                             <figcaption>
                                 <h3>Apun Mishra</h3>
                                 <h5>Best web dev</h5>
                             </figcaption>
-                            <a href="#"></a>
+                            {/* <a href="#"></a> */}
                         </figure>
                     </div>
                     <div className="col-md-3">
                         <figure className="snip1584">
-                            <img src={image} />
+                            <img src={image} alt="" />
                             <figcaption>
                                 <h3>Apun Mishra</h3>
                                 <h5>Best web dev</h5>
                             </figcaption>
-                            <a href="#"></a>
+                            {/* <a href="#"></a> */}
                         </figure>
                     </div>
                 </div>

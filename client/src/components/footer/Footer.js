@@ -1,6 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import logo from "../../assets/logo.svg";
 import "./footer.css";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -10,11 +8,14 @@ import Logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 export default function Discord() {
     return (
-        <div style={{ padding: 50, backgroundColor: "#212121" }}>
+        <div
+            className="footer-div"
+            style={{ padding: 50, backgroundColor: "#212121" }}
+        >
             <div className="container">
                 <div className="row" align="center">
                     <div className="col-md-3">
-                        <img src={Logo} style={{ width: "70%" }} />
+                        <img src={Logo} style={{ width: "70%" }} alt="" />
                     </div>
                     <div className="col-md-3" style={{ marginTop: 20 }}>
                         <ul style={{ textAlign: "center" }}>
@@ -80,11 +81,11 @@ export default function Discord() {
             <div className="container-fluid my-0">
                 <div className="row">
                     <div className="col-sm-12 gradient-footer">
-                        <h5 style={{ overflow: "hidden" }}>
+                        <h6 style={{ overflow: "hidden" }}>
                             {" "}
                             Built with <span> ❤️ </span> by your friends at
                             SudansTech
-                        </h5>
+                        </h6>
                     </div>
                 </div>
             </div>

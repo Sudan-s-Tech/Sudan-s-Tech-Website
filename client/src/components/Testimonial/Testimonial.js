@@ -20,6 +20,7 @@ export default function Testimonial() {
                                     <img
                                         src="https://i.ibb.co/8x9xK4H/team.jpg"
                                         class="img-circle img-responsive"
+                                        alt=""
                                     />
                                     <p>
                                         Lorem Ipsum is simply dummy text of the
@@ -38,6 +39,7 @@ export default function Testimonial() {
                                     <img
                                         src="https://i.ibb.co/8x9xK4H/team.jpg"
                                         class="img-circle img-responsive"
+                                        alt=""
                                     />
                                     <p>
                                         Lorem Ipsum is simply dummy text of the
@@ -56,6 +58,7 @@ export default function Testimonial() {
                                     <img
                                         src="https://i.ibb.co/8x9xK4H/team.jpg"
                                         class="img-circle img-responsive"
+                                        alt=""
                                     />
                                     <p>
                                         Lorem Ipsum is simply dummy text of the

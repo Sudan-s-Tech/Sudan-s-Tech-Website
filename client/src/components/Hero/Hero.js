@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import Logo from "../../assets/logo.svg";
 import "./hero.css";
 import Nav from "../Navbar/Navbar";
 import Disc from "../../assets/discord.svg";
@@ -22,7 +21,7 @@ export default function CenteredGrid(props) {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} className="hero">
             <Nav />
             <Grid
                 container
@@ -30,7 +29,8 @@ export default function CenteredGrid(props) {
                 style={{ margin: "10% 10% 1% 10%", width: "100%" }}
             >
                 {/* <Grid item xs={0.5} align="left">
-                    <img src={Logo} style={{ width: "50px" }} />
+                    <img
+                     alt="" src={Logo} style={{ width: "50px" }} />
                 </Grid>
                 <Grid item xs={2.5} align="left">
                     <h2>{props.subheading}</h2>
@@ -51,7 +51,7 @@ export default function CenteredGrid(props) {
                 >
                     {props.para}
                 </p>
-                {props.btn == true ? (
+                {props.btn === true ? (
                     <div className="container-fluid" style={{ marginLeft: 0 }}>
                         <div className="row">
                             <div className="col-sm-12 d-flex justify-content-left">
@@ -66,6 +66,7 @@ export default function CenteredGrid(props) {
                                     }}
                                 >
                                     <img
+                                        alt=""
                                         src={Disc}
                                         style={{
                                             width: "30px",
@@ -85,6 +86,7 @@ export default function CenteredGrid(props) {
                                     }}
                                 >
                                     <img
+                                        alt=""
                                         src={Git}
                                         style={{
                                             width: "30px",

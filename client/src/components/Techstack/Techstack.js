@@ -3,7 +3,9 @@ import "./techstack.css";
 export default function Techstack() {
     return (
         <div className="techstack">
-            <h1 style={{ textAlign: "center" }}>Our Techstacks</h1>
+            <h1 style={{ textAlign: "center", fontSize: "3em" }}>
+                Our Techstacks
+            </h1>
             <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.

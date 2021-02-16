@@ -13,10 +13,14 @@
     background: linear-gradient(to right, #fc466b, #3f5efb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 3em;
 }
 .impact-main h6 {
     overflow: hidden;
 }
 .impact-main h5 {
     overflow: hidden;
+}
+.stats h1 {
+    text-align: left;
 }

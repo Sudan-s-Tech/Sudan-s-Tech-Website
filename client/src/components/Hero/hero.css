@@ -3,7 +3,7 @@ h2 {
     text-align: left;
     font-size: clamp(30px, 40px, 80px) !important;
 }
-h1 {
+.hero h1 {
     font-family: "Inter", sans-serif;
     text-align: left;
     /* font-size: clamp(0.5em, 4em, 6em) !important; */
@@ -16,7 +16,7 @@ h1 {
 }
 
 @media only screen and (max-width: 750px) {
-    h1 {
+    .hero h1 {
         font-size: 3em;
         padding-right: 15%;
     }

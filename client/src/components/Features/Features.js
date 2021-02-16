@@ -1,6 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
 import Wave from "../../assets/wave-d.svg";
 import Wave2 from "../../assets/wave-u.svg";
 import Learn from "../../assets/learn.svg";
@@ -15,7 +13,6 @@ export default function Features() {
                 <h1
                     style={{
                         textAlign: "center",
-                        fontSize: "100px",
                     }}
                 >
                     How‌ ‌we‌ <span> ‌Impact‌</span>.
@@ -24,6 +21,7 @@ export default function Features() {
                 <div className="row">
                     <div className="col-md-6">
                         <img
+                            alt=""
                             src={Learn}
                             style={{ width: "100%", padding: 50 }}
                         />
@@ -44,7 +42,7 @@ export default function Features() {
                 </div>
             </div>
             <div style={{ width: "100%" }}>
-                <img src={Wave} />
+                <img alt="" src={Wave} />
             </div>
 
             <div className="container-fluid dark-wave">
@@ -60,19 +58,23 @@ export default function Features() {
                         </p>
                     </div>
                     <div className="col-md-6">
-                        <img src={Time} style={{ width: "100%" }} />
+                        <img alt="" src={Time} style={{ width: "100%" }} />
                     </div>
                 </div>
             </div>
 
             <div style={{ width: "100%" }}>
-                <img src={Wave2} />
+                <img alt="" src={Wave2} />
             </div>
 
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-6">
-                        <img src={Job} style={{ width: "100%", padding: 50 }} />
+                        <img
+                            alt=""
+                            src={Job}
+                            style={{ width: "100%", padding: 50 }}
+                        />
                     </div>
                     <div className="col-md-6" style={{ marginTop: 100 }}>
                         <h1 style={{ textAlign: "left" }}>
@@ -88,7 +90,7 @@ export default function Features() {
             </div>
 
             <div style={{ width: "100%" }}>
-                <img src={Wave} />
+                <img alt="" src={Wave} />
             </div>
             <div className="container-fluid dark-wave">
                 <div className="row">
@@ -102,12 +104,12 @@ export default function Features() {
                         </p>
                     </div>
                     <div className="col-md-6">
-                        <img src={Help} style={{ width: "100%" }} />
+                        <img alt="" src={Help} style={{ width: "100%" }} />
                     </div>
                 </div>
             </div>
             <div style={{ width: "100%" }}>
-                <img src={Wave2} />
+                <img alt="" src={Wave2} />
             </div>
         </div>
     );

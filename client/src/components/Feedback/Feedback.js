@@ -1,6 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import "./feedback.css";
 export default function Feedback() {
@@ -11,7 +9,7 @@ export default function Feedback() {
         >
             <div className="row">
                 <div className="col-md-8">
-                    <h1 style={{ color: "white" }}>
+                    <h1 style={{ color: "white", fontSize: "4em" }}>
                         We would love to hear back from you!
                     </h1>
                 </div>
