@@ -14,6 +14,7 @@ import Sponsors from "./components/Sponsors/Sponsors";
 import Coursepage from "./components/Coursepage/Course";
 import Nav from "./components/Navbar/Navbar";
 import Team from "./components/Team/Team";
+import Testimonial from "./components/Testimonial/Testimonial";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
     let name;
@@ -36,6 +37,7 @@ function App() {
                     <Impact />
                     <Feedback />
                     <Discord />
+                    <Testimonial />
                     <Footer />
                 </Route>
                 <Route path="/events" exact={true}>
@@ -49,7 +51,7 @@ function App() {
                 </Route>
                 <Route path="/contact" exact={true}>
                     <Contact />
-                    <Feedback />
+
                     <Footer />
                 </Route>
                 <Route path="/sponsors" exact={true}>

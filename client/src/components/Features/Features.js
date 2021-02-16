@@ -10,8 +10,17 @@ import Help from "../../assets/24-7.svg";
 import "./features.css";
 export default function Features() {
     return (
-        <div>
+        <div className="features-div">
             <div className="container-fluid" style={{ marginTop: 200 }}>
+                <h1
+                    style={{
+                        textAlign: "center",
+                        fontSize: "100px",
+                    }}
+                >
+                    How‌ ‌we‌ <span> ‌Impact‌</span>.
+                </h1>
+
                 <div className="row">
                     <div className="col-md-6">
                         <img

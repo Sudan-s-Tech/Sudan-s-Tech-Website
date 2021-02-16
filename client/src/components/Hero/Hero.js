@@ -29,13 +29,13 @@ export default function CenteredGrid(props) {
                 spacing={1}
                 style={{ margin: "10% 10% 1% 10%", width: "100%" }}
             >
-                <Grid item xs={0.5} align="left">
+                {/* <Grid item xs={0.5} align="left">
                     <img src={Logo} style={{ width: "50px" }} />
                 </Grid>
                 <Grid item xs={2.5} align="left">
                     <h2>{props.subheading}</h2>
                 </Grid>
-                <Grid item xs={9}></Grid>
+                <Grid item xs={9}></Grid> */}
                 <h1 className="gradient-text">
                     <b>
                         {props.heading}

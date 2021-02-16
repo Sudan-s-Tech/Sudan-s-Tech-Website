@@ -8,3 +8,8 @@ p {
 p {
     color: rgb(102, 102, 102);
 }
+.features-div span {
+    background: -webkit-linear-gradient(#12c2e9, #c471ed, #f64f59);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
