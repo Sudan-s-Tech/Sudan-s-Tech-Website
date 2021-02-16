@@ -40,21 +40,19 @@ export default function Coursepage() {
             .get("https://sudans-tech.firebaseio.com/training.json")
             .then((res) => {
                 // setCourse(res.data);
-                // console.log(res.data);
-                Object.keys(course).map((i) => {
-                    if (course[i].title == "Machine Learning") {
-                        setCourse(course[i].items);
-                        console.log(course);
-                    }
-                });
+                console.log(res);
+                // Object.keys(res.data).map((i) => {
+                //     setCourse(course[i].items);
+                //     console.log(course);
+                // });
             });
     }, []);
 
     const classes = useStyles();
     {
-        render = course.map((j) => {
+        course.map((j) => {
             // console.log(j);
-            return j.map((k) => {
+            render = j.map((k) => {
                 <div>
                     {k.title}
 

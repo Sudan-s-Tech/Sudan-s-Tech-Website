@@ -18,7 +18,7 @@ h1 {
 @media only screen and (max-width: 750px) {
     h1 {
         font-size: 3em;
-        padding-right: 2%;
+        padding-right: 15%;
     }
     .MuiButton-root {
         font-size: 10px !important;

@@ -11,7 +11,7 @@ import Footer from "./components/footer/Footer";
 import Feedback from "./components/Feedback/Feedback";
 import Contact from "./components/Contact/Contact";
 import Sponsors from "./components/Sponsors/Sponsors";
-import Coursepage from "./components/Coursepage/Coursepage";
+import Coursepage from "./components/Coursepage/Course";
 import Nav from "./components/Navbar/Navbar";
 import Team from "./components/Team/Team";
 import { BrowserRouter as Router, Route } from "react-router-dom";
