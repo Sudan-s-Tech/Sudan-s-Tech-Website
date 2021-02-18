@@ -25,7 +25,7 @@ console.log(currentdate);
 
 export default function Events() {
     const [events, setEvent] = useState([]);
-    const [option, setOption] = useState("");
+    const [option, setOption] = useState("ongoing");
 
     useEffect(async () => {
         axios.get("https://sudanstechapi.herokuapp.com/events").then((res) => {

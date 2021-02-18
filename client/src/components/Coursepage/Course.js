@@ -40,56 +40,52 @@ export default function Coursepage() {
             .get("https://sudans-tech.firebaseio.com/training.json")
             .then((res) => {
                 // setCourse(res.data);
-                console.log(res);
-                // Object.keys(res.data).map((i) => {
-                //     setCourse(course[i].items);
-                //     console.log(course);
-                // });
+                // console.log(res);
+                Object.keys(res.data).map((i) => {
+                    if (res.data[i].title === "Cyber Security the life style")
+                        setCourse(res.data[i].items);
+                });
             });
     }, []);
 
     const classes = useStyles();
     {
-        course.map((j) => {
-            // console.log(j);
-            render = j.map((k) => {
+        render = course.map((j) => {
+            console.log(j.items);
+            return (
                 <div>
-                    {k.title}
-
-                    {k.items ? (
-                        k.items.map((o) => {
-                            return <h4>{o.title}</h4>;
-                        })
-                    ) : (
-                        <div></div>
-                    )}
-                </div>;
-            });
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                        >
+                            <Typography className={classes.heading}>
+                                {j.title}
+                            </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                <ul>
+                                    {j.items ? (
+                                        j.items.map((o) => {
+                                            return (
+                                                <li style={{ color: "#fff" }}>
+                                                    {o.title}
+                                                </li>
+                                            );
+                                        })
+                                    ) : (
+                                        <div></div>
+                                    )}
+                                </ul>
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                </div>
+            );
         });
     }
-
-    // {
-    //     Object.keys(course).map((i) => {
-    //         [course[i].items].map((j) => {
-    //             console.log(j);
-    //             render = j.map((k) => {
-    //                 return (
-    //                     <div>
-    //                         {k.title}
-
-    //                         {k.items ? (
-    //                             k.items.map((o) => {
-    //                                 return <h4>{o.title}</h4>;
-    //                             })
-    //                         ) : (
-    //                             <div></div>
-    //                         )}
-    //                     </div>
-    //                 );
-    //             });
-    //         });
-    //     });
-    // }
 
     return (
         <div className="course-main-div">
@@ -139,10 +135,6 @@ export default function Coursepage() {
                 >
                     basic
                 </span>
-                {/* <div className="row">
-                    <div className="col-md-8"></div>
-                    <div className="col-md-8"></div>
-                </div> */}
             </div>
 
             <div className=" course-mid-div container">
@@ -263,34 +255,7 @@ export default function Coursepage() {
             <div className=" syllabus container" style={{ marginTop: "8em" }}>
                 <h2>Syllabus</h2>
 
-                <div>
-                    {render}
-
-                    {/* <Accordion>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                        >
-                            <Typography className={classes.heading}>
-                                Introduction
-                            </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                <ul>
-                                    <li>
-                                        Key Terms Setting up Virtuual Labs Linux
-                                        Distros
-                                    </li>
-                                    <li>Setting up Virtuual Labs</li>
-                                    <li>Linux Distros</li>
-                                    <li>Introduction to various Platforms</li>
-                                </ul>
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion> */}
-                </div>
+                <div>{render}</div>
             </div>
         </div>
     );
