@@ -15,14 +15,206 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+var arr = [];
+
+const today = new Date();
+const date =
+    today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+var currentdate = date;
+console.log(currentdate);
+
 export default function Events() {
     const [events, setEvent] = useState([]);
+    const [option, setOption] = useState("");
+
     useEffect(async () => {
         axios.get("https://sudanstechapi.herokuapp.com/events").then((res) => {
             setEvent(res.data);
         });
     }, []);
 
+    if (option == "ongoing") {
+        arr = [];
+        var items = [];
+        for (let i in events) {
+            // console.log(i);
+            if (
+                parseInt(events[i].enddate.split("-")[2]) >
+                    parseInt(currentdate.split("-")[2]) &&
+                parseInt(events[i].startdate.split("-")[2]) <
+                    parseInt(currentdate.split("-")[2])
+            ) {
+                items.push(events[i]);
+            } else if (
+                (parseInt(events[i].enddate.split("-")[2]) ==
+                    parseInt(currentdate.split("-")[2]) &&
+                    parseInt(events[i].startdate.split("-")[2]) ==
+                        parseInt(currentdate.split("-")[2])) ||
+                (parseInt(events[i].enddate.split("-")[2]) ==
+                    parseInt(currentdate.split("-")[2]) &&
+                    parseInt(events[i].startdate.split("-")[2]) <
+                        parseInt(currentdate.split("-")[2])) ||
+                (parseInt(events[i].enddate.split("-")[2]) >
+                    parseInt(currentdate.split("-")[2]) &&
+                    parseInt(events[i].startdate.split("-")[2]) ==
+                        parseInt(currentdate.split("-")[2]))
+            ) {
+                if (
+                    parseInt(events[i].enddate.split("-")[1]) >
+                        parseInt(currentdate.split("-")[1]) &&
+                    parseInt(events[i].startdate.split("-")[1]) <
+                        parseInt(currentdate.split("-")[1])
+                ) {
+                    items.push(events[i]);
+                } else if (
+                    (parseInt(events[i].enddate.split("-")[1]) ==
+                        parseInt(currentdate.split("-")[1]) &&
+                        parseInt(events[i].startdate.split("-")[1]) ==
+                            parseInt(currentdate.split("-")[1])) ||
+                    (parseInt(events[i].enddate.split("-")[1]) ==
+                        parseInt(currentdate.split("-")[1]) &&
+                        parseInt(events[i].startdate.split("-")[1]) <
+                            parseInt(currentdate.split("-")[1])) ||
+                    (parseInt(events[i].enddate.split("-")[1]) >
+                        parseInt(currentdate.split("-")[1]) &&
+                        parseInt(events[i].startdate.split("-")[1]) ==
+                            parseInt(currentdate.split("-")[1]))
+                ) {
+                    {
+                        if (
+                            parseInt(events[i].enddate.split("-")[1]) ==
+                                parseInt(currentdate.split("-")[1]) &&
+                            parseInt(events[i].startdate.split("-")[1]) ==
+                                parseInt(currentdate.split("-")[1])
+                        ) {
+                            if (
+                                parseInt(events[i].enddate.split("-")[0]) >=
+                                    parseInt(currentdate.split("-")[0]) &&
+                                parseInt(events[i].startdate.split("-")[0]) <=
+                                    parseInt(currentdate.split("-")[0])
+                            )
+                                items.push(events[i]);
+                        } else if (
+                            parseInt(events[i].enddate.split("-")[1]) ==
+                            parseInt(currentdate.split("-")[1])
+                        ) {
+                            if (
+                                parseInt(events[i].enddate.split("-")[0]) >=
+                                parseInt(currentdate.split("-")[0])
+                            )
+                                items.push(events[i]);
+                        } else if (
+                            parseInt(events[i].startdate.split("-")[1]) ==
+                            parseInt(currentdate.split("-")[1])
+                        ) {
+                            if (
+                                parseInt(events[i].startdate.split("-")[0]) <=
+                                parseInt(currentdate.split("-")[0])
+                            )
+                                items.push(events[i]);
+                        }
+                    }
+                }
+            }
+        }
+        for (var it of items) {
+            arr.push(it);
+        }
+    }
+
+    if (option === "upcoming") {
+        arr = [];
+        var items = [];
+
+        for (let i in events) {
+            if (
+                parseInt(events[i].startdate.split("-")[2]) >
+                parseInt(currentdate.split("-")[2])
+            ) {
+                items.push(events[i]);
+            } else if (
+                parseInt(events[i].startdate.split("-")[2]) ==
+                parseInt(currentdate.split("-")[2])
+            ) {
+                if (
+                    parseInt(events[i].startdate.split("-")[1]) >
+                    parseInt(currentdate.split("-")[1])
+                ) {
+                    items.push(events[i]);
+                    // items.push(5);
+                } else if (
+                    parseInt(events[i].startdate.split("-")[1]) ==
+                    parseInt(currentdate.split("-")[1])
+                ) {
+                    if (
+                        parseInt(events[i].startdate.split("-")[0]) >
+                        parseInt(currentdate.split("-")[0])
+                    ) {
+                        items.push(events[i]);
+                    }
+                }
+            }
+
+            // console.log(items);
+            // for (var it of items) {
+            //     arr.push(it);
+            // }
+            {
+                let mymap = new Map();
+
+                arr = items.filter((el) => {
+                    const val = mymap.get(el.name);
+                    if (val) {
+                        if (el.id < val) {
+                            mymap.delete(el.name);
+                            mymap.set(el.name, el.id);
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                    mymap.set(el.name, el.id);
+                    return true;
+                });
+            }
+        }
+    }
+    if (option === "past") {
+        arr = [];
+        var items = [];
+        for (let i in events) {
+            if (
+                parseInt(events[i].enddate.split("-")[2]) <
+                parseInt(currentdate.split("-")[2])
+            ) {
+                items.push(events[i]);
+                console.log(events[i].enddate);
+            } else if (
+                parseInt(events[i].enddate.split("-")[2]) ==
+                parseInt(currentdate.split("-")[2])
+            ) {
+                if (
+                    parseInt(events[i].enddate.split("-")[1]) <
+                    parseInt(currentdate.split("-")[1])
+                ) {
+                    items.push(events[i]);
+                } else if (
+                    parseInt(events[i].enddate.split("-")[1]) ==
+                    parseInt(currentdate.split("-")[1])
+                ) {
+                    if (
+                        parseInt(events[i].enddate.split("-")[0]) <
+                        parseInt(currentdate.split("-")[0])
+                    ) {
+                        items.push(events[i]);
+                    }
+                }
+            }
+        }
+        for (var it of items) {
+            arr.push(it);
+        }
+    }
     return (
         <div style={{ marginBottom: 100 }}>
             <Hero
@@ -37,6 +229,9 @@ export default function Events() {
                 variant="outlined"
                 color="primary"
                 style={{ margin: "1px 10px" }}
+                onClick={(e) => {
+                    setOption("past");
+                }}
             >
                 Past
             </Button>
@@ -44,6 +239,9 @@ export default function Events() {
                 variant="outlined"
                 color="secondary"
                 style={{ margin: "1px 10px" }}
+                onClick={(e) => {
+                    setOption("ongoing");
+                }}
             >
                 Ongoing
             </Button>
@@ -51,27 +249,40 @@ export default function Events() {
                 variant="outlined"
                 color="primary"
                 style={{ margin: "1px 10px" }}
+                onClick={(e) => {
+                    setOption("upcoming");
+                }}
             >
                 Upcoming
             </Button>
 
             <div className="container">
                 <div className="row" align="center">
-                    {events.map((item) => {
-                        return (
-                            <div className="col-md-4">
-                                <EventCard
-                                    tag={"upcoming"}
-                                    color={"secondary"}
-                                    title={item.title}
-                                    date={item.startdate}
-                                    desc={item.description}
-                                    imgurl={item.imgurl}
-                                    link={item.link}
-                                />
-                            </div>
-                        );
-                    })}
+                    {arr.length === 0 ? (
+                        <div className="col-sm-12 my-5">
+                            <h3 style={{ textAlign: "center" }}>
+                                No Events to show.
+                            </h3>
+                        </div>
+                    ) : (
+                        arr.map((item) => {
+                            return (
+                                <div className="col-md-4">
+                                    <EventCard
+                                        tag={"upcoming"}
+                                        color={"secondary"}
+                                        title={item.title}
+                                        date={item.startdate}
+                                        desc={item.description}
+                                        imgurl={item.imgurl}
+                                        link={item.link}
+                                    />
+                                </div>
+                            );
+                            // console.log(item);
+                        })
+                    )}
+                    {console.log(arr)}
                 </div>
             </div>
         </div>
