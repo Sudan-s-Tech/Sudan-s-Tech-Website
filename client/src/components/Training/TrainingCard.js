@@ -72,7 +72,15 @@ export default function RecipeReviewCard(props) {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing></CardActions>
-            <Link to={`${props.link}`}>
+            {/* <Link to={`${props.link}`} params={{ test: `${props.title}` }}> */}
+            <Link
+                to={{
+                    pathname: `/register/${props.title}`,
+                    state: {
+                        test: `${props.title}`,
+                    },
+                }}
+            >
                 <Button
                     variant="contained"
                     color="primary"

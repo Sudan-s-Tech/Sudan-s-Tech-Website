@@ -88,7 +88,7 @@ export default function Events() {
                                     lesson={item.lesson}
                                     desc={item.description}
                                     imgurl={item.imageurl}
-                                    link="/register/cyber"
+                                    link={`/register/${item.title}`}
                                 />
                             </div>
                         );
