@@ -38,7 +38,7 @@ export default function Events() {
                 heading={"We are known for our "}
                 gradient={"Training courses"}
                 para={
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "
+                    "“Don’t‌ ‌decrease‌ ‌the‌ ‌goal.‌ ‌Increase‌ ‌the‌ ‌effort”.We‌ ‌Don't‌ ‌Only‌ ‌Provide‌ ‌Courses‌ ‌but‌ ‌Train‌ ‌you‌ ‌for‌ ‌some‌ ‌Real‌ ‌industry‌ ‌experience.‌ "
                 }
             />
             {/* <div className="container">

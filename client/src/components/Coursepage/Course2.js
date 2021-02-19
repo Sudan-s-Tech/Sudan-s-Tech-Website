@@ -120,7 +120,7 @@ export default function Coursepage(props) {
                             style={{
                                 textAlign: "left",
                                 fontSize: "9em",
-                                lineHeight: "150px",
+                                lineHeight: "130px",
                             }}
                         >
                             {title}

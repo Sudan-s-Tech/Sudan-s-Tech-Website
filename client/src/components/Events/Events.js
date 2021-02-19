@@ -222,7 +222,7 @@ export default function Events() {
                 heading={"Our Events do the "}
                 gradient={"Talk"}
                 para={
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "
+                    "Are‌ ‌You‌ ‌fan‌ ‌of‌ ‌workshops‌ ‌,‌ ‌Hacakathon‌ ‌,‌ ‌webinars‌ ‌,‌ ‌Q/A’s‌ ‌?‌ ‌We‌ ‌organise‌ ‌these‌ ‌events‌ ‌.‌ ‌Check‌ ‌It‌ ‌Out‌ ‌!"
                 }
             />
             <Button
