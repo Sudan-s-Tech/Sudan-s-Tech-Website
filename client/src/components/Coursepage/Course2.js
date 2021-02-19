@@ -112,53 +112,58 @@ export default function Coursepage(props) {
 
     return (
         <div className="course-main-div">
-            <div
-                className="course-head container"
-                style={{
-                    textAlign: "center",
-                    height: "50em",
-                    paddingTop: "15em",
-                }}
-            >
-                <h1
-                    style={{
-                        textAlign: "center",
-                        fontSize: "120px",
-                        lineHeight: "110px",
-                    }}
-                >
-                    {/* Cyber Security the life style. */}
-                    {title}
-                </h1>{" "}
-                <h5
-                    style={{
-                        color: "black",
-                    }}
-                >
-                    {body}
-                </h5>
-                <Button variant="outlined" color="secondary">
-                    Register
-                </Button>{" "}
-                <br />
-                <span
-                    class="badge badge-primary"
-                    style={{ margin: "10px 10px" }}
-                >
-                    {`${duration} Hours`}
-                </span>
-                <span
-                    class="badge badge-danger"
-                    style={{ margin: "10px 10px" }}
-                >
-                    {`${lesson} lessons`}
-                </span>
-                <span
-                    class="badge badge-warning"
-                    style={{ margin: "10px 10px" }}
-                >
-                    {level}
-                </span>
+            <div className="course-head container-fluid mt-5">
+                <div className="row">
+                    <div className="col-md-8">
+                        {" "}
+                        <h1
+                            style={{
+                                textAlign: "left",
+                                fontSize: "9em",
+                                lineHeight: "150px",
+                            }}
+                        >
+                            {title}
+                        </h1>{" "}
+                        <h5
+                            style={{
+                                textAlign: "left",
+                                color: "black",
+                            }}
+                        >
+                            {body}
+                        </h5>
+                        <div style={{ textAlign: "left" }}>
+                            <span
+                                class="badge badge-primary"
+                                style={{ margin: "10px 10px" }}
+                            >
+                                {`${duration} Hours`}
+                            </span>
+                            <span
+                                class="badge badge-danger"
+                                style={{ margin: "10px 10px" }}
+                            >
+                                {`${lesson} lessons`}
+                            </span>
+                            <span
+                                class="badge badge-warning"
+                                style={{ margin: "10px 10px" }}
+                            >
+                                {level}
+                            </span>
+                        </div>
+                    </div>
+                    <div className="col-md-4 d-flex align-items-center justify-content-center">
+                        <Button
+                            variant="outlined"
+                            color="secondary"
+                            size="large"
+                        >
+                            Register
+                        </Button>{" "}
+                    </div>
+                </div>
             </div>
 
             <div className=" course-mid-div container">
