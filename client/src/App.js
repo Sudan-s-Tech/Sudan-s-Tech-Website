@@ -16,6 +16,7 @@ import Nav from "./components/Navbar/Navbar";
 import Team from "./components/Team/Team";
 import Testimonial from "./components/Testimonial/Testimonial";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import SignIn from "./components/SignIn/SignIn";
 function App() {
     let name;
     return (
@@ -62,6 +63,9 @@ function App() {
                 <Route path="/team" exact={true}>
                     <Team />
                     <Footer />
+                </Route>
+                <Route path="/signin" exact={true}>
+                   <SignIn />
                 </Route>
                 <Route path="/register/:name" exact={true}>
                     <Nav />
