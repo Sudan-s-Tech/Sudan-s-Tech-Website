@@ -4,6 +4,7 @@ import Hero from "../Hero/Hero";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
+import Page from "react-page-loading";
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -255,36 +256,35 @@ export default function Events() {
             >
                 Upcoming
             </Button>
-
-            <div className="container">
-                <div className="row" align="center">
-                    {arr.length === 0 ? (
-                        <div className="col-sm-12 my-5">
-                            <h3 style={{ textAlign: "center" }}>
-                                No Events to show.
-                            </h3>
-                        </div>
-                    ) : (
-                        arr.map((item) => {
-                            return (
-                                <div className="col-md-4">
-                                    <EventCard
-                                        tag={"upcoming"}
-                                        color={"secondary"}
-                                        title={item.title}
-                                        date={item.startdate}
-                                        desc={item.description}
-                                        imgurl={item.imgurl}
-                                        link={item.link}
-                                    />
-                                </div>
-                            );
-                            // console.log(item);
-                        })
-                    )}
-                    {console.log(arr)}
+            <Page loader={"rotate-spin"} color={"#D864B4"} size={10}>
+                <div className="container">
+                    <div className="row" align="center">
+                        {arr.length === 0 ? (
+                            <div className="col-sm-12 my-5">
+                                <h3 style={{ textAlign: "center" }}>
+                                    No Events to show.
+                                </h3>
+                            </div>
+                        ) : (
+                            arr.map((item) => {
+                                return (
+                                    <div className="col-md-4">
+                                        <EventCard
+                                            tag={"upcoming"}
+                                            color={"secondary"}
+                                            title={item.title}
+                                            date={item.startdate}
+                                            desc={item.description}
+                                            imgurl={item.imgurl}
+                                            link={item.link}
+                                        />
+                                    </div>
+                                );
+                            })
+                        )}
+                    </div>
                 </div>
-            </div>
+            </Page>
         </div>
     );
 }
