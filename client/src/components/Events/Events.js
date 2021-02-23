@@ -268,7 +268,7 @@ export default function Events() {
                         ) : (
                             arr.map((item) => {
                                 return (
-                                    <div className="col-md-4">
+                                    <div className="col-md-6">
                                         <EventCard
                                             tag={"upcoming"}
                                             color={"secondary"}

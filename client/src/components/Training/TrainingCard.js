@@ -11,7 +11,7 @@ import { red } from "@material-ui/core/colors";
 import Send from "@material-ui/icons/Send";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-
+import "./training.css";
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 345,
@@ -50,29 +50,64 @@ export default function RecipeReviewCard(props) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        ⭐
-                    </Avatar>
-                }
-                action={<span class={`badge badge-${color}`}>{tag}</span>}
-                title={props.title}
-                subheader={`${props.date} | ${props.lesson} lessons | ${props.level}`}
-            />
-            <CardMedia
-                className={classes.media}
-                image={props.imgurl}
-                title="Paella dish"
-            />
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    {props.desc}
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing></CardActions>
-            {/* <Link to={`${props.link}`} params={{ test: `${props.title}` }}> */}
+        // <Card className={classes.root}>
+        //     <CardHeader
+        //         avatar={
+        //             <Avatar aria-label="recipe" className={classes.avatar}>
+        //                 ⭐
+        //             </Avatar>
+        //         }
+        //         action={<span class={`badge badge-${color}`}>{tag}</span>}
+        //         title={props.title}
+        //         subheader={`${props.date} | ${props.lesson} lessons | ${props.level}`}
+        //     />
+        //     <CardMedia
+        //         className={classes.media}
+        //         image={props.imgurl}
+        //         title="Paella dish"
+        //     />
+        //     <CardContent>
+        //         <Typography variant="body2" color="textSecondary" component="p">
+        //             {props.desc}
+        //         </Typography>
+        //     </CardContent>
+        //     <CardActions disableSpacing></CardActions>
+        //     {/* <Link to={`${props.link}`} params={{ test: `${props.title}` }}> */}
+        //     <Link
+        //         to={{
+        //             pathname: `/register/${props.title}`,
+        //             state: {
+        //                 test: `${props.title}`,
+        //             },
+        //         }}
+        //     >
+        //         <Button
+        //             variant="contained"
+        //             color="primary"
+        //             className={classes.button}
+        //             endIcon={<Send />}
+        //         >
+        //             More Details
+        //         </Button>
+        //     </Link>
+        // </Card>
+        // <div class="container">
+        <div class="fancy_card" style={{ textAlign: "left" }}>
+            {/* <img
+                src="https://res.cloudinary.com/practicaldev/image/fetch/s--Sqh4MQSK--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/hzc4hdwc234t7p728i5c.jpg"
+                class="card_image"
+            /> */}
+            <div class="card_text">
+                <div class="tags" style={{ fontWeight: 600 }}>
+                    {props.title}
+                </div>
+                <h6 class="title tags" style={{ fontWeight: 400 }}>
+                    {`${props.date} | ${props.lesson} lessons | ${props.level}`}
+                </h6>
+                <div class="summary tags">
+                    <b>{props.desc}</b>
+                </div>
+            </div>
             <Link
                 to={{
                     pathname: `/register/${props.title}`,
@@ -81,15 +116,19 @@ export default function RecipeReviewCard(props) {
                     },
                 }}
             >
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}
-                    endIcon={<Send />}
-                >
-                    More Details
-                </Button>
+                <div class="card_footer">
+                    <a href="https://nestedsoftware.com">
+                        <img
+                            class="author_image"
+                            src="https://thepracticaldev.s3.amazonaws.com/i/62j2i9zf91agi13gsl6p.jpg"
+                            alt="Nested Software"
+                        />
+                    </a>
+
+                    <div class="reading_time tags">20 min read</div>
+                </div>
             </Link>
-        </Card>
+        </div>
+        // </div>
     );
 }
