@@ -71,6 +71,13 @@ export default function Navbar() {
                                 </a>
                             </li>
                         </Link>
+                        <Link to="/signin">
+                            <li>
+                                <a class="nav-link" href="#">
+                                    Signin
+                                </a>
+                            </li>
+                        </Link>
                     </ul>
                 </div>
             </nav>
