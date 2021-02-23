@@ -35,8 +35,11 @@ export default function Features() {
                             Project-based, active learning
                         </h1>
                         <p style={{ textAlign: "left" }}>
-                            Learn by doing with real-world projects and other
-                            hands-on exercises that lead to real skills mastery.
+                            Learning‌ ‌through‌ ‌practice‌ ‌has‌ ‌always‌
+                            ‌created‌ ‌more‌ ‌impact‌ ‌than‌ ‌theoretical‌ ‌
+                            Knowledge.‌ ‌We‌ ‌Provide‌ ‌hands-on‌ ‌experience‌
+                            ‌on‌ ‌real‌ ‌world‌ ‌projects‌ ‌which‌ ‌lead‌ ‌to‌ ‌
+                            mastering‌ ‌the‌ ‌skills‌ ‌required.‌
                         </p>
                     </div>
                 </div>
@@ -52,9 +55,12 @@ export default function Features() {
                             Learn on your schedule
                         </h1>
                         <p style={{ textAlign: "left" }}>
-                            Self-paced learning - whenever and wherever you
-                            want. Graduate while learning part-time for 10
-                            hrs/week.
+                            Are‌ ‌You‌ ‌not‌ ‌able‌ ‌to‌ ‌cope‌ ‌up‌ ‌with‌
+                            ‌timelines‌ ‌?‌ ‌Don't‌ ‌worry‌ ‌we‌ ‌understand‌
+                            ‌your‌ ‌problem‌ ‌ .Our‌ ‌courses‌ ‌are‌ ‌self‌
+                            ‌paced‌ ‌courses‌ ‌which‌ ‌you‌ ‌can‌ ‌view‌ ‌at‌
+                            ‌anytime‌ ‌and‌ ‌anywhere‌ ‌at‌ ‌ your‌ ‌comfort‌
+                            ‌.‌
                         </p>
                     </div>
                     <div className="col-md-6">
@@ -81,9 +87,12 @@ export default function Features() {
                             Get real employable skills
                         </h1>
                         <p style={{ textAlign: "left" }}>
-                            Our quality curriculum is designed with top-tier
-                            industry partners, not academics, so you learn the
-                            high-impact skills that top companies want.
+                            Skills‌ ‌are‌ ‌what‌ ‌really‌ ‌matters‌ ‌in‌ ‌the‌
+                            ‌industry‌ ‌when‌ ‌it‌ ‌comes‌ ‌to‌ ‌work.‌ ‌Doing‌
+                            ‌These‌ ‌ courses‌ ‌not‌ ‌only‌ ‌help‌ ‌you‌ ‌to‌
+                            ‌master‌ ‌that‌ ‌skill‌ ‌but‌ ‌get‌ ‌real‌
+                            ‌Industry‌ ‌ready‌ ‌and‌ ‌provide‌ ‌ more‌
+                            ‌opportunity‌ ‌.‌
                         </p>
                     </div>
                 </div>
@@ -99,8 +108,12 @@ export default function Features() {
                             The help you need, when you need it
                         </h1>
                         <p style={{ textAlign: "left" }}>
-                            Reach out to our mentors 24/7 and have your coding
-                            questions answered quickly so you can keep learning.
+                            Got‌ ‌Stuck‌ ‌in‌ ‌a‌ ‌Problem‌ ‌?‌ ‌Don't‌ ‌worry‌
+                            ‌!‌ ‌We‌ ‌are‌ ‌having‌ ‌a‌ ‌large‌ ‌Community‌
+                            ‌support‌ ‌of‌ ‌ Students,‌ ‌Industry‌ ‌Mentors‌
+                            ‌for‌ ‌your‌ ‌support‌ ‌and‌ ‌helping‌ ‌you‌ ‌to‌
+                            ‌solve‌ ‌your‌ ‌problem‌ ‌ as‌ ‌quickly‌ ‌as‌
+                            ‌fast.‌
                         </p>
                     </div>
                     <div className="col-md-6">

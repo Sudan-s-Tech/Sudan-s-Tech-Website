@@ -1,8 +1,9 @@
 .impact-main {
+    padding-top: 5em;
     background-color: #212121;
     color: white;
     overflow: hidden;
-    /* height: 100vh; */
+    height: 45em;
 }
 .impact-main .col-md-4 {
     border-left: 3px solid tomato;

@@ -4,6 +4,7 @@
 }
 .course-main-div .MuiAccordion-rounded {
     background-color: #424242 !important;
+    margin-bottom: 1%;
 }
 
 .course-main-div .MuiTypography-body1 {
@@ -19,4 +20,16 @@
 }
 ul {
     text-align: left;
+}
+.course-head .row {
+    display: flex !important;
+    flex-direction: row !important;
+    -ms-flex-wrap: wrap !important;
+}
+.course-head {
+    height: 50em;
+}
+.MuiButton-outlinedSecondary {
+    color: #f50057 !important;
+    border: 1px solid rgba(245, 0, 87, 0.5) !important;
 }

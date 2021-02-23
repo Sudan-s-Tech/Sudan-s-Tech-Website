@@ -11,7 +11,7 @@ import Footer from "./components/footer/Footer";
 import Feedback from "./components/Feedback/Feedback";
 import Contact from "./components/Contact/Contact";
 import Sponsors from "./components/Sponsors/Sponsors";
-import Coursepage from "./components/Coursepage/Course";
+import Coursepage from "./components/Coursepage/Course2";
 import Nav from "./components/Navbar/Navbar";
 import Team from "./components/Team/Team";
 import Testimonial from "./components/Testimonial/Testimonial";
@@ -64,12 +64,17 @@ function App() {
                     <Team />
                     <Footer />
                 </Route>
+
                 <Route path="/signin" exact={true}>
                    <SignIn />
                 </Route>
                 <Route path="/register/:name" exact={true}>
+
+                <Route path={`/register/:${name}`}>
+
                     <Nav />
-                    <Coursepage name={name} />
+                    {console.log(name)}
+                    <Coursepage title={name} />
                 </Route>
             </Router>
         </div>
