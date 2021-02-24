@@ -12,7 +12,6 @@ import { Marginer } from './Marginer';
 import axios from "axios";
 
 
-
 function LoginForm() {
     const { switchToSignup } = useContext(AccountContext);
     const [email, setemail] = useState('');
