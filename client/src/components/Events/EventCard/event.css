@@ -11,10 +11,10 @@
     /* font-family: "Inconsolata", monospace !important; */
 }
 .MediaItem .meta {
-    font-family: "Inconsolata", monospace !important;
+    /* font-family: "Inconsolata", monospace !important; */
 }
 .MediaItem .description {
-    font-family: "Inconsolata", monospace !important;
+    /* font-family: "Inconsolata", monospace !important; */
 }
 .MediaItem .thumbnail img {
     height: 100%;
@@ -31,7 +31,7 @@
     width: auto;
 }
 .MediaItem .s-vflex-outer {
-    padding: 50px;
+    padding: 35px;
     /* padding-top: 20px; */
     position: relative;
     z-index: 5;
@@ -80,8 +80,7 @@
 
 .MediaItem .cta {
     display: flex;
-    gap: 10%;
-
+    gap: 1%;
     flex-wrap: wrap;
 }
 
