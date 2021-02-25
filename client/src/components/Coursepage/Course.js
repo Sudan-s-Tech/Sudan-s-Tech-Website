@@ -116,7 +116,7 @@ export default function Coursepage(props) {
           {title} <span> {level}_</span>
         </h2>
         <h6>{body}</h6>
-        <Button variant="contained" className="course__btn">
+        <Button variant="contained" className="course__btn" style={{backgroundColor:'blueviolet',color:'#fff'}}>
           Buy Now
         </Button>
       </div>
