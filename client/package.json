@@ -13,7 +13,11 @@
     "netlify-cli": "^3.8.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+<<<<<<< HEAD
     "react-player": "^2.9.0",
+=======
+    "react-page-loading": "^1.0.2",
+>>>>>>> 92c4c1002a3ff520a854dbebdd4d2fb0fa0b68f7
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",

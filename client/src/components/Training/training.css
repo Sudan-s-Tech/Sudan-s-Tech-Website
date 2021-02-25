@@ -1,0 +1,73 @@
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,500,300italic,500italic,700italic,900,300); */
+
+.fancy_card h2 {
+    margin: 8px 0px 12px 0px;
+}
+
+.fancy_card {
+    font-family: Roboto, sans-serif;
+    /* width: 90%; */
+    margin: 5%;
+    border-radius: 5px;
+    box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+        1px 3px 8px rgba(39, 44, 49, 0.03);
+    overflow: hidden; /* otherwise header image won't respect rounded corners */
+    background: white;
+    transition: all 0.5s ease; /* back to normal */
+}
+.fancy_card:hover {
+    transform: translate3D(0, -1px, 0) scale(1.03); /* move up slightly and zoom in */
+    box-shadow: -20px 10px 0px #212121;
+    transition: all 0.4s ease; /* zoom in */
+    cursor: pointer;
+    transform: translateX(10px);
+}
+
+.card_image {
+    width: 100%; /* forces image to maintain its aspect ratio; otherwise image stretches vertically */
+}
+
+.card_text {
+    padding: 20px 13px 10px 16px;
+}
+
+.tags {
+    /* color: #738a94; */
+    /* font-size: 0.9rem; */
+    /* line-height: 1em; */
+    font-weight: 500;
+    font-family: "Inconsolata", monospace !important;
+    color: black !important;
+    /* letter-spacing: 0.5px; */
+    text-transform: uppercase;
+}
+
+.card_footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center; /* vertically align content */
+    font-family: roboto, sans-serif;
+    padding: 10px 20px 10px 10px;
+}
+
+.author_image {
+    object-fit: cover; /* don't squish profile image */
+    object-position: 30%; /* move image to the right slightly */
+    border-radius: 100%; /* make profile image a circle */
+    width: 44px;
+    height: 44px;
+}
+
+.reading_time {
+    color: #738a94;
+    font-size: 0.9rem;
+    line-height: 33px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left: auto; /* move over to the right */
+}
+.fancy_card .summary {
+    font-size: 20px;
+    font-weight: 800;
+}

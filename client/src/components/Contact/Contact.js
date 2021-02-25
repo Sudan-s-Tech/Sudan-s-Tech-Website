@@ -12,7 +12,7 @@ export default function Events() {
                 heading={"We keep our doors open "}
                 gradient={"24x7"}
                 para={
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "
+                    "Have‌ ‌a‌ ‌query‌ ‌?‌ ‌Contact‌ ‌Us‌ ‌,‌ ‌We‌ ‌will‌ ‌try‌ ‌our‌ ‌best‌ ‌to‌ ‌solve‌ ‌your‌ ‌query‌ ‌with‌ ‌our‌ ‌best‌ ‌minds‌ ‌on‌ ‌it‌.‌"
                 }
             />
             <div className="container">

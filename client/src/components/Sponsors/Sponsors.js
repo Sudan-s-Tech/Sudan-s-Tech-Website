@@ -20,7 +20,7 @@ export default function Sponsors() {
                 heading={"Our supporting "}
                 gradient={"Sponsors"}
                 para={
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy "
+                    "Thanks‌ ‌to‌ ‌all‌ ‌these‌ ‌Sponsors‌ ‌which‌ ‌Supported‌ ‌us‌ ‌for‌ ‌this‌ ‌Initiative‌ ‌and‌ ‌without‌ ‌their‌ ‌help‌ ‌this‌ ‌would‌ ‌have‌ ‌not‌ ‌been‌ ‌possible.‌"
                 }
             />
             <div className="container">
