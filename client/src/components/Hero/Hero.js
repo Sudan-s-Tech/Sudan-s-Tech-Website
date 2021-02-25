@@ -83,6 +83,7 @@ export default function CenteredGrid(props) {
                                         backgroundColor: "#FFF",
                                         color: "#212121",
                                         marginTop: "2%",
+                                        borderRadius: "15px",
                                     }}
                                 >
                                     <img
