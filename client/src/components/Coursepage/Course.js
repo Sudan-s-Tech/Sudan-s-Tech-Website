@@ -279,7 +279,7 @@ export default function Coursepage() {
           <div className="course__container-leftHeader">
             <h2>Overview</h2>
           </div>
-          <div className="course__container-rightVideo" style={{overflow:'none'}}>
+          <div className="course__container-rightVideo" style={{paddingLeft:'1rem'}}>
                 <ReactPlayer controls width='375px' height='220px' url='https://youtu.be/inWWhr5tnEA'  />
             </div>
           <div className="course__container-leftDesc">

@@ -105,6 +105,7 @@ ul {
 }
 .course__container-leftDesc{
     text-align: start;
+    padding-left: 1rem;
 }
 .course__container-leftDesc h4{
     font-size: 1.4rem !important;
@@ -165,5 +166,8 @@ color: blueviolet;
     }
     .course__container-leftDesc{
         padding-left: 1rem;
+    }
+    .makeStyles-teachers-2 {
+        width: 94.6% !important;
     }
 }
