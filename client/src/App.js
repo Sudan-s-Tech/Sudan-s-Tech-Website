@@ -37,7 +37,6 @@ function App() {
                     <TechStack />
                     <Impact />
                     <Feedback />
-                    <Discord />
                     <Testimonial />
                     <Footer />
                 </Route>
@@ -65,7 +64,7 @@ function App() {
                     <Footer />
                 </Route>
                 <Route path="/signin" exact={true}>
-                   <SignIn />
+                    <SignIn />
                 </Route>
                 <Route path={`/register/:${name}`}>
                     <Nav />

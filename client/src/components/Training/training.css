@@ -3,6 +3,9 @@
 .fancy_card h2 {
     margin: 8px 0px 12px 0px;
 }
+a:link {
+    text-decoration: none;
+}
 
 .fancy_card {
     font-family: Roboto, sans-serif;

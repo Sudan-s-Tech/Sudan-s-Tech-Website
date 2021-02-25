@@ -3,6 +3,7 @@ import Hero from "../Hero/Hero";
 import { makeStyles } from "@material-ui/core/styles";
 import Pic from "../../assets/contact.svg";
 import "./contact.css";
+import Button from "@material-ui/core/Button";
 
 export default function Events() {
     return (
@@ -24,6 +25,19 @@ export default function Events() {
                         <input type="text" placeholder="Name" />
                         <input type="email" placeholder="Email" />
                         <textarea placeholder="Write your message here..."></textarea>
+                        <Button
+                            // className="hero-btn"
+                            variant="contained"
+                            href="#contained-buttons"
+                            style={{
+                                backgroundColor: "#7289DA",
+                                color: "white",
+                                marginTop: "2%",
+                                borderRadius: "20px",
+                            }}
+                        >
+                            Submit
+                        </Button>
                     </div>
                 </div>
             </div>
