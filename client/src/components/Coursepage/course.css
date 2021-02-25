@@ -85,7 +85,6 @@ ul {
     outline: none !important;
     color: white !important;
 }
-<<<<<<< HEAD
 .course__container{
     display: flex;
     max-width: 1200px;
@@ -173,7 +172,6 @@ color: blueviolet;
         width: 94.6% !important;
     }
 }
-=======
 .course-head .row {
     display: flex !important;
     flex-direction: row !important;
@@ -186,4 +184,3 @@ color: blueviolet;
     color: #f50057 !important;
     border: 1px solid rgba(245, 0, 87, 0.5) !important;
 }
->>>>>>> 92c4c1002a3ff520a854dbebdd4d2fb0fa0b68f7
