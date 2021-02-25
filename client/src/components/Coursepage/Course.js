@@ -111,17 +111,17 @@ export default function Coursepage(props) {
         });
     }
 
-    return (
-        <div className="course">
-            <div className="course__header">
-                <h2>
-                    {title} <span> {level}_</span>
-                </h2>
-                <h6>{body}</h6>
-                <Button variant="contained" className="course__btn">
-                    Buy Now
-                </Button>
-            </div>
+  return (
+    <div className="course">
+      <div className="course__header" >
+        <h2>
+          {title} <span> {level}_</span>
+        </h2>
+        <h6>{body}</h6>
+        <Button variant="contained" className="course__btn" style={{backgroundColor:'blueviolet',color:'#fff'}}>
+          Buy Now
+        </Button>
+      </div>
             <div className="course__container">
                 <div className="course__container-left">
                     <div className="course__container-leftHeader">
