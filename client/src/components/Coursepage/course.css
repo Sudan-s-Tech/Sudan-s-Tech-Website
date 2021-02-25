@@ -165,6 +165,9 @@ color: blueviolet;
     .course__container-right{
         flex: 1;
     }
+    .course__container-rightVideo{
+        padding-left:0rem !important;
+    }
     .course__container-leftDesc{
         padding-left: 1rem;
     }
