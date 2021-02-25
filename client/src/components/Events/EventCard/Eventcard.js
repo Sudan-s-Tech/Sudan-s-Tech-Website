@@ -9,8 +9,9 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import Send from "@material-ui/icons/Send";
-import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+
 import "./event.css";
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -100,15 +101,20 @@ export default function RecipeReviewCard(props) {
                     </div>
                 </div>
                 <div class="cta">
-                    <a
-                        class="Button ButtonSmall ButtonRed"
-                        href="/courses/production-vue/"
+                    <Button
+                        variant="outlined"
+                        color="primary"
+                        // style={{ margin: "1px 10px" }}
                     >
                         Watch Free Preview
-                    </a>{" "}
-                    <a class="Button ButtonSmall" href="/join/">
+                    </Button>
+                    <Button
+                        variant="outlined"
+                        color="secondary"
+                        // style={{ margin: "1px 10px" }}
+                    >
                         Get Full Access
-                    </a>
+                    </Button>
                 </div>
             </div>
             <div className="thumbnail-wrap">

@@ -101,12 +101,13 @@ export default function RecipeReviewCard(props) {
                 <div class="tags" style={{ fontWeight: 600 }}>
                     {props.title}
                 </div>
-                <h6 class="title tags" style={{ fontWeight: 400 }}>
-                    {`${props.date} | ${props.lesson} lessons | ${props.level}`}
-                </h6>
+
                 <div class="summary tags">
                     <b>{props.desc}</b>
                 </div>
+                <h6 class="title tags" style={{ fontWeight: 400 }}>
+                    {`${props.date} | ${props.lesson} lessons | ${props.level}`}
+                </h6>
             </div>
             <Link
                 to={{
@@ -117,15 +118,7 @@ export default function RecipeReviewCard(props) {
                 }}
             >
                 <div class="card_footer">
-                    <a href="https://nestedsoftware.com">
-                        <img
-                            class="author_image"
-                            src="https://thepracticaldev.s3.amazonaws.com/i/62j2i9zf91agi13gsl6p.jpg"
-                            alt="Nested Software"
-                        />
-                    </a>
-
-                    <div class="reading_time tags">20 min read</div>
+                    <div class="reading_time tags">See more</div>
                 </div>
             </Link>
         </div>
