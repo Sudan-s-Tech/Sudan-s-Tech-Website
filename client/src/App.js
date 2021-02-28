@@ -17,64 +17,72 @@ import Team from "./components/Team/Team";
 import Testimonial from "./components/Testimonial/Testimonial";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignIn from "./components/SignIn/SignIn";
+import Dashboard from "./components/Dashboard/Dashboard";
 function App() {
-    let name;
-    return (
-        <div className="App">
-            <Router>
-                <Route path="/" exact={true}>
-                    <Home
-                        btn={true}
-                        subheading={"SudansTech"}
-                        heading={"Build Your Future "}
-                        gradient={"With Us"}
-                        para={
-                            "Sudan’s Technocrats(Tech) Foundation,J&K First Ever Tech Community which aims to focus on reducing the Technology gap between Industry and Students of India and is Registered section-8 company Rules under govt. Of India .Sudan's Technocrats(Tech) Foundation is a non-profit initiative aimed at making use of 21st-century technologies and learning methods to foster a fresh breed of highly skilled young people empowered with technical and social skills."
-                        }
-                    />
-                    <Features />
-                    <Vision />
-                    <TechStack />
-                    <Impact />
-                    <Feedback />
-                    <Discord />
-                    <Testimonial />
-                    <Footer />
-                </Route>
-                <Route path="/events" exact={true}>
-                    <Events />
+  let name;
+  return (
+    <div className="App">
+      <Router>
+        <Route path="/" exact={true}>
+          <Home
+            btn={true}
+            subheading={"SudansTech"}
+            heading={"Build Your Future "}
+            gradient={"With Us"}
+            para={
+              "Sudan’s Technocrats(Tech) Foundation,J&K First Ever Tech Community which aims to focus on reducing the Technology gap between Industry and Students of India and is Registered section-8 company Rules under govt. Of India .Sudan's Technocrats(Tech) Foundation is a non-profit initiative aimed at making use of 21st-century technologies and learning methods to foster a fresh breed of highly skilled young people empowered with technical and social skills."
+            }
+          />
+          <Features />
+          <Vision />
+          <TechStack />
+          <Impact />
+          <Feedback />
+          <Discord />
+          <Testimonial />
+          <Footer />
+        </Route>
+        <Route path="/events" exact={true}>
+          <Events />
 
-                    <Footer />
-                </Route>
-                <Route path="/trainings" exact={true}>
-                    <Training />
-                    <Footer />
-                </Route>
-                <Route path="/contact" exact={true}>
-                    <Contact />
+          <Footer />
+        </Route>
+        <Route path="/trainings" exact={true}>
+          <Training />
+          <Footer />
+        </Route>
+        <Route path="/contact" exact={true}>
+          <Contact />
 
-                    <Footer />
-                </Route>
-                <Route path="/sponsors" exact={true}>
-                    <Sponsors />
-                    <Feedback />
-                    <Footer />
-                </Route>
-                <Route path="/team" exact={true}>
-                    <Team />
-                    <Footer />
-                </Route>
-                <Route path="/signin" exact={true}>
-                   <SignIn />
-                </Route>
-                <Route path={`/register/:${name}`}>
-                    <Nav />
-                    {console.log(name)}
-                    <Coursepage title={name} />
-                </Route>
-            </Router>
-        </div>
-    );
+          <Footer />
+        </Route>
+        <Route path="/sponsors" exact={true}>
+          <Sponsors />
+          <Feedback />
+          <Footer />
+        </Route>
+        <Route path="/team" exact={true}>
+          <Team />
+          <Footer />
+        </Route>
+        <Route path="/signin" exact={true}>
+          <Nav />
+          <SignIn />
+        </Route>
+        <Route path="/dashboard" exact={true}>
+          {/* <Nav /> */}
+
+          <Dashboard />
+        </Route>
+        <Route path={`/register/:${name}`}>
+          <Nav />
+          {console.log(name)}
+          <Coursepage title={name} />
+          <Footer />
+        </Route>
+      </Router>
+    </div>
+  );
 }
 
 export default App;

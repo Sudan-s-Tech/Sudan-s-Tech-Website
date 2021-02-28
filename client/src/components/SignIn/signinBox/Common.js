@@ -53,7 +53,7 @@ export const Input = styled.input`
 
 export const SubmitButton = styled.button`
   width: 100%;
-  padding: 11px 40%;
+  padding: 11px 20%;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -69,7 +69,7 @@ export const SubmitButton = styled.button`
   );
 
   &:hover {
-    background:#f8f8f8;
+    background:transparent;
     border: 2px solid #6C99EB ;
     color:#6C99EB ;
   }
