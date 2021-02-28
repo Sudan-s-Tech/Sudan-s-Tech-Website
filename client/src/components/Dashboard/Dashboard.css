@@ -3,9 +3,9 @@
   /* height: 89vh; */
   text-align: left;
 }
-iframe {
+/* iframe {
   display: none;
-}
+} */
 .dashboard__header {
   min-height: 10vh;
   width: 100%;
