@@ -17,6 +17,7 @@ function SignupForm() {
     const [email, setemail] = useState("");
     const [phone, setphone] = useState("");
     const [password, setpassword] = useState("");
+    const [msg, setmsg] = useState("");
 
     const signup = () => {
       let content = {
@@ -27,19 +28,24 @@ function SignupForm() {
       }
       axios({
         method: "post",
-        url: "http://localhost:5000/users/signup",
+        url: "https://sudan-tech-backend.herokuapp.com/users/signup",
         data:content,
         headers: {
           "Content-Type": "application/json",
         },
       })
         .then((res) => {
-          if (res.status === 200) {
-            console.log(res);
+          if (res.status === 201) {
+            setmsg('Account created please sign in to continue')
           }
         })
         .catch((err) => {
-          console.error(err);
+         if(err.response){
+              // console.log(err.response.data)
+          // console.log(err.response.status)
+          // console.log(err.response.headers)
+           setmsg(err.response.data.message)
+         }
         });
     };
     return (
@@ -83,11 +89,13 @@ function SignupForm() {
           Signup
         </SubmitButton>
         <Marginer direction="vertical" margin="1em" />
-        <MutedLink>
+        <MutedLink style={{overflow:'hidden'}}>
           Already have an account?
           <BoldLink onClick={switchToSignin}>Signin</BoldLink>
         </MutedLink>
-        <Marginer direction="vertical" margin="1em" />
+      {/* <Marginer direction="vertical" margin="1em" /> */}
+      <p style={{ color: "red",marginBottom:'0px',fontSize:'small',overflow:'hidden' }}>{msg}</p>
+      <Marginer direction="vertical" margin="1em" />
       </BoxContainer>
     )
 }

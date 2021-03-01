@@ -15,6 +15,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import axios from "axios";
 import ReactPlayer from "react-player";
+import { useHistory } from 'react-router-dom'
+import { useStateValue } from "../../StateProvider";
+import { actionTypes } from "../../reducer";
 const useStyles = makeStyles((theme) => ({
     root: {
         "& > *": {
@@ -33,6 +36,27 @@ const useStyles = makeStyles((theme) => ({
 var render;
 var arr;
 export default function Coursepage(props) {
+    const [{ user }, dispatch] = useStateValue();
+    useEffect(() => {
+      const data = localStorage.getItem("username");
+      if (data) {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: data,
+        });
+      }
+    }, []);
+let history = useHistory();
+const buyCourse = () =>{
+    if(user){
+        console.log('user is logged in')
+       history.push('/payment')
+    }
+    else{
+       history.push('/signin')
+    }
+}
+
     const [course, setCourse] = useState([]);
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
@@ -118,7 +142,7 @@ export default function Coursepage(props) {
           {title} <span> {level}_</span>
         </h2>
         <h6>{body}</h6>
-        <Button variant="contained" className="course__btn" style={{backgroundColor:'blueviolet',color:'#fff'}}>
+        <Button onClick={buyCourse} variant="contained" className="course__btn" style={{backgroundColor:'blueviolet',color:'#fff'}}>
           Buy Now
         </Button>
       </div>
@@ -278,7 +302,7 @@ export default function Coursepage(props) {
             <div className="course-main-div">
                 <div
                     className=" syllabus container"
-                    style={{ marginTop: "2rem" }}
+                    style={{ marginTop: "2rem" , marginBottom:'2rem' }}
                 >
                     <h2 style={{ color: "blueviolet", marginBottom: "2rem" }}>
                         Syllabus

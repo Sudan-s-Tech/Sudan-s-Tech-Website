@@ -17,6 +17,7 @@ import Team from "./components/Team/Team";
 import Testimonial from "./components/Testimonial/Testimonial";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignIn from "./components/SignIn/SignIn";
+import Dashboard from "./components/Dashboard/Dashboard";
 function App() {
     let name;
     return (
@@ -43,37 +44,44 @@ function App() {
                 <Route path="/events" exact={true}>
                     <Events />
 
-                    <Footer />
-                </Route>
-                <Route path="/trainings" exact={true}>
-                    <Training />
-                    <Footer />
-                </Route>
-                <Route path="/contact" exact={true}>
-                    <Contact />
+          <Footer />
+        </Route>
+        <Route path="/trainings" exact={true}>
+          <Training />
+          <Footer />
+        </Route>
+        <Route path="/contact" exact={true}>
+          <Contact />
 
-                    <Footer />
-                </Route>
-                <Route path="/sponsors" exact={true}>
-                    <Sponsors />
-                    <Feedback />
-                    <Footer />
-                </Route>
-                <Route path="/team" exact={true}>
-                    <Team />
-                    <Footer />
-                </Route>
-                <Route path="/signin" exact={true}>
-                    <SignIn />
-                </Route>
-                <Route path={`/register/:${name}`}>
-                    <Nav />
-                    {console.log(name)}
-                    <Coursepage title={name} />
-                </Route>
-            </Router>
-        </div>
-    );
+          <Footer />
+        </Route>
+        <Route path="/sponsors" exact={true}>
+          <Sponsors />
+          <Feedback />
+          <Footer />
+        </Route>
+        <Route path="/team" exact={true}>
+          <Team />
+          <Footer />
+        </Route>
+        <Route path="/signin" exact={true}>
+          <Nav />
+          <SignIn />
+        </Route>
+        <Route path="/dashboard" exact={true}>
+          {/* <Nav /> */}
+
+          <Dashboard />
+        </Route>
+        <Route path={`/register/:${name}`}>
+          <Nav />
+          {console.log(name)}
+          <Coursepage title={name} />
+          <Footer />
+        </Route>
+      </Router>
+    </div>
+  );
 }
 
 export default App;

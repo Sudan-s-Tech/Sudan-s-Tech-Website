@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import { useStateValue } from "../../StateProvider";
+import { actionTypes } from "../../reducer";
 export default function Navbar() {
+  const[{ user }, dispatch] = useStateValue();
+  useEffect(() => {
+    const data = localStorage.getItem("username");
+    if (data) {
+      dispatch({
+        type: actionTypes.SET_USER,
+        user: data,
+      });
+    }
+  }, []);
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -74,7 +86,11 @@ export default function Navbar() {
                         <Link to="/signin">
                             <li>
                                 <a class="nav-link" href="#">
-                                    Signin
+                                    {user ? (
+                                        'Dashboard'
+                                    ):(
+                                        'Sign in'
+                                    )}
                                 </a>
                             </li>
                         </Link>
