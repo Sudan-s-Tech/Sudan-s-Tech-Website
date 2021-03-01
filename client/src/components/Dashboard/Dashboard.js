@@ -6,7 +6,7 @@ import Dash from "../../assets/dashboard.svg";
 import DashboardCard from "./DashboardCard";
 import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 function Dashboard() {
   let history = useHistory();
@@ -33,7 +33,12 @@ function Dashboard() {
     history.push('/signin');
   };
   return (
-    <div className="dashboard">
+    <>
+    { !user ?( 
+        <Redirect to='/signin' />
+      )
+      :(
+    <div className="dashboard">  
       <div className="dashboard__header">
         <div className="dashboard__header-left">
           <Avatar
@@ -189,6 +194,8 @@ function Dashboard() {
         </div>
       </div>
     </div>
+      )}
+    </>
   );
 }
 
