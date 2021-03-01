@@ -19,31 +19,30 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignIn from "./components/SignIn/SignIn";
 import Dashboard from "./components/Dashboard/Dashboard";
 function App() {
-  let name;
-  return (
-    <div className="App">
-      <Router>
-        <Route path="/" exact={true}>
-          <Home
-            btn={true}
-            subheading={"SudansTech"}
-            heading={"Build Your Future "}
-            gradient={"With Us"}
-            para={
-              "Sudan’s Technocrats(Tech) Foundation,J&K First Ever Tech Community which aims to focus on reducing the Technology gap between Industry and Students of India and is Registered section-8 company Rules under govt. Of India .Sudan's Technocrats(Tech) Foundation is a non-profit initiative aimed at making use of 21st-century technologies and learning methods to foster a fresh breed of highly skilled young people empowered with technical and social skills."
-            }
-          />
-          <Features />
-          <Vision />
-          <TechStack />
-          <Impact />
-          <Feedback />
-          <Discord />
-          <Testimonial />
-          <Footer />
-        </Route>
-        <Route path="/events" exact={true}>
-          <Events />
+    let name;
+    return (
+        <div className="App">
+            <Router>
+                <Route path="/" exact={true}>
+                    <Home
+                        btn={true}
+                        subheading={"SudansTech"}
+                        heading={"Build Your Future "}
+                        gradient={"With Us"}
+                        para={
+                            "Sudan’s Technocrats(Tech) Foundation,J&K First Ever Tech Community which aims to focus on reducing the Technology gap between Industry and Students of India and is Registered section-8 company Rules under govt. Of India .Sudan's Technocrats(Tech) Foundation is a non-profit initiative aimed at making use of 21st-century technologies and learning methods to foster a fresh breed of highly skilled young people empowered with technical and social skills."
+                        }
+                    />
+                    <Features />
+                    <Vision />
+                    <TechStack />
+                    <Impact />
+                    <Feedback />
+                    <Testimonial />
+                    <Footer />
+                </Route>
+                <Route path="/events" exact={true}>
+                    <Events />
 
           <Footer />
         </Route>

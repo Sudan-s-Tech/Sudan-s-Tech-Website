@@ -100,11 +100,15 @@ export default function RecipeReviewCard(props) {
                         <strong class="captioned">{props.desc}</strong>
                     </div>
                 </div>
-                <div class="cta">
+                <div class="cta" style={{ marginTop: "2em" }}>
                     <Button
                         variant="outlined"
                         color="primary"
                         // style={{ margin: "1px 10px" }}
+                        style={{
+                            borderRadius: "15px",
+                            backgroundColor: "#E7682E",
+                        }}
                     >
                         Watch Free Preview
                     </Button>
@@ -112,6 +116,11 @@ export default function RecipeReviewCard(props) {
                         variant="outlined"
                         color="secondary"
                         // style={{ margin: "1px 10px" }}
+
+                        style={{
+                            borderRadius: "15px",
+                            backgroundColor: "#D43530",
+                        }}
                     >
                         Get Full Access
                     </Button>

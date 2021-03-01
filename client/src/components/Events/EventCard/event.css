@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
 }
-
+.MuiButton-label {
+    color: #fff !important;
+}
 .MediaItem {
     display: 100%;
 }

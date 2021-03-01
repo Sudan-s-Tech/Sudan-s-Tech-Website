@@ -229,7 +229,12 @@ export default function Events() {
             <Button
                 variant="outlined"
                 color="primary"
-                style={{ margin: "1px 10px" }}
+                style={{
+                    margin: "1px 10px",
+                    borderRadius: "15px",
+                    backgroundColor: "#AB7CEC",
+                    color: "white",
+                }}
                 onClick={(e) => {
                     setOption("past");
                 }}
@@ -239,7 +244,13 @@ export default function Events() {
             <Button
                 variant="outlined"
                 color="secondary"
-                style={{ margin: "1px 10px" }}
+                style={{
+                    margin: "1px 10px",
+                    borderRadius: "15px",
+                    backgroundColor: "#F546AD",
+                    color: "white !important",
+                    outline: "none",
+                }}
                 onClick={(e) => {
                     setOption("ongoing");
                 }}
@@ -249,7 +260,12 @@ export default function Events() {
             <Button
                 variant="outlined"
                 color="primary"
-                style={{ margin: "1px 10px" }}
+                style={{
+                    margin: "1px 10px",
+                    borderRadius: "15px",
+                    backgroundColor: "#679BEB",
+                    color: "white",
+                }}
                 onClick={(e) => {
                     setOption("upcoming");
                 }}

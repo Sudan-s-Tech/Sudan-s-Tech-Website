@@ -92,36 +92,37 @@ export default function RecipeReviewCard(props) {
         //     </Link>
         // </Card>
         // <div class="container">
-        <div class="fancy_card" style={{ textAlign: "left" }}>
-            {/* <img
+        <Link
+            to={{
+                pathname: `/register/${props.title}`,
+                state: {
+                    test: `${props.title}`,
+                },
+            }}
+        >
+            <div class="fancy_card" style={{ textAlign: "left" }}>
+                {/* <img
                 src="https://res.cloudinary.com/practicaldev/image/fetch/s--Sqh4MQSK--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/hzc4hdwc234t7p728i5c.jpg"
                 class="card_image"
             /> */}
-            <div class="card_text">
-                <div class="tags" style={{ fontWeight: 600 }}>
-                    {props.title}
+                <div class="card_text">
+                    <div class="tags" style={{ fontWeight: 600 }}>
+                        {props.title}
+                    </div>
+
+                    <div class="summary tags">
+                        <b>{props.desc}</b>
+                    </div>
+                    <h6 class="title tags" style={{ fontWeight: 400 }}>
+                        {`${props.date} | ${props.lesson} lessons | ${props.level}`}
+                    </h6>
                 </div>
 
-                <div class="summary tags">
-                    <b>{props.desc}</b>
-                </div>
-                <h6 class="title tags" style={{ fontWeight: 400 }}>
-                    {`${props.date} | ${props.lesson} lessons | ${props.level}`}
-                </h6>
-            </div>
-            <Link
-                to={{
-                    pathname: `/register/${props.title}`,
-                    state: {
-                        test: `${props.title}`,
-                    },
-                }}
-            >
                 <div class="card_footer">
                     <div class="reading_time tags">See more</div>
                 </div>
-            </Link>
-        </div>
+            </div>{" "}
+        </Link>
         // </div>
     );
 }

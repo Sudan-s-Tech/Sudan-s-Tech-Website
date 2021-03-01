@@ -63,6 +63,7 @@ export default function CenteredGrid(props) {
                                         backgroundColor: "#7289DA",
                                         color: "white",
                                         marginTop: "2%",
+                                        borderRadius: "20px",
                                     }}
                                 >
                                     <img
@@ -79,10 +80,12 @@ export default function CenteredGrid(props) {
                                     className="ml-1"
                                     variant="contained"
                                     href="#contained-buttons"
+                                    id="git-btn"
                                     style={{
                                         backgroundColor: "#FFF",
                                         color: "#212121",
                                         marginTop: "2%",
+                                        borderRadius: "20px",
                                     }}
                                 >
                                     <img
