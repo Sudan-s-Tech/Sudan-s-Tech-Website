@@ -1,13 +1,28 @@
 .feedback-div {
     background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.9);
-    background-image: url(../../assets/stars.svg),
-        radial-gradient(
-            at center bottom,
-            /* rgba(17, 236, 229, 0.73) 0%, */ #ef4775 0%,
-            rgba(29, 38, 53, 0) 69%
-        );
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url('https://st.depositphotos.com/1979329/2531/i/600/depositphotos_25317153-stock-photo-man-giving-positive-feedback.jpg');
+       display: flex;
+       align-items: center;
+       position: relative;
+       z-index: 999;
+       height:60vh ;
+}
+.feedback-div::before {
+ position: absolute;
+ content: '';
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ width: 100%;
+ background: linear-gradient(rgba(136, 105, 105, 0.7),rgba(0,0,0,0.7));
+ opacity: 0.7;
+ z-index: -1;
+}
+.feed_heading{
+    padding-left:4rem
 }
 .textf {
     border: 1px solid rgba(17, 236, 229, 0.73) !important;
@@ -41,4 +56,15 @@
 .col-md-4 button {
     border: 1px solid #fff;
     color: white;
+}
+.form-group ::placeholder{
+    color: white;
+}
+@media(max-width:500px){
+    .feed_heading{
+        padding-left: 0rem !important;
+    }
+    .feedback-div{
+        height: auto;
+    }
 }

@@ -56,7 +56,7 @@ function Dashboard() {
             variant="outlined"
             className="course__btn"
             style={{
-              color: "blueviolet",
+              color: "bluevoilet",
               marginRight: "1rem",
               border: " 2px solid blueviolet",
             }}
@@ -67,7 +67,7 @@ function Dashboard() {
             onClick={signOut}
             variant="contained"
             className="course__btn"
-            style={{ backgroundColor: "blueviolet", color: "#fff" }}
+            style={{ backgroundColor: "blueviolet", color: "#fff",boxShadow:'none' }}
           >
             Sign Out
           </Button>
@@ -92,7 +92,7 @@ function Dashboard() {
               image={
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNYKHbQOHW3Vev4Wt6EWMe2wFrB2pJRHVzuA&usqp=CAU"
               }
-              title={"Cyber Security"}
+              title={"Cyber Security the life style"}
               subTitle={"Lets learn about cyber security"}
             />
             <DashboardCard
@@ -100,7 +100,7 @@ function Dashboard() {
                 " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt45dq0ZTou1p44yffI4F_3OPUuH4IhYQGoA&usqp=CAU"
               }
               title={"Web Development"}
-              subTitle={"Lets learn about web world"}
+              subTitle={"Lets learn about web development"}
             />
             <DashboardCard
               image={
@@ -114,7 +114,7 @@ function Dashboard() {
                 " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt45dq0ZTou1p44yffI4F_3OPUuH4IhYQGoA&usqp=CAU"
               }
               title={"Web Development"}
-              subTitle={"Lets learn about web world"}
+              subTitle={"Lets learn about web development"}
             />
           </div>
         </div>

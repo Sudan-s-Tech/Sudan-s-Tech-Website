@@ -1,6 +1,32 @@
 
 @media only screen and (min-width: 1200px) {
     .navbar-nav {
-        margin-left: 54%;
+        margin-left: 52.5%;
     }
 }
+.navbar-nav a{
+    border-radius: 8px;
+    color: black;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+.navbar-nav a:hover{
+   color: #7289DA !important;
+}
+
+.nav_active{
+    background: #DCDFEA;
+}
+/* .navbar-nav a{
+    transition:all 0.3s ease-in-out !important;
+    border-radius: 5px;
+
+}
+.navbar-nav a:hover{
+    background: #536DFE;
+    color: white !important;
+} */
+/* .active{
+    background: #536DFE;
+    color: white !important;
+} */

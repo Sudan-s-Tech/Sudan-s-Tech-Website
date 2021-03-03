@@ -9,12 +9,12 @@ export default function Feedback() {
         >
             <div className="row">
                 <div className="col-md-8">
-                    <h1 style={{ color: "white", fontSize: "4em" }}>
+                    <h1 className='feed_heading' style={{ color: "white", fontSize: "3.5em" }}>
                         We would love to hear back from you!
                     </h1>
                 </div>
                 <div className="col-md-4">
-                    <form>
+                    <form  id='form'>
                         <div class="form-group">
                             <input required={true} placeholder="Email" />
                         </div>

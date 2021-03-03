@@ -10,71 +10,68 @@ export default function Discord() {
     return (
         <div
             className="footer-div"
-            style={{ padding: 50, backgroundColor: "#212121" }}
+            style={{ padding: 30}}
         >
+            <div className="footer-mainCircle1"></div>
+            <div className="footer-mainCircle2"></div>
             <div className="container">
                 <div className="row" align="center">
-                    <div className="col-md-3">
-                        <img src={Logo} style={{ width: "70%" }} alt="" />
-                    </div>
-                    <div className="col-md-3" style={{ marginTop: 20 }}>
-                        <ul style={{ textAlign: "center" }}>
-                            <li>
-                                <Link>Home</Link>
-                            </li>
-                            <li>
-                                <Link>Event</Link>
-                            </li>
-                            <li>
-                                <Link>Trainings</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="col-md-3" style={{ marginTop: 20 }}>
-                        <ul style={{ textAlign: "center" }}>
-                            <li>
-                                <Link>Contact us</Link>
-                            </li>
-                            <li>
-                                <Link>Sponsors</Link>
-                            </li>
-                            <li>
-                                <Link>Team</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="container">
-                            {" "}
-                            <div className="row d-flex justify-content-center my-5">
+                    <div className="col-md-6">
+                        <img className='footer__logo' src={Logo} style={{ width: "25%" }} alt="" />
+                        <div style={{display:'flex',justifyContent:'center'}} className=" footer_icon my-3">
                                 <div
-                                    className="col-sm-3"
-                                    style={{ color: "#E7497B" }}
+                                    className="icons"
+                                    style={{ color: "#fff" }}
                                 >
                                     <span>
                                         <InstagramIcon />
                                     </span>
                                 </div>
                                 <div
-                                    className="col-sm-3"
-                                    style={{ color: "#0A66C2" }}
+                                    className="icons"
+                                    style={{ color: "#fff" }}
                                 >
                                     <LinkedInIcon />
                                 </div>
                                 <div
-                                    className="col-sm-3"
-                                    style={{ color: "#1199F6" }}
+                                    className="icons"
+                                    style={{ color: "#fff" }}
                                 >
                                     <FacebookIcon />
                                 </div>
                                 <div
-                                    className="col-sm-3"
-                                    style={{ color: "#1A91DA" }}
+                                    className="icons"
+                                    style={{ color: "#fff" }}
                                 >
                                     <TwitterIcon />
                                 </div>
-                            </div>
                         </div>
+                    </div>
+                    <div className="col-md-3" style={{  fontWeight:'bold' }}>
+                        <ul style={{ textAlign: "center" }}>
+                            <li>
+                                <Link to='/'>Home</Link>
+                            </li>
+                            <li>
+                                <Link to='/events'>Event</Link>
+                            </li>
+                            <li>
+                                <Link to='/trainings'>Trainings</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="col-md-3" style={{  fontWeight:'bold' }}>
+                        <ul style={{ textAlign: "center" }}>
+                            <li>
+                                <Link to='/contact'>Contact us</Link>
+                            </li>
+                            <li>
+                                <Link to='/sponsors'>Sponsors</Link>
+                            </li>
+                            <li>
+                                <Link to='/team'>Team</Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

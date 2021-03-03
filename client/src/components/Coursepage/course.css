@@ -85,6 +85,14 @@ ul {
   outline: none !important;
   /* color: white !important; */
 }
+.course__btn{
+  display: flex;
+}
+.courseBtn{
+  border-radius: 15px !important;
+  text-transform: capitalize !important;
+  margin: 0 8px !important;
+}
 .course__container {
   display: flex;
   max-width: 1200px;
@@ -161,6 +169,10 @@ ul {
 iframe {
     height: 90% !important;
     border: 4px solid #c3bdbd;
+}
+.submitCall{
+  background-color: blueviolet !important;
+  color: white !important;
 }
 
 /* media queries */

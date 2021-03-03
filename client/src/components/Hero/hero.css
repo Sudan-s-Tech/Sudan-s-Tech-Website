@@ -17,6 +17,15 @@ h2 {
 .hero .MuiButton-label {
     color: #212121 !important;
 }
+.hero__btn{
+    transition: all 0.3s ease !important;
+}
+.hero__btn:hover{
+    transform: translateY(-4px);
+    box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.4) !important;
+    -webkit-box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.4) !important;
+    -moz-box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.4) !important;
+}
 @media only screen and (max-width: 750px) {
     .hero h1 {
         font-size: 3em;
@@ -25,4 +34,7 @@ h2 {
     .MuiButton-root {
         font-size: 10px !important;
     }
+}
+*:focus{
+    outline: none !important;
 }

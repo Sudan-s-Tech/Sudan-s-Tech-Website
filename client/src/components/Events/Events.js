@@ -26,7 +26,7 @@ console.log(currentdate);
 
 export default function Events() {
     const [events, setEvent] = useState([]);
-    const [option, setOption] = useState("ongoing");
+    const [option, setOption] = useState("upcoming");
 
     useEffect(async () => {
         axios.get("https://sudanstechapi.herokuapp.com/events").then((res) => {
@@ -239,7 +239,7 @@ export default function Events() {
                     setOption("past");
                 }}
             >
-                Past
+                <span style={{color:'#fff',outline:'none'}}> Past</span>
             </Button>
             <Button
                 variant="outlined"
@@ -255,7 +255,7 @@ export default function Events() {
                     setOption("ongoing");
                 }}
             >
-                Ongoing
+               <span style={{color:'#fff',outline:'none'}}> Ongoing</span> 
             </Button>
             <Button
                 variant="outlined"
@@ -270,7 +270,7 @@ export default function Events() {
                     setOption("upcoming");
                 }}
             >
-                Upcoming
+               <span style={{color:'#fff',outline:'none'}}> Upcoming</span>
             </Button>
             <Page loader={"rotate-spin"} color={"#D864B4"} size={10}>
                 <div className="container">
