@@ -1,4 +1,6 @@
 import "./App.css";
+import { makeStyles } from '@material-ui/core/styles';
+import Modal from '@material-ui/core/Modal';
 import Home from "./components/Hero/Hero";
 import Features from "./components/Features/Features";
 import TechStack from "./components/Techstack/Techstack";
@@ -18,10 +20,91 @@ import Testimonial from "./components/Testimonial/Testimonial";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignIn from "./components/SignIn/SignIn";
 import Dashboard from "./components/Dashboard/Dashboard";
+import { useState } from "react";
+import { Button, Input, TextareaAutosize } from "@material-ui/core";
+import logo from '../src/assets/logo.svg'
+function getModalStyle() {
+  const top = 50 
+  const left = 50 
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    width: 600,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #7289DA',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 6, 3),
+  },
+}));
 function App() {
+  const[email, setEmail] = useState();
+  const[username, setUserame] = useState();
+  const[message, setMessage] = useState();
+  const submitForm = ()=>{
+    console.log('clicked')
+  }
+  const classes = useStyles();
+  const [modalStyle] = useState(getModalStyle);
+  const[open , setOpen] = useState(false)
     let name;
+    const handleClose = () =>{
+      setOpen(false);
+    }
     return (
         <div className="App">
+             <Modal
+        open={open}
+        onClose={handleClose}
+      >
+         <div style={modalStyle} className={classes.paper}>
+           <form className='feedback__form' >
+       <center>
+         <img className='feedback__logo' src={logo} alt="logo" />
+         </center>
+         <Input 
+         placeholder='Email'
+         type='text'
+         value={email}
+         onChange={(e)=>{
+           setEmail(e.target.value)
+         }}
+         >
+         </Input>
+         <Input 
+         placeholder='Name'
+         type='text'
+         value={username}
+         onChange={(e)=>{
+           setUserame(e.target.value)
+         }}
+         >
+         </Input>
+         <TextareaAutosize 
+         className='txtarea'
+         placeholder='Share your thought'
+         type='text'
+         rowsMin={5}
+         value={message}
+         onChange={(e)=>{
+           setMessage(e.target.value)
+         }}
+         >
+         </TextareaAutosize>
+         <Button className='submitBtn' onClick={submitForm}>Submit</Button>
+         </form>
+    </div>
+      </Modal>
+      <Button className='feedback__btn' onClick={() =>{
+        setOpen(true)
+      }}>Feedback</Button>
             <Router>
                 <Route path="/" exact={true}>
                     <Home
@@ -37,7 +120,7 @@ function App() {
                     <Vision />
                     <TechStack />
                     <Impact />
-                    <Feedback />
+                    {/* <Feedback /> */}
                     <Testimonial />
                     <Footer />
                 </Route>
@@ -57,7 +140,7 @@ function App() {
         </Route>
         <Route path="/sponsors" exact={true}>
           <Sponsors />
-          <Feedback />
+          {/* <Feedback /> */}
           <Footer />
         </Route>
         <Route path="/team" exact={true}>

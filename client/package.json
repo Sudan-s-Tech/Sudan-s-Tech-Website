@@ -13,6 +13,7 @@
     "framer-motion": "^3.7.0",
     "netlify-cli": "^3.10.1",
     "react": "^17.0.1",
+    "react-countup": "^4.3.3",
     "react-dom": "^17.0.1",
     "react-page-loading": "^1.0.2",
     "react-player": "^2.9.0",

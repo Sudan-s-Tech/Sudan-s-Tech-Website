@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import logo from "../../assets/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
@@ -40,52 +40,51 @@ export default function Navbar() {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <Link to="/">
+                        <NavLink exact to="/" activeClassName='nav_active'>
                             <li>
                                 <a class="nav-link active" href="#">
                                     Home <span class="sr-only">(current)</span>
                                 </a>
                             </li>
-                        </Link>
-                        <Link to="/Events">
+                        </NavLink>
+                        <NavLink exact to="/Events" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link" href="#">
-                                    Events
+                                <a class="nav-link active" href="#">
+                                    Events 
                                 </a>
                             </li>
-                        </Link>
-                        <Link to="/trainings">
+                        </NavLink>
+                        <NavLink exact to="/trainings" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link" href="#">
+                                <a class="nav-link active" href="#">
                                     Trainings
                                 </a>
                             </li>
-                        </Link>
-                        <Link to="/contact">
+                        </NavLink>
+                        <NavLink exact to="/contact" activeClassName='nav_active'>
                             <li>
-                                {" "}
-                                <a class="nav-link" href="#">
-                                    Contact us
+                                <a class="nav-link active" href="#">
+                                   Contact us
                                 </a>
                             </li>
-                        </Link>
-                        <Link to="/sponsors">
+                        </NavLink>
+                        <NavLink exact to="/sponsors" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link" href="#">
-                                    Sponsors
+                                <a class="nav-link active" href="#">
+                                Sponsors
                                 </a>
                             </li>
-                        </Link>
-                        <Link to="/team">
+                        </NavLink>
+                        <NavLink exact to="/team" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link" href="#">
-                                    Team
+                                <a class="nav-link active" href="#">
+                                   Team
                                 </a>
                             </li>
-                        </Link>
-                        <Link to="/signin">
+                        </NavLink>
+                        <NavLink exact to="/signin" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" style={{color:'black'}} href="#">
                                     {user ? (
                                         'Dashboard'
                                     ):(
@@ -93,7 +92,7 @@ export default function Navbar() {
                                     )}
                                 </a>
                             </li>
-                        </Link>
+                        </NavLink>
                     </ul>
                 </div>
             </nav>

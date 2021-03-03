@@ -101,20 +101,20 @@ export default function RecipeReviewCard(props) {
                     </div>
                 </div>
                 <div class="cta" style={{ marginTop: "2em" }}>
-                    <Button
+                    <Button 
                         variant="outlined"
-                        color="primary"
+                        
                         // style={{ margin: "1px 10px" }}
                         style={{
                             borderRadius: "15px",
                             backgroundColor: "#E7682E",
                         }}
                     >
-                        Watch Free Preview
+                        <span style={{color:'#fff'}}> Watch Free Preview</span> 
                     </Button>
-                    <Button
+                    <Button 
                         variant="outlined"
-                        color="secondary"
+                        
                         // style={{ margin: "1px 10px" }}
 
                         style={{
@@ -122,7 +122,7 @@ export default function RecipeReviewCard(props) {
                             backgroundColor: "#D43530",
                         }}
                     >
-                        Get Full Access
+                        <span style={{color:'#fff'}}> Get Full Access</span> 
                     </Button>
                 </div>
             </div>

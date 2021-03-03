@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+import { Button, Input, TextareaAutosize } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
@@ -14,10 +14,23 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import axios from "axios";
+import Modal from '@material-ui/core/Modal';
 import ReactPlayer from "react-player";
 import { useHistory } from 'react-router-dom'
 import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
+import logo from '../../assets/logo.svg'
+function getModalStyle() {
+    const top = 50 
+    const left = 50 
+  
+    return {
+      top: `${top}%`,
+      left: `${left}%`,
+      transform: `translate(-${top}%, -${left}%)`,
+    };
+  }
+  
 const useStyles = makeStyles((theme) => ({
     root: {
         "& > *": {
@@ -32,10 +45,45 @@ const useStyles = makeStyles((theme) => ({
     inline: {
         display: "inline",
     },
+    paper: {
+        position: 'absolute',
+        width: 600,
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #7289DA',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 6, 3),
+      },
 }));
 var render;
 var arr;
 export default function Coursepage(props) {
+    const[email, setEmail] = useState('');
+    const[username, setUserame] = useState();
+    const[message, setMessage] = useState();
+    const[number, setNumber] = useState('');
+    const submitForm = ()=>{
+      console.log('clicked')
+      if(email===""){
+          alert('Please fill the form to expect a call')
+      }
+      if(number===""){
+          alert('Please fill the form to expect a call')
+      }
+      else{
+          alert('Thank you for submitting the form we will contact you shortly')
+          setOpen(false)
+          setEmail('')
+          setNumber('')
+          setUserame('')
+          setMessage('')
+      }
+    }
+    // const classes = useStyles();
+    const [modalStyle] = useState(getModalStyle);
+    const[open , setOpen] = useState(false)
+    const handleClose = () =>{
+        setOpen(false);
+      }
     const [{ user }, dispatch] = useStateValue();
     useEffect(() => {
       const data = localStorage.getItem("username");
@@ -66,13 +114,14 @@ const buyCourse = () =>{
     const [duration, setDuration] = useState("");
     const [img, setImg] = useState("");
     var render;
+    // let Object;
     useEffect(() => {
         var str = window.location.pathname.substring(100, 10);
         var s = str.replace(/%20/g, " ");
         // console.log(s);
         setTitle(s);
         axios
-            .get("https://sudans-tech.firebaseio.com/training.json")
+            .get("https://sudanstechapi.herokuapp.com/trainings")
             .then((res) => {
                 Object.keys(res.data).map((i) => {
                     if (res.data[i].title === s) {
@@ -137,14 +186,74 @@ const buyCourse = () =>{
 
   return (
     <div className="course">
+         <Modal
+        open={open}
+        onClose={handleClose}
+      >
+         <div style={modalStyle} className={classes.paper}>
+           <form className='feedback__form' >
+       <center>
+         <img className='feedback__logo' src={logo} alt="logo" />
+         </center>
+         <Input 
+         required={true}
+         placeholder='Email'
+         type='text'
+         value={email}
+         onChange={(e)=>{
+           setEmail(e.target.value)
+         }}
+         >
+         </Input>
+         <Input 
+         required={true}
+         placeholder='Name'
+         type='text'
+         value={username}
+         onChange={(e)=>{
+           setUserame(e.target.value)
+         }}
+         >
+         </Input>
+         <Input 
+         placeholder='Number'
+         type='number'
+         value={number}
+         onChange={(e)=>{
+           setNumber(e.target.value)
+         }}
+         >
+         </Input>
+         <TextareaAutosize 
+         className='txtarea'
+         placeholder='Message'
+         type='text'
+         rowsMin={5}
+         value={message}
+         onChange={(e)=>{
+           setMessage(e.target.value)
+         }}
+         >
+         </TextareaAutosize>
+         <Button className='submitCall' onClick={submitForm}>Submit</Button>
+         </form>
+    </div>
+      </Modal>
       <div className="course__header" >
         <h2>
           {title} <span> {level}_</span>
         </h2>
         <h6>{body}</h6>
-        <Button onClick={buyCourse} variant="contained" className="course__btn" style={{backgroundColor:'blueviolet',color:'#fff'}}>
+        <div className="course__btn">
+        <Button onClick={buyCourse} variant="contained" className="courseBtn" style={{backgroundColor:'blueviolet',color:'#fff',fontWeight:'600'}}>
           Buy Now
         </Button>
+        <Button onClick={() =>{
+        setOpen(true)
+      }} className="courseBtn" style={{border:'2px solid blueviolet',backgroundColor:'#fff',fontWeight:'600',color:'blueviolet'}}>
+          Request a Call
+        </Button>
+        </div>
       </div>
             <div className="course__container">
                 <div className="course__container-left">

@@ -54,8 +54,8 @@ export default function CenteredGrid(props) {
                 {props.btn === true ? (
                     <div className="container-fluid" style={{ marginLeft: 0 }}>
                         <div className="row">
-                            <div className="col-sm-12 d-flex justify-content-left">
-                                <Button
+                            <div className="col-sm-12 d-flex justify-content-left" style={{paddingBottom:'15px'}}>
+                                <Button className='hero__btn'
                                     // className="hero-btn"
                                     variant="contained"
                                     href="#contained-buttons"
@@ -77,7 +77,8 @@ export default function CenteredGrid(props) {
                                     Join our Discord
                                 </Button>
                                 <Button
-                                    className="ml-1"
+                                
+                                    className="ml-1 hero__btn"
                                     variant="contained"
                                     href="#contained-buttons"
                                     id="git-btn"
