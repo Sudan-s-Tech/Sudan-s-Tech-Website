@@ -4,9 +4,9 @@ import "./impact.css";
 export default function Impact() {
     return (
         <div className="impact-main">
-            <div className="impact-mainCircle1"></div>
+            {/* <div className="impact-mainCircle1"></div>
             <div className="impact-mainCircle2"></div>
-            <div className="impact-mainCircle3"></div>
+            <div className="impact-mainCircle3"></div> */}
             <div className="container">
                 <h1 style={{ textAlign: "center" }}>We are growing quickly</h1>
                 <h6 style={{ color:'#536DFE', fontSize:'1.2rem',width:'350px',margin:'auto' }}>
