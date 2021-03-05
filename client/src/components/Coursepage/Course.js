@@ -14,23 +14,24 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import axios from "axios";
-import Modal from '@material-ui/core/Modal';
+import Modal from "@material-ui/core/Modal";
 import ReactPlayer from "react-player";
-import { useHistory } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
-import logo from '../../assets/logo.svg'
+import logo from "../../assets/logo.svg";
+var sub_mods = [];
 function getModalStyle() {
-    const top = 50 
-    const left = 50 
-  
+    const top = 50;
+    const left = 50;
+
     return {
-      top: `${top}%`,
-      left: `${left}%`,
-      transform: `translate(-${top}%, -${left}%)`,
+        top: `${top}%`,
+        left: `${left}%`,
+        transform: `translate(-${top}%, -${left}%)`,
     };
-  }
-  
+}
+
 const useStyles = makeStyles((theme) => ({
     root: {
         "& > *": {
@@ -49,61 +50,61 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         width: 460,
         backgroundColor: theme.palette.background.paper,
-        border: '2px solid #7289DA',
+        border: "2px solid #7289DA",
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 6, 3),
-      },
+    },
 }));
 var render;
 var arr;
 export default function Coursepage(props) {
-    const[email, setEmail] = useState('');
-    const[username, setUserame] = useState();
-    const[message, setMessage] = useState();
-    const[number, setNumber] = useState('');
-    const submitForm = ()=>{
-      console.log('clicked')
-      if(email===""){
-          alert('Please fill the form to expect a call')
-      }
-      if(number===""){
-          alert('Please fill the form to expect a call')
-      }
-      else{
-          alert('Thank you for submitting the form we will contact you shortly')
-          setOpen(false)
-          setEmail('')
-          setNumber('')
-          setUserame('')
-          setMessage('')
-      }
-    }
+    const [email, setEmail] = useState("");
+    const [username, setUserame] = useState();
+    const [message, setMessage] = useState();
+    const [number, setNumber] = useState("");
+    const submitForm = () => {
+        console.log("clicked");
+        if (email === "") {
+            alert("Please fill the form to expect a call");
+        }
+        if (number === "") {
+            alert("Please fill the form to expect a call");
+        } else {
+            alert(
+                "Thank you for submitting the form we will contact you shortly"
+            );
+            setOpen(false);
+            setEmail("");
+            setNumber("");
+            setUserame("");
+            setMessage("");
+        }
+    };
     // const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
-    const[open , setOpen] = useState(false)
-    const handleClose = () =>{
+    const [open, setOpen] = useState(false);
+    const handleClose = () => {
         setOpen(false);
-      }
+    };
     const [{ user }, dispatch] = useStateValue();
     useEffect(() => {
-      const data = localStorage.getItem("username");
-      if (data) {
-        dispatch({
-          type: actionTypes.SET_USER,
-          user: data,
-        });
-      }
+        const data = localStorage.getItem("username");
+        if (data) {
+            dispatch({
+                type: actionTypes.SET_USER,
+                user: data,
+            });
+        }
     }, []);
-let history = useHistory();
-const buyCourse = () =>{
-    if(user){
-        console.log('user is logged in')
-       history.push('/payment')
-    }
-    else{
-       history.push('/signin')
-    }
-}
+    let history = useHistory();
+    const buyCourse = () => {
+        if (user) {
+            console.log("user is logged in");
+            history.push("/payment");
+        } else {
+            history.push("/signin");
+        }
+    };
 
     const [course, setCourse] = useState([]);
     const [title, setTitle] = useState("");
@@ -123,26 +124,39 @@ const buyCourse = () =>{
         axios
             .get("https://sudanstechapi.herokuapp.com/trainings")
             .then((res) => {
-                Object.keys(res.data).map((i) => {
-                    if (res.data[i].title === s) {
-                        setCourse(res.data[i].items);
-                        // console.log(props.location.state.state);
-                        // console.log(res.data[i].body);
-                        setBody(res.data[i].body);
-                        setDesc(res.data[i].desc);
-                        setLesson(res.data[i].lesson);
-                        setLevel(res.data[i].level);
-                        setDuration(res.data[i].duration);
-                        setImg(res.data[i].image);
+                // Object.keys(res.data).map((i) => {
+                //     if (res.data[i].title === s) {
+                //         setCourse(res.data[i].items);
+                //         // console.log(props.location.state.state);
+                //         // console.log(res.data[i].body);
+                //         setBody(res.data[i].body);
+                //         setDesc(res.data[i].desc);
+                //         setLesson(res.data[i].lesson);
+                //         setLevel(res.data[i].level);
+                //         setDuration(res.data[i].duration);
+                //         setImg(res.data[i].image);
+                //     }
+                // });
+                res.data.map((i) => {
+                    if (i.title === s) {
+                        setCourse(i.modules);
+
+                        setBody(i.body);
+                        setDesc(i.desc);
+                        setLesson(i.lesson);
+                        setLevel(i.level);
+                        setDuration(i.duration);
+                        setImg(i.image);
                     }
                 });
+                console.log(res.data);
             });
     }, []);
 
     const classes = useStyles();
     {
         render = course.map((j) => {
-            console.log(j.items);
+            // console.log(j);
             return (
                 <div>
                     <Accordion style={{ borderBottom: "1px solid blueviolet" }}>
@@ -154,11 +168,33 @@ const buyCourse = () =>{
                             <Typography className={classes.heading}>
                                 {j.title}
                             </Typography>
+                            <h6 style={{ color: "#FFFFFF" }}>
+                                {(sub_mods = j.items.split(","))}
+                            </h6>
                         </AccordionSummary>
+
                         <AccordionDetails>
                             <Typography>
                                 <ul>
-                                    {j.items ? (
+                                    {sub_mods.map((o) => {
+                                        // console.log(o);
+                                        return (
+                                            <li
+                                                style={{
+                                                    color: "#000",
+                                                    textAlign: "start",
+                                                    fontWeight: "normal",
+                                                }}
+                                            >
+                                                {o}
+                                            </li>
+                                        );
+                                    })}
+                                    {/* console.log(nameArr); */}
+                                    {}
+
+                                    {/* {j.items ? (
+                                      
                                         j.items.map((o) => {
                                             return (
                                                 <li
@@ -174,7 +210,7 @@ const buyCourse = () =>{
                                         })
                                     ) : (
                                         <div></div>
-                                    )}
+                                    )} */}
                                 </ul>
                             </Typography>
                         </AccordionDetails>
@@ -184,77 +220,94 @@ const buyCourse = () =>{
         });
     }
 
-  return (
-    <div className="course">
-         <Modal
-        open={open}
-        onClose={handleClose}
-      >
-         <div style={modalStyle} className={classes.paper}>
-           <form className='feedback__form' >
-       <center>
-         <img className='feedback__logo' src={logo} alt="logo" />
-         </center>
-         <Input 
-         required={true}
-         placeholder='Email'
-         type='text'
-         value={email}
-         onChange={(e)=>{
-           setEmail(e.target.value)
-         }}
-         >
-         </Input>
-         <Input 
-         required={true}
-         placeholder='Name'
-         type='text'
-         value={username}
-         onChange={(e)=>{
-           setUserame(e.target.value)
-         }}
-         >
-         </Input>
-         <Input 
-         placeholder='Number'
-         type='number'
-         value={number}
-         onChange={(e)=>{
-           setNumber(e.target.value)
-         }}
-         >
-         </Input>
-         <TextareaAutosize 
-         className='txtarea'
-         placeholder='Message'
-         type='text'
-         rowsMin={5}
-         value={message}
-         onChange={(e)=>{
-           setMessage(e.target.value)
-         }}
-         >
-         </TextareaAutosize>
-         <Button className='submitCall' onClick={submitForm}>Submit</Button>
-         </form>
-    </div>
-      </Modal>
-      <div className="course__header" >
-        <h2>
-          {title} <span> {level}_</span>
-        </h2>
-        <h6>{body}</h6>
-        <div className="course__btn">
-        <Button onClick={buyCourse} variant="contained" className="courseBtn" style={{backgroundColor:'blueviolet',color:'#fff',fontWeight:'600'}}>
-          Buy Now
-        </Button>
-        <Button onClick={() =>{
-        setOpen(true)
-      }} className="courseBtn" style={{border:'2px solid blueviolet',backgroundColor:'#fff',fontWeight:'600',color:'blueviolet'}}>
-          Request a Call
-        </Button>
-        </div>
-      </div>
+    return (
+        <div className="course">
+            <Modal open={open} onClose={handleClose}>
+                <div style={modalStyle} className={classes.paper}>
+                    <form className="feedback__form">
+                        <center>
+                            <img
+                                className="feedback__logo"
+                                src={logo}
+                                alt="logo"
+                            />
+                        </center>
+                        <Input
+                            required={true}
+                            placeholder="Email"
+                            type="text"
+                            value={email}
+                            onChange={(e) => {
+                                setEmail(e.target.value);
+                            }}
+                        ></Input>
+                        <Input
+                            required={true}
+                            placeholder="Name"
+                            type="text"
+                            value={username}
+                            onChange={(e) => {
+                                setUserame(e.target.value);
+                            }}
+                        ></Input>
+                        <Input
+                            placeholder="Number"
+                            type="number"
+                            value={number}
+                            onChange={(e) => {
+                                setNumber(e.target.value);
+                            }}
+                        ></Input>
+                        <TextareaAutosize
+                            className="txtarea"
+                            placeholder="Message"
+                            type="text"
+                            rowsMin={5}
+                            value={message}
+                            onChange={(e) => {
+                                setMessage(e.target.value);
+                            }}
+                        ></TextareaAutosize>
+                        <Button className="submitCall" onClick={submitForm}>
+                            Submit
+                        </Button>
+                    </form>
+                </div>
+            </Modal>
+            <div className="course__header">
+                <h2>
+                    {title} <span> {level}_</span>
+                </h2>
+                <h6>{body}</h6>
+                <div className="course__btn">
+                    <Button
+                        onClick={buyCourse}
+                        variant="contained"
+                        className="courseBtn"
+                        style={{
+                            backgroundColor: "blueviolet",
+                            color: "#fff",
+                            fontWeight: "600",
+                        }}
+                    >
+                        Buy Now
+                    </Button>
+                    <Button
+                        onClick={() => {
+                            setOpen(true);
+                        }}
+                        className="courseBtn"
+                        style={{
+                            border: "2px solid blueviolet",
+                            backgroundColor: "#fff",
+                            fontWeight: "600",
+                            color: "blueviolet",
+                        }}
+                    >
+                        Request a Call
+                    </Button>
+                </div>
+            </div>
             <div className="course__container">
                 <div className="course__container-left">
                     <div className="course__container-leftHeader">
@@ -411,7 +464,7 @@ const buyCourse = () =>{
             <div className="course-main-div">
                 <div
                     className=" syllabus container"
-                    style={{ marginTop: "2rem" , marginBottom:'2rem' }}
+                    style={{ marginTop: "2rem", marginBottom: "2rem" }}
                 >
                     <h2 style={{ color: "blueviolet", marginBottom: "2rem" }}>
                         Syllabus
