@@ -7,85 +7,58 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import Logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 export default function Discord() {
-    return (
-        <div
-            className="footer-div"
-            style={{ padding: 30}}
-        >
-            <div className="footer-mainCircle1"></div>
-            <div className="footer-mainCircle2"></div>
-            <div className="container">
-                <div className="row" align="center">
-                    <div className="col-md-6">
-                        <img className='footer__logo' src={Logo} style={{ width: "25%" }} alt="" />
-                        <div style={{display:'flex',justifyContent:'center'}} className=" footer_icon my-3">
-                                <div
-                                    className="icons"
-                                    style={{ color: "#fff" }}
-                                >
-                                    <span>
-                                        <InstagramIcon />
-                                    </span>
-                                </div>
-                                <div
-                                    className="icons"
-                                    style={{ color: "#fff" }}
-                                >
-                                    <LinkedInIcon />
-                                </div>
-                                <div
-                                    className="icons"
-                                    style={{ color: "#fff" }}
-                                >
-                                    <FacebookIcon />
-                                </div>
-                                <div
-                                    className="icons"
-                                    style={{ color: "#fff" }}
-                                >
-                                    <TwitterIcon />
-                                </div>
-                        </div>
-                    </div>
-                    <div className="col-md-3" style={{  fontWeight:'bold' }}>
-                        <ul style={{ textAlign: "center" }}>
-                            <li>
-                                <Link to='/'>Home</Link>
-                            </li>
-                            <li>
-                                <Link to='/events'>Event</Link>
-                            </li>
-                            <li>
-                                <Link to='/trainings'>Trainings</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="col-md-3" style={{  fontWeight:'bold' }}>
-                        <ul style={{ textAlign: "center" }}>
-                            <li>
-                                <Link to='/contact'>Contact us</Link>
-                            </li>
-                            <li>
-                                <Link to='/sponsors'>Sponsors</Link>
-                            </li>
-                            <li>
-                                <Link to='/team'>Team</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div className="container-fluid my-0">
-                <div className="row">
-                    <div className="col-sm-12 gradient-footer">
-                        <h6 style={{ overflow: "hidden" }}>
-                            {" "}
-                            Built with <span> ❤️ </span> by your friends at
-                            SudansTech
-                        </h6>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="footer-div">
+      <div className="footer-mainCircle1"></div>
+      <div className="footer-mainCircle2"></div>
+      <div className="footer__container">
+        <div className="footerContainer__left">
+          <img className="footer__logo" src={Logo} alt=" company logo" />
         </div>
-    );
+      <div className="footerContainer__right">
+        <div className="footerContainer__right1">
+          <h5>Contact us </h5>
+          <p>
+            <span>General Querry- </span>hello@Sudan'sTech.com
+          </p>
+          <p>
+            <span>Sponsorship Querry- </span>sponsor@Sudan'sTech.com
+          </p>
+        </div>
+        <div className="footerContainer__right2">
+          <h5>Quick links </h5>
+          <ul className='footer__links'>
+            <li>
+              <Link to="/events">Event</Link>
+            </li>
+            <li>
+              <Link to="/trainings">Training</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+            <Link to="/sponsors">Sponsor</Link>
+            </li>
+            <li className='footer__register'>
+              <Link  to="/signin">Register</Link>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <hr/>
+      <div className="footer__bottom">
+       <div className="footerBottom__copywrite">
+           <h5>Copyright &copy; 2021 All Rights Reserved By Sudan's Tech </h5>
+       </div>
+       <div className="footerBottom__icons">
+      <span> <InstagramIcon style={{color:'red'}} className='footer__icon' /></span>
+      <span> <LinkedInIcon style={{color:'blue'}} className='footer__icon'/></span>
+      <span> <FacebookIcon style={{color:'blue'}} className='footer__icon'/></span>
+       <span> <TwitterIcon style={{color:'blue'}} className='footer__icon'/></span>
+       </div>
+      </div>
+    </div>
+  );
 }
