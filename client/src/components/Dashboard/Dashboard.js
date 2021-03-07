@@ -23,7 +23,7 @@ function Dashboard() {
     }
   }, []);
   const signOut = () => {
-    console.log('clicked');
+    // console.log('clicked');
     localStorage.clear();
     dispatch({
       type: actionTypes.SET_USER,
@@ -54,9 +54,8 @@ function Dashboard() {
               history.push("/");
             }}
             variant="outlined"
-            className="course__btn"
+            className="course__btn homeBtn"
             style={{
-              color: "bluevoilet",
               marginRight: "1rem",
               border: " 2px solid blueviolet",
             }}

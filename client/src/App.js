@@ -23,6 +23,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import { useState } from "react";
 import { Button, Input, TextareaAutosize } from "@material-ui/core";
 import logo from '../src/assets/logo.svg'
+import axios from 'axios'
 function getModalStyle() {
   const top = 50 
   const left = 50 
@@ -37,7 +38,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 600,
+    width: 460,
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #7289DA',
     boxShadow: theme.shadows[5],
@@ -47,9 +48,28 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const[email, setEmail] = useState();
   const[username, setUserame] = useState();
-  const[message, setMessage] = useState();
+  const[text, setText] = useState();
   const submitForm = ()=>{
-    console.log('clicked')
+    let mailMsg ={
+      email:email,
+      text:text,
+    }
+    axios({
+      method: "post",
+      url: "https://email-receive.herokuapp.com/email",
+      data: mailMsg,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(()=>{
+      alert('Message sent sucessfully:)');
+      setOpen(false)
+      setEmail('')
+      setUserame('')
+      setText('')
+    }).catch((e)=>{
+      console.log(e.message);
+    })
   }
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
@@ -92,9 +112,9 @@ function App() {
          placeholder='Share your thought'
          type='text'
          rowsMin={5}
-         value={message}
+         value={text}
          onChange={(e)=>{
-           setMessage(e.target.value)
+           setText(e.target.value)
          }}
          >
          </TextareaAutosize>
