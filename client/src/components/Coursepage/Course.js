@@ -21,6 +21,8 @@ import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
 import logo from "../../assets/logo.svg";
 var sub_mods = [];
+
+var a;
 function getModalStyle() {
     const top = 50;
     const left = 50;
@@ -119,7 +121,7 @@ export default function Coursepage(props) {
     useEffect(() => {
         var str = window.location.pathname.substring(100, 10);
         var s = str.replace(/%20/g, " ");
-        // console.log(s);
+        console.log(s);
         setTitle(s);
         axios
             .get("https://sudanstechapi.herokuapp.com/trainings")
@@ -139,6 +141,7 @@ export default function Coursepage(props) {
                 // });
                 res.data.map((i) => {
                     if (i.title === s) {
+                        console.log(i);
                         setCourse(i.modules);
 
                         setBody(i.body);
@@ -149,7 +152,6 @@ export default function Coursepage(props) {
                         setImg(i.image);
                     }
                 });
-                console.log(res.data);
             });
     }, []);
 
@@ -159,62 +161,54 @@ export default function Coursepage(props) {
             // console.log(j);
             return (
                 <div>
-                    <Accordion style={{ borderBottom: "1px solid blueviolet" }}>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
+                    {j.title || j.items ? (
+                        <Accordion
+                            style={{ borderBottom: "1px solid blueviolet" }}
                         >
-                            <Typography className={classes.heading}>
-                                {j.title}
-                            </Typography>
-                            <h6 style={{ color: "#FFFFFF" }}>
-                                {(sub_mods = j.items.split(","))}
-                            </h6>
-                        </AccordionSummary>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                            >
+                                <Typography className={classes.heading}>
+                                    {j.title}
+                                </Typography>
+                                <h6 style={{ color: "#FFFFFF" }}>
+                                    {(sub_mods = [])}
+                                    {j.items
+                                        ? (sub_mods = j.items.split(","))
+                                        : (a = a + 1)}
+                                </h6>
+                            </AccordionSummary>
 
-                        <AccordionDetails>
-                            <Typography>
-                                <ul>
-                                    {sub_mods.map((o) => {
-                                        // console.log(o);
-                                        return (
-                                            <li
-                                                style={{
-                                                    color: "#000",
-                                                    textAlign: "start",
-                                                    fontWeight: "normal",
-                                                }}
-                                            >
-                                                {o}
-                                            </li>
-                                        );
-                                    })}
-                                    {/* console.log(nameArr); */}
-                                    {}
-
-                                    {/* {j.items ? (
-                                      
-                                        j.items.map((o) => {
-                                            return (
-                                                <li
-                                                    style={{
-                                                        color: "#000",
-                                                        textAlign: "start",
-                                                        fontWeight: "normal",
-                                                    }}
-                                                >
-                                                    {o.title}
-                                                </li>
-                                            );
-                                        })
-                                    ) : (
-                                        <div></div>
-                                    )} */}
-                                </ul>
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
+                            <AccordionDetails>
+                                <Typography>
+                                    <ul>
+                                        {j.items ? (
+                                            sub_mods.map((o) => {
+                                                return (
+                                                    <li
+                                                        style={{
+                                                            color: "#000",
+                                                            textAlign: "start",
+                                                            fontWeight:
+                                                                "normal",
+                                                        }}
+                                                    >
+                                                        {o}
+                                                    </li>
+                                                );
+                                            })
+                                        ) : (
+                                            <li> </li>
+                                        )}
+                                    </ul>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                    ) : (
+                        <div></div>
+                    )}
                 </div>
             );
         });
