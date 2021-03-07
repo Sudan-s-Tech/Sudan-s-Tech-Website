@@ -23,19 +23,19 @@ export default function Sponsors() {
                     "Thanks‌ ‌to‌ ‌all‌ ‌these‌ ‌Sponsors‌ ‌which‌ ‌Supported‌ ‌us‌ ‌for‌ ‌this‌ ‌Initiative‌ ‌and‌ ‌without‌ ‌their‌ ‌help‌ ‌this‌ ‌would‌ ‌have‌ ‌not‌ ‌been‌ ‌possible.‌"
                 }
             />
-            <div className="container">
+            <div className="container my-4">
                 <div className="row">
-                    <div className="col-md-12">
+                    <div className="col-md-6">
                         <img
                             src={Sp1}
-                            style={{ width: "20%", marginTop: "10%" }}
+                            style={{ width: "28%", marginTop: "3%" }}
                             alt=""
                         />
                     </div>
-                    <div className="col-md-12">
+                    <div className="col-md-6">
                         <img
                             src={Sp2}
-                            style={{ width: "20%", marginTop: "10%" }}
+                            style={{ width: "40%", marginTop: "10%" }}
                             alt=""
                         />
                     </div>

@@ -44,6 +44,7 @@ function LoginForm() {
       url: "https://sudan-tech-backend.herokuapp.com/users/login",
       data: content,
       headers: {
+        'Authorization': "JWT_TOKEN",
         "Content-Type": "application/json",
       },
     })
