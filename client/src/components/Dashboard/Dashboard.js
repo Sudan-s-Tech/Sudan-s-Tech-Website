@@ -23,7 +23,7 @@ function Dashboard() {
     }
   }, []);
   const signOut = () => {
-    console.log('clicked');
+    // console.log('clicked');
     localStorage.clear();
     dispatch({
       type: actionTypes.SET_USER,
