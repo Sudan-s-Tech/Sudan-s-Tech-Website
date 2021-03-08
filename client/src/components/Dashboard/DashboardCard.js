@@ -20,7 +20,7 @@ function DashboardCard({ title, image, subTitle }) {
           }}
             variant="contained"
             className="course__btn"
-            style={{ backgroundColor: "blueviolet", color: "#fff",marginBottom:'0.5rem' }}
+            style={{ backgroundColor: "#7289DA", color: "#fff",marginBottom:'0.5rem' }}
           >
             See the course
           </Button>

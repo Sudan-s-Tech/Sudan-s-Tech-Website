@@ -232,7 +232,7 @@ export default function Events() {
                 style={{
                     margin: "1px 10px",
                     borderRadius: "15px",
-                    backgroundColor: "#AB7CEC",
+                    backgroundColor: "#7289DA",
                     color: "white",
                 }}
                 onClick={(e) => {
@@ -243,11 +243,11 @@ export default function Events() {
             </Button>
             <Button
                 variant="outlined"
-                color="secondary"
+                color="primary"
                 style={{
                     margin: "1px 10px",
                     borderRadius: "15px",
-                    backgroundColor: "#F546AD",
+                    backgroundColor: "#7289DA",
                     color: "white !important",
                     outline: "none",
                 }}
@@ -263,7 +263,7 @@ export default function Events() {
                 style={{
                     margin: "1px 10px",
                     borderRadius: "15px",
-                    backgroundColor: "#679BEB",
+                    backgroundColor: "#7289DA",
                     color: "white",
                 }}
                 onClick={(e) => {

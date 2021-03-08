@@ -17,7 +17,7 @@ export default function Events() {
                 }
             />
             <div className="container">
-                <div className="row" style={{ margin: "20% 0%" }}>
+                <div className="row" style={{ margin: "8% 0%" }}>
                     <div className="col-md-7">
                         <img src={Pic} style={{ width: "80%" }} />
                     </div>

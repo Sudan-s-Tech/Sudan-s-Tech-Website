@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 export default function Discord() {
   return (
     <div className="footer-div">
-      <div className="footer-mainCircle1"></div>
-      <div className="footer-mainCircle2"></div>
       <div className="footer__container">
         <div className="footerContainer__left">
           <img className="footer__logo" src={Logo} alt=" company logo" />
