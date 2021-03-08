@@ -79,12 +79,12 @@ top: 20rem !important;
 z-index: 1;
 transform: rotate(-90deg);
 position: fixed !important;
-background-color: #C76FE4 !important;
+background-color: #7289DA !important;
 color: white !important;
 z-index: 9999;
 }
 .submitBtn{
-    background-color: #C76FE4 !important;
+    background-color: #7289DA !important;
     color: white !important;
 }
 .txtarea{

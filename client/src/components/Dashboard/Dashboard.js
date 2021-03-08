@@ -57,7 +57,8 @@ function Dashboard() {
             className="course__btn homeBtn"
             style={{
               marginRight: "1rem",
-              border: " 2px solid blueviolet",
+              border: " 2px solid #7289DA",
+              color:'#7289DA'
             }}
           >
             Home
@@ -66,7 +67,7 @@ function Dashboard() {
             onClick={signOut}
             variant="contained"
             className="course__btn"
-            style={{ backgroundColor: "blueviolet", color: "#fff",boxShadow:'none' }}
+            style={{ backgroundColor: "#7289DA", color: "#fff",boxShadow:'none' }}
           >
             Sign Out
           </Button>
@@ -79,7 +80,7 @@ function Dashboard() {
           </div>
           <div className="dashboardBody__header-msg">
             <h4>
-              Hello <span style={{ color: "blueviolet" }}> {user}</span>
+              Hello <span style={{ color: "#7289DA" }}> {user}</span>
             </h4>
             <p>Welcome to your admin dashboard</p>
           </div>

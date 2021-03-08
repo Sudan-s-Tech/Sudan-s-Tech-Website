@@ -23,7 +23,7 @@ ul {
 } */
 .MuiDivider-inset {
   margin-left: 72px;
-  background-color: blueviolet !important;
+  background-color: #7289DA !important;
 }
 .course-main-div .MuiList-padding {
   color: #000 !important;
@@ -69,7 +69,7 @@ ul {
   font-weight: medium !important;
 }
 .course__header h2 span {
-  background-color: blueviolet;
+  background-color: #7289DA;
   color: rgb(255, 255, 255);
   font-size: 20px;
   padding: 3px 8px;
@@ -108,7 +108,7 @@ ul {
   padding-bottom: 2.5rem;
 }
 .course__container-leftHeader h2 {
-  color: blueviolet;
+  color: #7289DA;
   font-size: 2.2rem !important;
   padding-left: 1rem;
 }
@@ -159,7 +159,7 @@ ul {
   font-family: none;
   font-size: 2rem;
   font-weight: 700;
-  color: blueviolet;
+  color: #7289DA;
 }
 .course__teachers {
   max-width: 1150px;
@@ -171,7 +171,7 @@ iframe {
     border: 4px solid #c3bdbd;
 }
 .submitCall{
-  background-color: blueviolet !important;
+  background-color: #7289DA !important;
   color: white !important;
 }
 
