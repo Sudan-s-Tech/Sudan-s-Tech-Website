@@ -107,7 +107,7 @@ export default function RecipeReviewCard(props) {
                         // style={{ margin: "1px 10px" }}
                         style={{
                             borderRadius: "15px",
-                            backgroundColor: "#E7682E",
+                            backgroundColor: "#7289DA",
                         }}
                     >
                         <span style={{color:'#fff'}}> Watch Free Preview</span> 
@@ -119,7 +119,7 @@ export default function RecipeReviewCard(props) {
 
                         style={{
                             borderRadius: "15px",
-                            backgroundColor: "#D43530",
+                            backgroundColor: "#7289DA",
                         }}
                     >
                         <span style={{color:'#fff'}}> Get Full Access</span> 

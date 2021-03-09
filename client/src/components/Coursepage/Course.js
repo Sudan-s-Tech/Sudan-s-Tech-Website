@@ -163,7 +163,7 @@ export default function Coursepage(props) {
                 <div>
                     {j.title || j.items ? (
                         <Accordion
-                            style={{ borderBottom: "1px solid blueviolet" }}
+                            style={{ borderBottom: "1px solid #7289DA" }}
                         >
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
@@ -279,7 +279,7 @@ export default function Coursepage(props) {
                         variant="contained"
                         className="courseBtn"
                         style={{
-                            backgroundColor: "blueviolet",
+                            backgroundColor: "#7289DA",
                             color: "#fff",
                             fontWeight: "600",
                         }}
@@ -292,10 +292,10 @@ export default function Coursepage(props) {
                         }}
                         className="courseBtn"
                         style={{
-                            border: "2px solid blueviolet",
+                            border: "2px solid #7289DA",
                             backgroundColor: "#fff",
                             fontWeight: "600",
-                            color: "blueviolet",
+                            color: "#7289DA",
                         }}
                     >
                         Request a Call
@@ -365,7 +365,7 @@ export default function Coursepage(props) {
                 </div>
             </div>
             <div className="course__teachers">
-                <h2 style={{ color: "blueviolet", margin: "2rem 0rem" }}>
+                <h2 style={{ color: "#7289DA", margin: "2rem 0rem" }}>
                     Teachers
                 </h2>
                 <List className={classes.teachers}>
@@ -460,7 +460,7 @@ export default function Coursepage(props) {
                     className=" syllabus container"
                     style={{ marginTop: "2rem", marginBottom: "2rem" }}
                 >
-                    <h2 style={{ color: "blueviolet", marginBottom: "2rem" }}>
+                    <h2 style={{ color: "#7289DA", marginBottom: "2rem" }}>
                         Syllabus
                     </h2>
                     <div>{render}</div>
