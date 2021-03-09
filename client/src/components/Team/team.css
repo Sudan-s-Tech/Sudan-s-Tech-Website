@@ -124,3 +124,10 @@
     font-family: "Raleway";
     font-size: 24px;
 }
+.Team__head{
+    margin: 35px 0;
+    text-align: center;
+}
+.Team__head span{
+  color: #AE895D;
+}

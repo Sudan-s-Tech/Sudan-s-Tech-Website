@@ -21,19 +21,19 @@ function LoginForm() {
   const [password, setpassword] = useState("");
   const [msg, setmsg] = useState("");
 
-  const googleSignin = () => {
-    console.log("clicked");
-    auth
-      .signInWithPopup(provider)
-      .then((res) => {
-     dispatch({
-      type: actionTypes.SET_USER,
-      user: res.user.displayName,
-     })
-      }
-      )
-      .catch((err) => alert(err.message));
-    };
+  // const googleSignin = () => {
+  //   console.log("clicked");
+  //   auth
+  //     .signInWithPopup(provider)
+  //     .then((res) => {
+  //    dispatch({
+  //     type: actionTypes.SET_USER,
+  //     user: res.user.displayName,
+  //    })
+  //     }
+  //     )
+  //     .catch((err) => alert(err.message));
+  //   };
   const signin = () => {
     let content = {
       email: email,
@@ -44,7 +44,6 @@ function LoginForm() {
       url: "https://sudan-tech-backend.herokuapp.com/users/login",
       data: content,
       headers: {
-        'Authorization': "JWT_TOKEN",
         "Content-Type": "application/json",
       },
     })
@@ -94,9 +93,9 @@ function LoginForm() {
         Signin
       </SubmitButton>
       <Marginer direction="vertical" margin="0.5em" />
-      <SubmitButton  type="submit" onClick={googleSignin}>
+      {/* <SubmitButton  type="submit" onClick={googleSignin}>
         Signin with google
-      </SubmitButton>
+      </SubmitButton> */}
       <Marginer direction="vertical" margin="0.8em" />
       <MutedLink>
         Don't have an account?
