@@ -18,15 +18,17 @@ function SignIn() {
 
   useEffect(() => {
    const data = localStorage.getItem('username');
+   const token = localStorage.getItem("tokens");
    if(data){
     dispatch({
       type: actionTypes.SET_USER,
       user:data,
+      token:token,
     })
    }
   },[])
   useEffect(() => {
-    if(user){
+    if(token){
     localStorage.setItem('username', user);
     localStorage.setItem('tokens', token);
   }

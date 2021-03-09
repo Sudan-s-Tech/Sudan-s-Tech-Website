@@ -29,6 +29,7 @@ export default function Team() {
             />
             <Page loader={"rotate-spin"} color={"#D864B4"} size={10}>
                 <div className="container">
+                        <h2 className='Team__head'>Our <span>Core Team</span></h2>
                     <div className="row">
                         <div className="col-md-3">
                             <figure className="snip1584">
@@ -60,36 +61,40 @@ export default function Team() {
                                 {/* <a href="#"></a> */}
                             </figure>
                         </div>
+                    </div>
+                    <h2 className='Team__head'>Our Lead <span>Web Team</span></h2>
+                    <div className="row">
                         <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={Abir} alt="" />
                                 <figcaption>
                                     <h3>Abir Pal</h3>
-                                    <h5>Web Engineering Team Lead</h5>
+                                    <h5>Web Team Lead</h5>
                                 </figcaption>
                                 {/* <a href="#"></a> */}
                             </figure>
                         </div>
-                    </div>
-                    <div className="row">
                         <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src='https://media-exp1.licdn.com/dms/image/C4E03AQFL-qyEkNLQ2g/profile-displayphoto-shrink_800_800/0/1607253962475?e=1620864000&v=beta&t=0c4E_gpJMSK65ZsBcxAwu4jKmxn4Uq_1a4oxY9vViY4' alt="" />
                                 <figcaption>
                                     <h3>Shashwat Mishra</h3>
-                                    <h5>Web Engineering Team Lead</h5>
+                                    <h5>Web Team Lead</h5>
                                 </figcaption>
                                 {/* <a href="#"></a> */}
                             </figure>
                         </div>
-                        <div className="col-md-3">
+                    </div>
+                    <h2 className='Team__head'>Our <span>Graphics Team</span></h2>
+                    <div className="row">
+                    <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={shrishti} alt="" />
                                 <figcaption>
                                     <h3>Shrishti Jalan</h3>
                                     <h5>Graphics Specialist</h5>
                                 </figcaption>
-                                {/* <a href="#"></a> */}
+                                <a href="#"></a>
                             </figure>
                         </div>
                         <div className="col-md-3">
@@ -99,26 +104,37 @@ export default function Team() {
                                     <h3>Ravula Sreeja</h3>
                                     <h5>Graphics Specialist</h5>
                                 </figcaption>
-                                {/* <a href="#"></a> */}
+                                <a href="#"></a>
                             </figure>
                         </div>
                         <div className="col-md-3">
                             <figure className="snip1584">
-                                <img src={Navya} alt="" />
+                                <img src={reeti} alt="" />
                                 <figcaption>
-                                    <h3>Navya Jyoti</h3>
-                                    <h5>Community Manager</h5>
+                                    <h3>Reeti Jha</h3>
+                                    <h5>Content Specialist</h5>
                                 </figcaption>
                                 {/* <a href="#"></a> */}
                             </figure>
                         </div>
                     </div>
+                    <h2 className='Team__head'>Our <span>Community Managers</span></h2>
                     <div className="row">
-                        <div className="col-md-3">
+                    <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={Rakshit} alt="" />
                                 <figcaption>
                                     <h3>Rakshit Ramesh</h3>
+                                    <h5>Community Manager</h5>
+                                </figcaption>
+                                {/* <a href="#"></a> */}
+                            </figure>
+                        </div>           
+                        <div className="col-md-3">
+                            <figure className="snip1584">
+                                <img src={Navya} alt="" />
+                                <figcaption>
+                                    <h3>Navya Jyoti</h3>
                                     <h5>Community Manager</h5>
                                 </figcaption>
                                 {/* <a href="#"></a> */}
@@ -134,17 +150,10 @@ export default function Team() {
                                 {/* <a href="#"></a> */}
                             </figure>
                         </div>
-                        <div className="col-md-3">
-                            <figure className="snip1584">
-                                <img src={reeti} alt="" />
-                                <figcaption>
-                                    <h3>Reeti Jha</h3>
-                                    <h5>Content Specialist</h5>
-                                </figcaption>
-                                {/* <a href="#"></a> */}
-                            </figure>
-                        </div>
-                        <div className="col-md-3">
+                    </div>
+                    <h2 className='Team__head'>Our <span>Interns</span></h2>
+                    <div className="row">
+                    <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={Yash} alt="" />
                                 <figcaption>
@@ -154,8 +163,6 @@ export default function Team() {
                                 {/* <a href="#"></a> */}
                             </figure>
                         </div>
-                    </div>
-                    <div className="row">
                         <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={merrin} alt="" />

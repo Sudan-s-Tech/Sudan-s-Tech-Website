@@ -7,6 +7,7 @@ import DashboardCard from "./DashboardCard";
 import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
 import { Redirect, useHistory } from "react-router-dom";
+import axios from "axios";
 
 function Dashboard() {
   let history = useHistory();
@@ -22,16 +23,39 @@ function Dashboard() {
       });
     }
   }, []);
-  const signOut = () => {
-    // console.log('clicked');
-    localStorage.clear();
-    dispatch({
-      type: actionTypes.SET_USER,
-      user: null,
-      token: null,
+  const signOut =() =>{
+    axios({
+      method: "post",
+      url: "https://sudan-tech-backend.herokuapp.com/users/logout",
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        "Content-Type": "application/json",
+      },
     })
-    history.push('/signin');
-  };
+    .then((res) =>{
+      if(res.status === 200){
+        history.push('/signin');
+        localStorage.clear();
+       dispatch({
+         type: actionTypes.SET_USER,
+         user: null,
+         token: null,
+         })
+    }
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  }
+  // const signOut =() =>{
+  //   history.push('/signin');
+  //   localStorage.clear();
+  //  dispatch({
+  //    type: actionTypes.SET_USER,
+  //    user: null,
+  //    token: null,
+  //    })
+  // }
   return (
     <>
     { !user ?( 
