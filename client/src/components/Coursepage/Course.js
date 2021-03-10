@@ -145,11 +145,11 @@ export default function Coursepage(props) {
                         setCourse(i.modules);
 
                         setBody(i.body);
-                        setDesc(i.desc);
+                        setDesc(i.description);
                         setLesson(i.lesson);
                         setLevel(i.level);
                         setDuration(i.duration);
-                        setImg(i.image);
+                        setImg(i.imageurl);
                     }
                 });
             });
@@ -173,7 +173,7 @@ export default function Coursepage(props) {
                                 <Typography className={classes.heading}>
                                     {j.title}
                                 </Typography>
-                                <h6 style={{ color: "#FFFFFF" }}>
+                                <h6 style={{ color: "#FFFFFF", display:'none' }}>
                                     {(sub_mods = [])}
                                     {j.items
                                         ? (sub_mods = j.items.split(","))
@@ -268,11 +268,11 @@ export default function Coursepage(props) {
                     </form>
                 </div>
             </Modal>
-            <div className="course__header">
+            <div className="course__header"style={{backgroundImage:`url(${img})`}}>
                 <h2>
                     {title} <span> {level}_</span>
                 </h2>
-                <h6>{body}</h6>
+                <h6>{desc}</h6>
                 <div className="course__btn">
                     <Button
                         onClick={buyCourse}
@@ -319,28 +319,10 @@ export default function Coursepage(props) {
                         />
                     </div>
                     <div className="course__container-leftDesc">
-                        <h4> What is Cyber Security ?</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Maxime excepturi laboriosam aliquid optio
-                            voluptatibus, officiis ipsum, consectetur saepe eum
-                            distinctio accusantium ex harum similique quis
-                            cupiditate. Molestiae reprehenderit dicta placeat.
-                            consectetur saepe eum distinctio accusantium ex
-                            harum similique quis cupiditate. Molestiae
-                            reprehenderit dicta placeat.
-                        </p>
-                        <h4> Why choose us ?</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Maxime excepturi laboriosam aliquid optio
-                            voluptatibus, officiis ipsum, consectetur saepe eum
-                            distinctio accusantium ex harum similique quis
-                            cupiditate. Molestiae reprehenderit dicta placeat.
-                            consectetur saepe eum distinctio accusantium ex
-                            harum similique quis cupiditate. Molestiae
-                            reprehenderit dicta placeat.
-                        </p>
+                        <h5>
+                        {body}
+                        </h5>
+                        
                     </div>
                 </div>
                 <div className="course__container-right">
