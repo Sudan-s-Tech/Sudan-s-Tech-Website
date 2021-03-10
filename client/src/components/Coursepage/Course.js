@@ -116,6 +116,7 @@ export default function Coursepage(props) {
     const [level, setLevel] = useState("");
     const [duration, setDuration] = useState("");
     const [img, setImg] = useState("");
+    const[id, setId] = useState('');
     var render;
     // let Object;
     useEffect(() => {
@@ -150,11 +151,12 @@ export default function Coursepage(props) {
                         setLevel(i.level);
                         setDuration(i.duration);
                         setImg(i.imageurl);
+                        setId(i._id);
                     }
                 });
             });
     }, []);
-
+    
     const classes = useStyles();
     {
         render = course.map((j) => {
@@ -188,32 +190,33 @@ export default function Coursepage(props) {
                                             sub_mods.map((o) => {
                                                 return (
                                                     <li
-                                                        style={{
-                                                            color: "#000",
-                                                            textAlign: "start",
-                                                            fontWeight:
-                                                                "normal",
-                                                        }}
+                                                    style={{
+                                                        color: "#000",
+                                                        textAlign: "start",
+                                                        fontWeight:
+                                                        "normal",
+                                                    }}
                                                     >
                                                         {o}
                                                     </li>
                                                 );
                                             })
-                                        ) : (
-                                            <li> </li>
-                                        )}
+                                            ) : (
+                                                <li> </li>
+                                                )}
                                     </ul>
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
                     ) : (
                         <div></div>
-                    )}
+                        )}
                 </div>
             );
         });
     }
-
+    console.log(id)    
+    
     return (
         <div className="course">
             <Modal open={open} onClose={handleClose}>
@@ -333,7 +336,7 @@ export default function Coursepage(props) {
                         </div>
                         <div className="course__container-rightBox">
                             <p>Time to complete</p>
-                            <h4>{duration} hours</h4>
+                            <h4>{duration}</h4>
                         </div>
                         <div className="course__container-rightBox">
                             <p>Modules</p>
