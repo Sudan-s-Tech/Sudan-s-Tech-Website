@@ -28,9 +28,9 @@ export default function Team() {
                 para={"Meet‌ ‌The‌ ‌Minds‌ ‌which‌ ‌started‌ ‌this‌ ‌Cause‌."}
             />
             <Page loader={"rotate-spin"} color={"#D864B4"} size={10}>
-                <div className="container">
+                <div className="container ">
                         <h2 className='Team__head'>Our <span>Core Team</span></h2>
-                    <div className="row">
+                    <div className="row team__people ">
                         <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={Avinash} alt="" />
@@ -63,7 +63,7 @@ export default function Team() {
                         </div>
                     </div>
                     <h2 className='Team__head'>Our Lead <span>Web Team</span></h2>
-                    <div className="row">
+                    <div className="row team__people">
                         <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={Abir} alt="" />
@@ -86,7 +86,7 @@ export default function Team() {
                         </div>
                     </div>
                     <h2 className='Team__head'>Our <span>Graphics Team</span></h2>
-                    <div className="row">
+                    <div className="row team__people">
                     <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={shrishti} alt="" />
@@ -119,7 +119,7 @@ export default function Team() {
                         </div>
                     </div>
                     <h2 className='Team__head'>Our <span>Community Managers</span></h2>
-                    <div className="row">
+                    <div className="row team__people">
                     <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={Rakshit} alt="" />
@@ -152,7 +152,7 @@ export default function Team() {
                         </div>
                     </div>
                     <h2 className='Team__head'>Our <span>Interns</span></h2>
-                    <div className="row">
+                    <div className="row team__people">
                     <div className="col-md-3">
                             <figure className="snip1584">
                                 <img src={Yash} alt="" />

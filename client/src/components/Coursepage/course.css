@@ -115,13 +115,10 @@ ul {
 .course__container-leftDesc {
   text-align: start;
   padding-left: 1rem;
+  padding-right: 3rem;
 }
-.course__container-leftDesc h5 {
-  font-size: 1.3rem !important;
-  font-weight: 500;
-  margin-bottom: 1.2rem;
-  margin-top: 1rem;
-  padding: 0.1rem 1rem 0rem 0rem;
+.course__container-leftDesc p {
+  all: unset;
 }
 .course__container-right {
   flex: 0.26;
