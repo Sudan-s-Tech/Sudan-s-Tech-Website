@@ -131,3 +131,7 @@
 .Team__head span{
   color: #AE895D;
 }
+.team__people{
+    display:flex !important;
+    justify-content: center !important
+}

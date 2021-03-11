@@ -12,7 +12,7 @@ import { Marginer } from "./Marginer";
 import axios from "axios";
 import { useStateValue } from "../../../StateProvider";
 import { actionTypes } from "../../../reducer";
-import { auth, provider } from "../../../firebase";
+
 
 function LoginForm() {
   const [{}, dispatch] = useStateValue();

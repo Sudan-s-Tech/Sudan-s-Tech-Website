@@ -106,12 +106,12 @@ export default function RecipeReviewCard(props) {
                 class="card_image"
             /> */}
                 <div class="card_text">
-                    <div class="tags" style={{ fontWeight: 600 }}>
+                    <div class="tags" style={{ fontWeight: 600,fontSize:'22px' }}>
                         {props.title}
                     </div>
 
                     <div class="summary tags">
-                        <b>{props.desc}</b>
+                        <b style={{ fontWeight: 500,fontSize:'16px' }}>{props.desc}</b>
                     </div>
                     <h6 class="title tags" style={{ fontWeight: 400 }}>
                         {`${props.date} | ${props.lesson} lessons | ${props.level}`}
