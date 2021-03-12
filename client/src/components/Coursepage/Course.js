@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
         display: "inline",
     },
     paper: {
-        position: 'absolute',
+        position: "absolute",
         width: 460,
         backgroundColor: theme.palette.background.paper,
         border: "2px solid #7289DA",
@@ -139,9 +139,11 @@ export default function Coursepage(props) {
                 //         setImg(res.data[i].image);
                 //     }
                 // });
+                // console.log(res.data);
                 res.data.map((i) => {
                     if (i.title === s) {
-                        console.log(i);
+                        console.log(i.title);
+                        console.log(s);
                         setCourse(i.modules);
 
                         setBody(i.body);
@@ -158,7 +160,7 @@ export default function Coursepage(props) {
     const classes = useStyles();
     {
         render = course.map((j) => {
-            // console.log(j);
+            console.log(j);
             return (
                 <div>
                     {j.title || j.items ? (
