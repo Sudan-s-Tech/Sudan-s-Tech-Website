@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 var render;
 var arr;
+var data;
 export default function Coursepage(props) {
     const [email, setEmail] = useState("");
     const [username, setUserame] = useState();
@@ -88,7 +89,7 @@ export default function Coursepage(props) {
     const handleClose = () => {
         setOpen(false);
     };
-    const [{ user }, dispatch] = useStateValue();
+    const [{ user, token }, dispatch] = useStateValue();
     useEffect(() => {
         const data = localStorage.getItem("username");
         if (data) {
@@ -99,14 +100,6 @@ export default function Coursepage(props) {
         }
     }, []);
     let history = useHistory();
-    const buyCourse = () => {
-        if (user) {
-            console.log("user is logged in");
-            history.push("/payment");
-        } else {
-            history.push("/signin");
-        }
-    };
 
     const [course, setCourse] = useState([]);
     const [title, setTitle] = useState("");
@@ -116,6 +109,9 @@ export default function Coursepage(props) {
     const [level, setLevel] = useState("");
     const [duration, setDuration] = useState("");
     const [img, setImg] = useState("");
+    const [id, setId] = useState("");
+    const [Teacher, setTeacher] = useState("");
+    const [Bio, setBio] = useState("");
     var render;
     // let Object;
     useEffect(() => {
@@ -123,44 +119,141 @@ export default function Coursepage(props) {
         var s = str.replace(/%20/g, " ");
         console.log(s);
         setTitle(s);
+        // console.log(title);
+        // title != ""
+        //     ? axios
+        //           .get("https://sudanstechapi.herokuapp.com/teacher", {
+        //               params: {
+        //                   data: s,
+        //               },
+        //           })
+        //           .then((res) => {
+        //               console.log(res);
+        //           })
+        //     : console.log();
         axios
             .get("https://sudanstechapi.herokuapp.com/trainings")
             .then((res) => {
-                // Object.keys(res.data).map((i) => {
-                //     if (res.data[i].title === s) {
-                //         setCourse(res.data[i].items);
-                //         // console.log(props.location.state.state);
-                //         // console.log(res.data[i].body);
-                //         setBody(res.data[i].body);
-                //         setDesc(res.data[i].desc);
-                //         setLesson(res.data[i].lesson);
-                //         setLevel(res.data[i].level);
-                //         setDuration(res.data[i].duration);
-                //         setImg(res.data[i].image);
-                //     }
-                // });
-                // console.log(res.data);
                 res.data.map((i) => {
                     if (i.title === s) {
-                        console.log(i.title);
-                        console.log(s);
+                        // console.log(i);
                         setCourse(i.modules);
 
                         setBody(i.body);
-                        setDesc(i.desc);
+                        setDesc(i.description);
                         setLesson(i.lesson);
                         setLevel(i.level);
                         setDuration(i.duration);
-                        setImg(i.image);
+                        setImg(i.imageurl);
+                        setId(i._id);
                     }
                 });
             });
     }, []);
 
+    useEffect(() => {
+        var str = window.location.pathname.substring(100, 10);
+        var s = str.replace(/%20/g, " ");
+        console.log(s);
+        setTitle(s);
+        // console.log(title);
+        axios
+            .get("http://localhost:5000/teacher", {
+                params: {
+                    data: s,
+                },
+            })
+            .then((res) => {
+                setTeacher(res.data.name);
+                setBio(res.data.bio);
+            });
+    }, []);
+    const buyCourse = () => {
+        // function isDate(val) {
+        //     return Object.prototype.toString.call(val) === '[object Date]'
+        //   }
+
+        //   function isObj(val) {
+        //     return typeof val === 'object'
+        //   }
+
+        //    function stringifyValue(val) {
+        //     if (isObj(val) && !isDate(val)) {
+        //       return JSON.stringify(val)
+        //     } else {
+        //       return val
+        //     }
+        //   }
+
+        //   function buildForm({ action, params }) {
+        //     const form = document.createElement('form')
+        //     form.setAttribute('method', 'post')
+        //     form.setAttribute('action', action)
+
+        //     Object.keys(params).forEach(key => {
+        //       const input = document.createElement('input')
+        //       input.setAttribute('type', 'hidden')
+        //       input.setAttribute('name', key)
+        //       input.setAttribute('value', stringifyValue(params[key]))
+        //       form.appendChild(input)
+        //     })
+
+        //     return form
+        //   }
+
+        //    function post(details) {
+        //     const form = buildForm(details)
+        //     document.body.appendChild(form)
+        //     form.submit()
+        //     form.remove()
+        //   }
+        //   let detail={
+        //       amount:500,
+        //       email:'hello@gmail.com'
+        //   }
+        // if (user) {
+        //   axios({
+        //     method: "post",
+        //     url: "http://localhost:5000/api/payment",
+        //     data: JSON.stringify(detail) ,
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //   }).then((res)=>{
+        //       let information={
+        //           action:'https://securegw.paytm.in/order/process' ,
+        //           params:res
+        //       }
+        //       post(information)
+        //   }).catch((e)=>{
+        //       console.log(e)
+        //   })
+        if (user) {
+            axios({
+                method: "post",
+                url: "https://sudan-tech-backend.herokuapp.com/users/buy",
+                data: id,
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch((e) => {
+                    console.log(e);
+                });
+            console.log("user is logged in");
+            history.push("/payment");
+        } else {
+            history.push("/signin");
+        }
+    };
+
     const classes = useStyles();
     {
         render = course.map((j) => {
-            console.log(j);
+            // console.log(j);
             return (
                 <div>
                     {j.title || j.items ? (
@@ -175,7 +268,12 @@ export default function Coursepage(props) {
                                 <Typography className={classes.heading}>
                                     {j.title}
                                 </Typography>
-                                <h6 style={{ color: "#FFFFFF" }}>
+                                <h6
+                                    style={{
+                                        color: "#FFFFFF",
+                                        display: "none",
+                                    }}
+                                >
                                     {(sub_mods = [])}
                                     {j.items
                                         ? (sub_mods = j.items.split(","))
@@ -215,6 +313,7 @@ export default function Coursepage(props) {
             );
         });
     }
+    // console.log(id);
 
     return (
         <div className="course">
@@ -270,11 +369,14 @@ export default function Coursepage(props) {
                     </form>
                 </div>
             </Modal>
-            <div className="course__header">
+            <div
+                className="course__header"
+                style={{ backgroundImage: `url(${img})` }}
+            >
                 <h2>
                     {title} <span> {level}_</span>
                 </h2>
-                <h6>{body}</h6>
+                <h6>{desc}</h6>
                 <div className="course__btn">
                     <Button
                         onClick={buyCourse}
@@ -321,28 +423,8 @@ export default function Coursepage(props) {
                         />
                     </div>
                     <div className="course__container-leftDesc">
-                        <h4> What is Cyber Security ?</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Maxime excepturi laboriosam aliquid optio
-                            voluptatibus, officiis ipsum, consectetur saepe eum
-                            distinctio accusantium ex harum similique quis
-                            cupiditate. Molestiae reprehenderit dicta placeat.
-                            consectetur saepe eum distinctio accusantium ex
-                            harum similique quis cupiditate. Molestiae
-                            reprehenderit dicta placeat.
-                        </p>
-                        <h4> Why choose us ?</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Maxime excepturi laboriosam aliquid optio
-                            voluptatibus, officiis ipsum, consectetur saepe eum
-                            distinctio accusantium ex harum similique quis
-                            cupiditate. Molestiae reprehenderit dicta placeat.
-                            consectetur saepe eum distinctio accusantium ex
-                            harum similique quis cupiditate. Molestiae
-                            reprehenderit dicta placeat.
-                        </p>
+                        <h4>What is this course all about?</h4>
+                        <p>{body}</p>
                     </div>
                 </div>
                 <div className="course__container-right">
@@ -353,7 +435,7 @@ export default function Coursepage(props) {
                         </div>
                         <div className="course__container-rightBox">
                             <p>Time to complete</p>
-                            <h4>{duration} hours</h4>
+                            <h4>{duration}</h4>
                         </div>
                         <div className="course__container-rightBox">
                             <p>Modules</p>
@@ -374,12 +456,12 @@ export default function Coursepage(props) {
                     <ListItem alignItems="flex-start">
                         <ListItemAvatar>
                             <Avatar
-                                alt="Remy Sharp"
+                                alt={Teacher}
                                 src="/static/images/avatar/1.jpg"
                             />
                         </ListItemAvatar>
                         <ListItemText
-                            primary="Brunch this weekend?"
+                            primary={Teacher}
                             secondary={
                                 <React.Fragment>
                                     <Typography
@@ -388,73 +470,14 @@ export default function Coursepage(props) {
                                         className={classes.inline}
                                         color="textPrimary"
                                     >
-                                        Ali Connors
+                                        {/* {Teacher} */}
                                     </Typography>
-                                    {
-                                        " — I'll be in your neighborhood doing errands this…"
-                                    }
+                                    {Bio}
                                 </React.Fragment>
                             }
                         />{" "}
                     </ListItem>{" "}
                     <Divider variant="inset" component="li" />{" "}
-                    <ListItem alignItems="flex-start">
-                        {" "}
-                        <ListItemAvatar>
-                            {" "}
-                            <Avatar
-                                alt="Travis Howard"
-                                src="/static/images/avatar/2.jpg"
-                            />{" "}
-                        </ListItemAvatar>{" "}
-                        <ListItemText
-                            primary="Summer BBQ"
-                            secondary={
-                                <React.Fragment>
-                                    {" "}
-                                    <Typography
-                                        component="span"
-                                        variant="body2"
-                                        className={classes.inline}
-                                        color="textPrimary"
-                                    >
-                                        {" "}
-                                        to Scott, Alex, Jennifer{" "}
-                                    </Typography>{" "}
-                                    {
-                                        " — Wish I could come, but I'm out of town this…"
-                                    }{" "}
-                                </React.Fragment>
-                            }
-                        />
-                    </ListItem>
-                    <Divider variant="inset" component="li" />
-                    <ListItem alignItems="flex-start">
-                        <ListItemAvatar>
-                            <Avatar
-                                alt="Cindy Baker"
-                                src="/static/images/avatar/3.jpg"
-                            />
-                        </ListItemAvatar>
-                        <ListItemText
-                            primary="Oui Oui"
-                            secondary={
-                                <React.Fragment>
-                                    <Typography
-                                        component="span"
-                                        variant="body2"
-                                        className={classes.inline}
-                                        color="textPrimary"
-                                    >
-                                        Sandra Adams
-                                    </Typography>
-                                    {
-                                        " — Do you have Paris recommendations? Have you ever…"
-                                    }
-                                </React.Fragment>
-                            }
-                        />
-                    </ListItem>
                 </List>
             </div>
             <div className="course-main-div">

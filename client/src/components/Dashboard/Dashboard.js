@@ -10,6 +10,9 @@ import { Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
 
 function Dashboard() {
+
+ 
+
   let history = useHistory();
   const [{ user,token}, dispatch] = useStateValue();
   useEffect(() => {
@@ -22,6 +25,22 @@ function Dashboard() {
         token:token,
       });
     }
+  }, []);
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: "https://sudan-tech-backend.herokuapp.com/users/me",
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   }, []);
   const signOut =() =>{
     axios({
@@ -47,15 +66,6 @@ function Dashboard() {
       console.log(e)
     })
   }
-  // const signOut =() =>{
-  //   history.push('/signin');
-  //   localStorage.clear();
-  //  dispatch({
-  //    type: actionTypes.SET_USER,
-  //    user: null,
-  //    token: null,
-  //    })
-  // }
   return (
     <>
     { !user ?( 

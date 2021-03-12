@@ -48,7 +48,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNOYTBmWQY2joYFMMa_K1-WFZ4s2PboR_zQ&usqp=CAU");
+  /* background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNOYTBmWQY2joYFMMa_K1-WFZ4s2PboR_zQ&usqp=CAU"); */
   background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: 999;
@@ -115,20 +115,10 @@ ul {
 .course__container-leftDesc {
   text-align: start;
   padding-left: 1rem;
-}
-.course__container-leftDesc h4 {
-  font-size: 1.4rem !important;
-  font-weight: 500;
-  margin-bottom: 1.2rem;
-  margin-top: 1rem;
+  padding-right: 3rem;
 }
 .course__container-leftDesc p {
-  padding-right: 3rem;
-  font-family: none;
-  font-size: 1.1rem !important;
-  color: #000;
-  letter-spacing: 2;
-  line-height: 1.7;
+  all: unset;
 }
 .course__container-right {
   flex: 0.26;
