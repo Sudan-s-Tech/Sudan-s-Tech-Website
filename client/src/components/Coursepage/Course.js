@@ -60,6 +60,8 @@ const useStyles = makeStyles((theme) => ({
 var render;
 var arr;
 export default function Coursepage(props) {
+  const [{ user,token}, dispatch] = useStateValue();
+
   const [email, setEmail] = useState("");
   const [username, setUserame] = useState();
   const [message, setMessage] = useState();
@@ -86,13 +88,14 @@ export default function Coursepage(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const [{ user,token }, dispatch] = useStateValue();
   useEffect(() => {
     const data = localStorage.getItem("username");
+    const token = localStorage.getItem("tokens");
     if (data) {
       dispatch({
         type: actionTypes.SET_USER,
         user: data,
+        token:token
       });
     }
   }, []);
@@ -204,23 +207,26 @@ export default function Coursepage(props) {
     //   }).catch((e)=>{
     //       console.log(e)
     //   })
+    // axios.post("https://sudanstechapi.herokuapp.com/trainings",id)
           if (user) {
                  axios({
         method: "post",
-        url: "https://sudan-tech-backend.herokuapp.com/users/buy",
-        data: id,
+        url: ("https://sudan-tech-backend.herokuapp.com/users/buy/"+id),
         headers: {
+            'Authorization': 'Bearer ' + token,
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin":"*",
         },
       })
         .then((res) => {
           console.log(res);
         })
         .catch((e) => {
-          console.log(e);
+          console.log(e.response);
         });
+        console.log(token)
       console.log("user is logged in");
-      history.push("/payment");
+      // history.push("/payment");
     } else {
       history.push("/signin");
     }
@@ -277,7 +283,7 @@ export default function Coursepage(props) {
       );
     });
   }
-  console.log(id);
+  console.log(JSON.stringify(id) );
 
   return (
     <div className="course">

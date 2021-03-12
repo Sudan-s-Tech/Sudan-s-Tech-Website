@@ -108,9 +108,10 @@ export default function RecipeReviewCard(props) {
                         style={{
                             borderRadius: "15px",
                             backgroundColor: "#7289DA",
+                            width:'180px'
                         }}
                     >
-                        <span style={{color:'#fff'}}> Watch Free Preview</span> 
+                        <span style={{color:'#fff'}}> Watch Preview</span> 
                     </Button>
                     <Button 
                         variant="outlined"
@@ -120,6 +121,8 @@ export default function RecipeReviewCard(props) {
                         style={{
                             borderRadius: "15px",
                             backgroundColor: "#7289DA",
+                            width:'180px'
+
                         }}
                     >
                         <span style={{color:'#fff'}}> Get Full Access</span> 

@@ -239,7 +239,7 @@ export default function Events() {
                     setOption("past");
                 }}
             >
-                <span style={{color:'#fff',outline:'none'}}> Past</span>
+                <span style={{color:'#fff',outline:'none', width:'80px'}}> Past</span>
             </Button>
             <Button
                 variant="outlined"
@@ -255,7 +255,7 @@ export default function Events() {
                     setOption("ongoing");
                 }}
             >
-               <span style={{color:'#fff',outline:'none'}}> Ongoing</span> 
+               <span style={{color:'#fff',outline:'none', width:'80px'}}> Ongoing</span> 
             </Button>
             <Button
                 variant="outlined"
@@ -270,7 +270,7 @@ export default function Events() {
                     setOption("upcoming");
                 }}
             >
-               <span style={{color:'#fff',outline:'none'}}> Upcoming</span>
+               <span style={{color:'#fff',outline:'none', width:'80px'}}> Upcoming</span>
             </Button>
             <Page loader={"rotate-spin"} color={"#D864B4"} size={10}>
                 <div className="container">
