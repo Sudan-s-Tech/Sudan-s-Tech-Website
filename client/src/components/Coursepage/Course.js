@@ -158,7 +158,7 @@ export default function Coursepage(props) {
         setTitle(s);
         // console.log(title);
         axios
-            .get("http://localhost:5000/teacher", {
+            .get("https://sudanstechapi.herokuapp.com/teacher", {
                 params: {
                     data: s,
                 },
