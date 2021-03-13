@@ -110,6 +110,8 @@ export default function Coursepage(props) {
   const [duration, setDuration] = useState("");
   const [img, setImg] = useState("");
   const [id, setId] = useState("");
+  const [Teacher, setTeacher] = useState("");
+  const [Bio, setBio] = useState("");
   const[url, setUrl]= useState('');
   var render;
   // let Object;
@@ -149,141 +151,87 @@ export default function Coursepage(props) {
       });
     });
   }, []);
-    // function isDate(val) {
-    //     return Object.prototype.toString.call(val) === '[object Date]'
-    //   }
-      
-    //   function isObj(val) {
-    //     return typeof val === 'object'
-    //   }
-      
-    //    function stringifyValue(val) {
-    //     if (isObj(val) && !isDate(val)) {
-    //       return JSON.stringify(val)
-    //     } else {
-    //       return val
-    //     }
-    //   }
-      
-    //   function buildForm({ action, params }) {
-    //     const form = document.createElement('form')
-    //     form.setAttribute('method', 'post')
-    //     form.setAttribute('action', action)
-      
-    //     Object.keys(params).forEach(key => {
-    //       const input = document.createElement('input')
-    //       input.setAttribute('type', 'hidden')
-    //       input.setAttribute('name', key)
-    //       input.setAttribute('value', stringifyValue(params[key]))
-    //       form.appendChild(input)
-    //     })
-      
-    //     return form
-    //   }
-      
-    //    function post(details) {
-    //     const form = buildForm(details)
-    //     document.body.appendChild(form)
-    //     form.submit()
-    //     form.remove()
-    //   }
-    //   let detail={
-    //       amount:500,
-    //       email:'hello@gmail.com'
-    //   }
-    // if (user) {
-    //   axios({
-    //     method: "post",
-    //     url: "http://localhost:5000/api/payment",
-    //     data: JSON.stringify(detail) ,
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }).then((res)=>{
-    //       let information={
-    //           action:'https://securegw.paytm.in/order/process' ,
-    //           params:res
-    //       }
-    //       post(information)
-    //   }).catch((e)=>{
-    //       console.log(e)
-    //   })
-    // axios.post("https://sudanstechapi.herokuapp.com/trainings",id)
-    //       if (user) {
-      //            axios({
-      //   method: "post",
-      //   url: ("https://sudan-tech-backend.herokuapp.com/users/buy/"+id),
-      //   headers: {
-      //       'Authorization': 'Bearer ' + token,
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Origin":"*",
-      //   },
-      // })
-      //   .then((res) => {
-      //     console.log(res);
-      //   })
-      //   .catch((e) => {
-      //     console.log(e.response);
-      //   });
-    //     console.log(token)
-    //   console.log("user is logged in");
-    //   history.push("/payment");
-    // } else {
-    //   history.push("/signin");
-    // }
+  useEffect(() => {
+    var str = window.location.pathname.substring(100, 10);
+    var s = str.replace(/%20/g, " ");
+    console.log(s);
+    setTitle(s);
+    // console.log(title);
+    axios
+        .get("https://sudanstechapi.herokuapp.com/teacher", {
+            params: {
+                data: s,
+            },
+        })
+        .then((res) => {
+            setTeacher(res.data.name);
+            setBio(res.data.bio);
+        });
+}, []);
 
-  const classes = useStyles();
-  {
-    render = course.map((j) => {
-      // console.log(j);
-      return (
-        <div>
-          {j.title || j.items ? (
-            <Accordion style={{ borderBottom: "1px solid #7289DA" }}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography className={classes.heading}>{j.title}</Typography>
-                <h6 style={{ color: "#FFFFFF", display: "none" }}>
-                  {(sub_mods = [])}
-                  {j.items ? (sub_mods = j.items.split(",")) : (a = a + 1)}
-                </h6>
-              </AccordionSummary>
+    const classes = useStyles();
+    {
+        render = course.map((j) => {
+            // console.log(j);
+            return (
+                <div>
+                    {j.title || j.items ? (
+                        <Accordion
+                            style={{ borderBottom: "1px solid #7289DA" }}
+                        >
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                            >
+                                <Typography className={classes.heading}>
+                                    {j.title}
+                                </Typography>
+                                <h6
+                                    style={{
+                                        color: "#FFFFFF",
+                                        display: "none",
+                                    }}
+                                >
+                                    {(sub_mods = [])}
+                                    {j.items
+                                        ? (sub_mods = j.items.split(","))
+                                        : (a = a + 1)}
+                                </h6>
+                            </AccordionSummary>
 
-              <AccordionDetails>
-                <Typography>
-                  <ul>
-                    {j.items ? (
-                      sub_mods.map((o) => {
-                        return (
-                          <li
-                            style={{
-                              color: "#000",
-                              textAlign: "start",
-                              fontWeight: "normal",
-                            }}
-                          >
-                            {o}
-                          </li>
-                        );
-                      })
+                            <AccordionDetails>
+                                <Typography>
+                                    <ul>
+                                        {j.items ? (
+                                            sub_mods.map((o) => {
+                                                return (
+                                                    <li
+                                                        style={{
+                                                            color: "#000",
+                                                            textAlign: "start",
+                                                            fontWeight:
+                                                                "normal",
+                                                        }}
+                                                    >
+                                                        {o}
+                                                    </li>
+                                                );
+                                            })
+                                        ) : (
+                                            <li> </li>
+                                        )}
+                                    </ul>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
                     ) : (
-                      <li> </li>
+                        <div></div>
                     )}
-                  </ul>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          ) : (
-            <div></div>
-          )}
-        </div>
-      );
-    });
-  }
-  console.log(JSON.stringify(id) );
+                </div>
+            );
+        });
+    }
 
   return (
     <div className="course">
@@ -418,82 +366,37 @@ export default function Coursepage(props) {
         </div>
       </div>
       <div className="course__teachers">
-        <h2 style={{ color: "#7289DA", margin: "2rem 0rem" }}>Teachers</h2>
-        <List className={classes.teachers}>
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-            </ListItemAvatar>
-            <ListItemText
-              primary="Brunch this weekend?"
-              secondary={
-                <React.Fragment>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    className={classes.inline}
-                    color="textPrimary"
-                  >
-                    Ali Connors
-                  </Typography>
-                  {" — I'll be in your neighborhood doing errands this…"}
-                </React.Fragment>
-              }
-            />{" "}
-          </ListItem>{" "}
-          <Divider variant="inset" component="li" />{" "}
-          <ListItem alignItems="flex-start">
-            {" "}
-            <ListItemAvatar>
-              {" "}
-              <Avatar
-                alt="Travis Howard"
-                src="/static/images/avatar/2.jpg"
-              />{" "}
-            </ListItemAvatar>{" "}
-            <ListItemText
-              primary="Summer BBQ"
-              secondary={
-                <React.Fragment>
-                  {" "}
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    className={classes.inline}
-                    color="textPrimary"
-                  >
-                    {" "}
-                    to Scott, Alex, Jennifer{" "}
-                  </Typography>{" "}
-                  {" — Wish I could come, but I'm out of town this…"}{" "}
-                </React.Fragment>
-              }
-            />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-            </ListItemAvatar>
-            <ListItemText
-              primary="Oui Oui"
-              secondary={
-                <React.Fragment>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    className={classes.inline}
-                    color="textPrimary"
-                  >
-                    Sandra Adams
-                  </Typography>
-                  {" — Do you have Paris recommendations? Have you ever…"}
-                </React.Fragment>
-              }
-            />
-          </ListItem>
-        </List>
-      </div>
+                <h2 style={{ color: "#7289DA", margin: "2rem 0rem" }}>
+                    Teachers
+                </h2>
+                <List className={classes.teachers}>
+                    <ListItem alignItems="flex-start">
+                        <ListItemAvatar>
+                            <Avatar
+                                alt={Teacher}
+                                src="/static/images/avatar/1.jpg"
+                            />
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={Teacher}
+                            secondary={
+                                <React.Fragment>
+                                    <Typography
+                                        component="span"
+                                        variant="body2"
+                                        className={classes.inline}
+                                        color="textPrimary"
+                                    >
+                                        {/* {Teacher} */}
+                                    </Typography>
+                                    {Bio}
+                                </React.Fragment>
+                            }
+                        />{" "}
+                    </ListItem>{" "}
+                    <Divider variant="inset" component="li" />{" "}
+                </List>
+            </div>
       <div className="course-main-div">
         <div
           className=" syllabus container"
