@@ -51,10 +51,10 @@ export default function Discord() {
            <h5>Copyright &copy; 2021 All Rights Reserved By Sudan's Tech </h5>
        </div>
        <div className="footerBottom__icons">
-      <span> <InstagramIcon style={{color:'red'}} className='footer__icon' /></span>
-      <span> <LinkedInIcon style={{color:'blue'}} className='footer__icon'/></span>
-      <span> <FacebookIcon style={{color:'blue'}} className='footer__icon'/></span>
-       <span> <TwitterIcon style={{color:'blue'}} className='footer__icon'/></span>
+    <a href="https://www.instagram.com/sudans_tech/"> <span> <InstagramIcon style={{color:'red'}} className='footer__icon' /></span></a> 
+     <a href="https://www.linkedin.com/company/sudan-s-tech"> <span> <LinkedInIcon style={{color:'#0e76a8'}} className='footer__icon'/></span></a> 
+     <a href="https://www.facebook.com/Sudans-Tech-102013144941387/"> <span> <FacebookIcon style={{color:'#0F92F3'}} className='footer__icon'/></span></a> 
+     <a href="https://twitter.com/SudansTech1?s=09">  <span> <TwitterIcon style={{color:'#00acee'}} className='footer__icon'/></span></a> 
        </div>
       </div>
     </div>

@@ -44,38 +44,28 @@ const [course, setCourse] = useState([])
         // console.log(e);
       });
   }, []);
-  useEffect(async () => {
+  
+  useEffect(async() => {
     for (let i = 0; i < coursearr.length; i++) {
-      let elem = coursearr[i];
-      console.log(elem)
-   
-    axios
-        .get("https://sudanstechapi.herokuapp.com/training/"+ '6049d249b758d10004a7dd66')
-        .then((res) => {
-          console.log(res)
-          setCourse(res.data);
-        }); 
-}}, []);
-//  useEffect(async() => {
-//     for (let i = 0; i < coursearr.length; i++) {
-//       let elem = coursearr[i];
-//        axios({
-//         method: "get",
-//         url: "https://sudanstechapi.herokuapp.com/training/"+ elem,
-//         headers: {
-//           'Authorization': "Bearer " + token,
-//           "Content-Type": "application/json",
-//         },
-//       })
-//        .then((res) => {
-//          console.log(res)
-//          setCourse(res.data);
-//         })
-//         .catch((e) => {
-//           console.log(e);
-//         });
-//     }
-//   }, []);
+       let elem = coursearr[i];
+    
+       axios({
+        method: "get",
+        url:("https://sudanstechapi.herokuapp.com/training/"+ elem),
+        headers: {
+          'Authorization': "Bearer " + token,
+          "Content-Type": "application/json",
+        },
+      })
+       .then((res) => {
+         console.log(res)
+         setCourse(res.data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+  }, [coursearr]);
 
   function signOut() {
     axios({
@@ -226,53 +216,6 @@ const [course, setCourse] = useState([])
                     <p>Cyber Security</p>
                     <p>in progress</p>
                   </div>
-                </div>
-              </div>
-              <div className="dashboard__announcements">
-                <div className="dashboard__announcements-header">
-                  <h2>Announcements</h2>
-                </div>
-                <div className="dashboard__announcements-info">
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Facere, minus.
-                  </p>
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Facere, minus.
-                  </p>
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Facere, minus.
-                  </p>
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Facere, minus.
-                  </p>
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Facere, minus.
-                  </p>
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Facere, minus.
-                  </p>
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Facere, minus.
-                  </p>
-                  <p>
-                    {" "}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Facere, minus.
-                  </p>
                 </div>
               </div>
             </div>

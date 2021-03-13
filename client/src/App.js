@@ -24,6 +24,7 @@ import { useState } from "react";
 import { Button, Input, TextareaAutosize } from "@material-ui/core";
 import logo from '../src/assets/logo.svg'
 import axios from 'axios'
+import Success from "./components/success/Success";
 function getModalStyle() {
   const top = 50 
   const left = 50 
@@ -178,9 +179,11 @@ function App() {
         </Route>
         <Route path={`/register/:${name}`}>
           <Nav />
-          {console.log(name)}
           <Coursepage title={name} />
           <Footer />
+        </Route>
+        <Route path='/success'>
+         <Success/>
         </Route>
       </Router>
     </div>
