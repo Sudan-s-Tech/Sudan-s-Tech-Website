@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, Input, TextareaAutosize } from "@material-ui/core";
+import { Button, Input, Link, TextareaAutosize } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
@@ -16,7 +16,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import axios from "axios";
 import Modal from "@material-ui/core/Modal";
 import ReactPlayer from "react-player";
-import { useHistory } from "react-router-dom";
+import {  useHistory } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
 import logo from "../../assets/logo.svg";
@@ -110,6 +110,7 @@ export default function Coursepage(props) {
   const [duration, setDuration] = useState("");
   const [img, setImg] = useState("");
   const [id, setId] = useState("");
+  const[url, setUrl]= useState('');
   var render;
   // let Object;
   useEffect(() => {
@@ -143,11 +144,11 @@ export default function Coursepage(props) {
           setDuration(i.duration);
           setImg(i.imageurl);
           setId(i._id);
+          setUrl(i.formurl);
         }
       });
     });
   }, []);
-  const buyCourse = () => {
     // function isDate(val) {
     //     return Object.prototype.toString.call(val) === '[object Date]'
     //   }
@@ -208,29 +209,28 @@ export default function Coursepage(props) {
     //       console.log(e)
     //   })
     // axios.post("https://sudanstechapi.herokuapp.com/trainings",id)
-          if (user) {
-                 axios({
-        method: "post",
-        url: ("https://sudan-tech-backend.herokuapp.com/users/buy/"+id),
-        headers: {
-            'Authorization': 'Bearer ' + token,
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin":"*",
-        },
-      })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((e) => {
-          console.log(e.response);
-        });
-        console.log(token)
-      console.log("user is logged in");
-      // history.push("/payment");
-    } else {
-      history.push("/signin");
-    }
-  };
+    //       if (user) {
+    //              axios({
+    //     method: "post",
+    //     url: ("https://sudan-tech-backend.herokuapp.com/users/buy/"+id),
+    //     headers: {
+    //         'Authorization': 'Bearer ' + token,
+    //       "Content-Type": "application/json",
+    //       "Access-Control-Allow-Origin":"*",
+    //     },
+    //   })
+    //     .then((res) => {
+    //       console.log(res);
+    //     })
+    //     .catch((e) => {
+    //       console.log(e.response);
+    //     });
+    //     console.log(token)
+    //   console.log("user is logged in");
+    //   history.push("/payment");
+    // } else {
+    //   history.push("/signin");
+    // }
 
   const classes = useStyles();
   {
@@ -344,8 +344,14 @@ export default function Coursepage(props) {
         </h2>
         <h6>{desc}</h6>
         <div className="course__btn">
-          <Button
-            onClick={buyCourse}
+        <a onClick={()=>{
+          dispatch({
+            type: actionTypes.SET_USER,
+            id:id,
+          });
+          localStorage.setItem('courseid', id)
+        }} href={url}>
+        <Button
             variant="contained"
             className="courseBtn"
             style={{
@@ -356,6 +362,7 @@ export default function Coursepage(props) {
           >
             Buy Now
           </Button>
+        </a>
           <Button
             onClick={() => {
               setOpen(true);

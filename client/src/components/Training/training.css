@@ -33,7 +33,7 @@ a:link {
 
 .card_text {
     padding: 20px 13px 10px 16px;
-    height: 250px;
+    height: 290px;
     overflow: hidden;
 }
 
@@ -74,6 +74,7 @@ a:link {
     /* margin-left: auto; move over to the right */
 }
 .fancy_card .summary {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 800;
+    text-transform: capitalize !important;
 }
