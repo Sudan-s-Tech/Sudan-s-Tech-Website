@@ -210,21 +210,21 @@ export default function Coursepage(props) {
     //   })
     // axios.post("https://sudanstechapi.herokuapp.com/trainings",id)
     //       if (user) {
-    //              axios({
-    //     method: "post",
-    //     url: ("https://sudan-tech-backend.herokuapp.com/users/buy/"+id),
-    //     headers: {
-    //         'Authorization': 'Bearer ' + token,
-    //       "Content-Type": "application/json",
-    //       "Access-Control-Allow-Origin":"*",
-    //     },
-    //   })
-    //     .then((res) => {
-    //       console.log(res);
-    //     })
-    //     .catch((e) => {
-    //       console.log(e.response);
-    //     });
+      //            axios({
+      //   method: "post",
+      //   url: ("https://sudan-tech-backend.herokuapp.com/users/buy/"+id),
+      //   headers: {
+      //       'Authorization': 'Bearer ' + token,
+      //     "Content-Type": "application/json",
+      //     "Access-Control-Allow-Origin":"*",
+      //   },
+      // })
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((e) => {
+      //     console.log(e.response);
+      //   });
     //     console.log(token)
     //   console.log("user is logged in");
     //   history.push("/payment");
@@ -345,10 +345,6 @@ export default function Coursepage(props) {
         <h6>{desc}</h6>
         <div className="course__btn">
         <a onClick={()=>{
-          dispatch({
-            type: actionTypes.SET_USER,
-            id:id,
-          });
           localStorage.setItem('courseid', id)
         }} href={url}>
         <Button
