@@ -44,18 +44,19 @@ const [course, setCourse] = useState([])
         // console.log(e);
       });
   }, []);
+//   var i;
+// for (i = 0; i < cars.length; i++) {
+//   text += cars[i] + "<br>";
+// }
   
   useEffect(async() => {
+    let data =[]
     for (let i = 0; i < coursearr.length; i++) {
        let elem = coursearr[i];
     
        axios({
         method: "get",
         url:("https://sudanstechapi.herokuapp.com/training/"+ elem),
-        headers: {
-          'Authorization': "Bearer " + token,
-          "Content-Type": "application/json",
-        },
       })
        .then((res) => {
          console.log(res)
@@ -93,7 +94,7 @@ const [course, setCourse] = useState([])
   }
  
 
-
+console.log(course)
 
   return (
     <>
@@ -216,6 +217,17 @@ const [course, setCourse] = useState([])
                     <p>Cyber Security</p>
                     <p>in progress</p>
                   </div>
+                </div>
+              </div>
+              <div className="dashboard__announcements">
+                <div className="dashboard__announcements-header">
+                  <h2>Announcements</h2>
+                </div>
+                <div className="dashboard__announcements-info">
+                  <p>
+                    {" "}
+                    Welcome to your admin dashboard.
+                  </p>
                 </div>
               </div>
             </div>

@@ -138,6 +138,7 @@ iframe {
   font-size: 1rem !important;
   font-weight: 500;
   border-top: 1px solid black;
+  border-bottom: 1px solid black;
   color: rgb(7, 7, 7);
 }
 .dashboard__announcements-info p:hover {
