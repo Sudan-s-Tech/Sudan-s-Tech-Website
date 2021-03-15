@@ -114,6 +114,7 @@ export default function Coursepage(props) {
   const [Bio, setBio] = useState("");
   const[url, setUrl]= useState('');
   const[videourl, setVideourl]= useState('')
+  const[btn, setBtn]= useState('Enroll now')
   var render;
   // let Object;
   useEffect(() => {
@@ -237,6 +238,10 @@ useEffect(() => {
     setVideourl('https://sudanstech.s3.amazonaws.com/PHP.mp4')
   }else if (title=='Computer Vision and Image Processing') {
     setVideourl('https://sudanstech.s3.amazonaws.com/OpenCV.mp4')
+    setBtn('Buy now')
+  }else if(title==='CyberSecurity Bootcamp'){
+    setVideourl('')
+    setBtn('Buy now')
   }else{
     setVideourl('')
   }
@@ -320,7 +325,7 @@ const handleurl =()=>{
               fontWeight: "600",
             }}
           >
-            Buy Now
+           {btn}
           </Button>
           <Button
             onClick={() => {
