@@ -47,6 +47,7 @@ export default function CenteredGrid(props) {
                         textAlign: "left",
                         fontSize: 20,
                         margin: "1% 20% 1% 0%",
+                        paddingRight:'20px'
                     }}
                 >
                     {props.para}

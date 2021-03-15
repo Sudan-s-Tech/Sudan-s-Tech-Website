@@ -87,10 +87,10 @@ export default function RecipeReviewCard(props) {
         <div
             className="MediaItem s-vflex state-"
             id="event-card"
-            style={{ textAlign: "left" }}
+            style={{ textAlign: "left", height:'400px' }}
         >
             <div className="s-vflex-outer">
-                <div class="s-vflex-inner">
+                <div class="s-vflex-inner" style={{overflow:'hidden',height:'300px'}}>
                     <h3 class="title">
                         <a href="/courses/production-vue/">{props.title}</a>
                     </h3>
@@ -100,7 +100,7 @@ export default function RecipeReviewCard(props) {
                         <strong class="captioned">{props.desc}</strong>
                     </div>
                 </div>
-                <div class="cta" style={{ marginTop: "2em" }}>
+                <div class="cta" style={{ marginTop: "2em",marginBottom:'1rem',height:'50px',overflow:'hidden' }}>
                     <Button 
                         variant="outlined"
                         
@@ -111,21 +111,7 @@ export default function RecipeReviewCard(props) {
                             width:'180px'
                         }}
                     >
-                        <span style={{color:'#fff'}}> Watch Preview</span> 
-                    </Button>
-                    <Button 
-                        variant="outlined"
-                        
-                        // style={{ margin: "1px 10px" }}
-
-                        style={{
-                            borderRadius: "15px",
-                            backgroundColor: "#7289DA",
-                            width:'180px'
-
-                        }}
-                    >
-                        <span style={{color:'#fff'}}> Get Full Access</span> 
+                        <span style={{color:'#fff'}}> Register / Watch</span> 
                     </Button>
                 </div>
             </div>

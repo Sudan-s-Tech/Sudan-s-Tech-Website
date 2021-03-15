@@ -34,7 +34,7 @@ export default function Features() {
                         <h1 style={{ textAlign: "left" }}>
                             Project-based, active learning
                         </h1>
-                        <p style={{ textAlign: "left" }}>
+                        <p style={{ textAlign: "left" ,paddingRight:'40px'}}>
                             Learning‌ ‌through‌ ‌practice‌ ‌has‌ ‌always‌
                             ‌created‌ ‌more‌ ‌impact‌ ‌than‌ ‌theoretical‌ ‌
                             Knowledge.‌ ‌We‌ ‌Provide‌ ‌hands-on‌ ‌experience‌
@@ -54,8 +54,8 @@ export default function Features() {
                         <h1 style={{ textAlign: "left" }}>
                             Learn on your schedule
                         </h1>
-                        <p style={{ textAlign: "left" }}>
-                            Are‌ ‌You‌ ‌not‌ ‌able‌ ‌to‌ ‌cope‌ ‌up‌ ‌with‌
+                        <p style={{ textAlign: "left",paddingRight:'4rem' }}>
+                            Are‌ ‌You‌ ‌not‌ ‌able‌ ‌to‌ ‌cope‌ ‌up‌ ‌with‌ the
                             ‌timelines‌ ‌?‌ ‌Don't‌ ‌worry‌ ‌we‌ ‌understand‌
                             ‌your‌ ‌problem‌ ‌ .Our‌ ‌courses‌ ‌are‌ ‌self‌
                             ‌paced‌ ‌courses‌ ‌which‌ ‌you‌ ‌can‌ ‌view‌ ‌at‌
@@ -86,10 +86,10 @@ export default function Features() {
                         <h1 style={{ textAlign: "left" }}>
                             Get real employable skills
                         </h1>
-                        <p style={{ textAlign: "left" }}>
+                        <p style={{ textAlign: "left",paddingRight:'20px' }}>
                             Skills‌ ‌are‌ ‌what‌ ‌really‌ ‌matters‌ ‌in‌ ‌the‌
                             ‌industry‌ ‌when‌ ‌it‌ ‌comes‌ ‌to‌ ‌work.‌ ‌Doing‌
-                            ‌These‌ ‌ courses‌ ‌not‌ ‌only‌ ‌help‌ ‌you‌ ‌to‌
+                            ‌our ‌courses‌ ‌not‌ ‌only‌ ‌help‌ ‌you‌ ‌to‌
                             ‌master‌ ‌that‌ ‌skill‌ ‌but‌ ‌get‌ ‌real‌
                             ‌Industry‌ ‌ready‌ ‌and‌ ‌provide‌ ‌ more‌
                             ‌opportunity‌ ‌.‌
@@ -110,10 +110,9 @@ export default function Features() {
                         <p style={{ textAlign: "left" }}>
                             Got‌ ‌Stuck‌ ‌in‌ ‌a‌ ‌Problem‌ ‌?‌ ‌Don't‌ ‌worry‌
                             ‌!‌ ‌We‌ ‌are‌ ‌having‌ ‌a‌ ‌large‌ ‌Community‌
-                            ‌support‌ ‌of‌ ‌ Students,‌ ‌Industry‌ ‌Mentors‌
+                            ‌support‌ ‌of‌ ‌Students,‌ ‌Industry‌ ‌Mentors‌
                             ‌for‌ ‌your‌ ‌support‌ ‌and‌ ‌helping‌ ‌you‌ ‌to‌
-                            ‌solve‌ ‌your‌ ‌problem‌ ‌ as‌ ‌quickly‌ ‌as‌
-                            ‌fast.‌
+                            ‌solve‌ ‌your‌ ‌problem‌ quickly‌. ‌
                         </p>
                     </div>
                     <div className="col-md-6">

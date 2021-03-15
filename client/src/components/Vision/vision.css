@@ -1,0 +1,8 @@
+.vision__para{
+    padding: 25px 74px !important;
+}
+@media(max-width:500px){
+    .vision__para{
+        padding: 10px 20px !important;
+    }
+}

@@ -11,7 +11,7 @@ import axios from "axios";
 
 function Dashboard() {
 const [course, setCourse] = useState([])
-  let coursearr = [];
+const[arr, setArr] = useState([])
   let history = useHistory();
   const [{ user, token }, dispatch] = useStateValue();
   useEffect(() => {
@@ -25,7 +25,8 @@ const [course, setCourse] = useState([])
       });
     }
   }, []);
- 
+  
+  
   useEffect(async() => {
     axios({
       method: "get",
@@ -36,68 +37,59 @@ const [course, setCourse] = useState([])
       },
     })
       .then((res) => {
-        console.log(res);
-       Array.prototype.push.apply(coursearr, res.data.coursereg)
-        console.log(coursearr);
-      })
-      .catch((e) => {
-        // console.log(e);
-      });
-  }, []);
-//   var i;
-// for (i = 0; i < cars.length; i++) {
-//   text += cars[i] + "<br>";
-// }
-  
-  useEffect(async() => {
-    let data =[]
-    for (let i = 0; i < coursearr.length; i++) {
-       let elem = coursearr[i];
-    
-       axios({
-        method: "get",
-        url:("https://sudanstechapi.herokuapp.com/training/"+ elem),
-      })
-       .then((res) => {
-         console.log(res)
-         setCourse(res.data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }
-  }, [coursearr]);
-
-  function signOut() {
-    axios({
-      method: "post",
-      url: "https://sudan-tech-backend.herokuapp.com/users/logout",
-      headers: {
-        Authorization: "Bearer " + token,
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        if (res.status === 200) {
-          history.push("/signin");
-          localStorage.clear();
-          dispatch({
-            type: actionTypes.SET_USER,
-            user: null,
-            token: null,
-          });
+        // console.log(res)
+        if(res.data.coursereg.length > 0){
+        setArr(res.data.coursereg)
         }
       })
       .catch((e) => {
-        console.log(e);
       });
-  }
- 
+  }, []);
+  useEffect(async() => {
+    arr.map(item =>{
+// console.log(item)
+axios({
+  method: "get",
+  url:(`https://sudanstechapi.herokuapp.com/training/${item}`),
+})
+.then((res) => {
+  // console.log(res)
+  setCourse(oldarr =>{
+    return [...oldarr, res.data]
+  })
+})
+.catch((e) => {
+  console.log(e);
+});
+})
+}, [arr]);
+  function signOut() {
+    axios({
+      method: "post",
+    url: "https://sudan-tech-backend.herokuapp.com/users/logout",
+    headers: {
+      Authorization: "Bearer " + token,
+      "Content-Type": "application/json",
+    },
+  })
+  .then((res) => {
+    if (res.status === 200) {
+      history.push("/signin");
+      localStorage.clear();
+      dispatch({
+        type: actionTypes.SET_USER,
+        user: null,
+        token: null,
+      });
+    }
+  })
+  .catch((e) => {
+    // console.log(e);
+  });
+}
 
-console.log(course)
-
-  return (
-    <>
+return (
+  <>
       {!user ? (
         <Redirect to="/signin" />
       ) : (
@@ -155,9 +147,8 @@ console.log(course)
             <div className="dashbordBody__courses">
               <h2>My Courses</h2>
               <div className="dashbordBody__courses-cards">
-                {    
-                // setTimeout(() => {
-                course.map((info) => {
+                {   
+               course && course.map((info) => {
                   return (
                     <>
                     <DashboardCard
@@ -168,29 +159,7 @@ console.log(course)
                     </>
                   );
                 })
-              // }, 3000)
               }
-                {/* <DashboardCard
-                  image={
-                    " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt45dq0ZTou1p44yffI4F_3OPUuH4IhYQGoA&usqp=CAU"
-                  }
-                  title={"Web Development"}
-                  subTitle={"Lets learn about web development"}
-                />
-                <DashboardCard
-                  image={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIiREjHpsolL5RsjWAgCW4dLj1KqNa3gYwJw&usqp=CAU"
-                  }
-                  title={"Python Development"}
-                  subTitle={"Lets learn about Python with real world examples"}
-                />
-                <DashboardCard
-                  image={
-                    " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt45dq0ZTou1p44yffI4F_3OPUuH4IhYQGoA&usqp=CAU"
-                  }
-                  title={"Web Development"}
-                  subTitle={"Lets learn about web development"}
-                /> */}
               </div>
             </div>
             <div className="dashboard__mid">
@@ -202,20 +171,19 @@ console.log(course)
                     <h5>Status</h5>
                   </div>
                   <div className="dashboardBody__progressBox-info">
-                    <p>Web Development</p>
-                    <p>Completed</p>
-                  </div>
-                  <div className="dashboardBody__progressBox-info">
-                    <p>Python Development</p>
-                    <p>in progress</p>
-                  </div>
-                  <div className="dashboardBody__progressBox-info">
-                    <p>Cyber Security</p>
-                    <p>in progress</p>
-                  </div>
-                  <div className="dashboardBody__progressBox-info">
-                    <p>Cyber Security</p>
-                    <p>in progress</p>
+                  {    
+                course.map((info) => {
+                  return (
+                    <>
+                   <div  onClick={()=>{
+            history.push(`/register/${info.title}`)
+          }} className='info__para' style={{display:'flex',justifyContent:'space-between',width:'100%',cursor:'pointer'}}><p>{info.title}</p> <span>Enrolled</span></div> 
+                    </>
+                  );
+                })
+
+              }
+
                   </div>
                 </div>
               </div>
@@ -225,7 +193,6 @@ console.log(course)
                 </div>
                 <div className="dashboard__announcements-info">
                   <p>
-                    {" "}
                     Welcome to your admin dashboard.
                   </p>
                 </div>

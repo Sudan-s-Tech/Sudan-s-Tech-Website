@@ -6,10 +6,6 @@ export default function Techstack() {
             <h1 style={{ textAlign: "center", fontSize: "3em" }}>
                 Our Techstacks
             </h1>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-            </p>
             <div className="slider-main">
                 <div class="slider">
                     <div class="slide-track">

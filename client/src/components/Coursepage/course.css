@@ -116,6 +116,7 @@ ul {
   text-align: start;
   padding-left: 1rem;
   padding-right: 3rem;
+  margin-top: 1.2rem;
 }
 .course__container-leftDesc p {
   all: unset;

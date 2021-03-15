@@ -143,7 +143,7 @@
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
+    /* display: box; */
     display: flex;
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;

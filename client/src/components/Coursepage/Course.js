@@ -113,13 +113,13 @@ export default function Coursepage(props) {
   const [Teacher, setTeacher] = useState("");
   const [Bio, setBio] = useState("");
   const[url, setUrl]= useState('');
+  const[videourl, setVideourl]= useState('')
   var render;
   // let Object;
   useEffect(() => {
     var str = window.location.pathname.substring(100, 10);
     var s = str.replace(/%20/g, " ");
-    console.log(s);
-    setTitle(s);
+    // console.log(s);
     axios.get("https://sudanstechapi.herokuapp.com/trainings").then((res) => {
       // Object.keys(res.data).map((i) => {
       //     if (res.data[i].title === s) {
@@ -136,7 +136,7 @@ export default function Coursepage(props) {
       // });
       res.data.map((i) => {
         if (i.title === s) {
-          console.log(i);
+          // console.log(i);
           setCourse(i.modules);
 
           setBody(i.body);
@@ -154,7 +154,7 @@ export default function Coursepage(props) {
   useEffect(() => {
     var str = window.location.pathname.substring(100, 10);
     var s = str.replace(/%20/g, " ");
-    console.log(s);
+    // console.log(s);
     setTitle(s);
     // console.log(title);
     axios
@@ -232,7 +232,25 @@ export default function Coursepage(props) {
             );
         });
     }
+useEffect(() => {
+  if(title=='Introduction To Php ( Basics to advance)'){
+    setVideourl('https://sudanstech.s3.amazonaws.com/PHP.mp4')
+  }else if (title=='Computer Vision and Image Processing') {
+    setVideourl('https://sudanstech.s3.amazonaws.com/OpenCV.mp4')
+  }else{
+    setVideourl('')
+  }
+  
+}, [title])
 
+const handleurl =()=>{
+  if(user){
+    localStorage.setItem('courseid', id)
+    window.open(url)
+  }else{
+    history.push('/signin')
+  }
+}
   return (
     <div className="course">
       <Modal open={open} onClose={handleClose}>
@@ -292,10 +310,8 @@ export default function Coursepage(props) {
         </h2>
         <h6>{desc}</h6>
         <div className="course__btn">
-        <a onClick={()=>{
-          localStorage.setItem('courseid', id)
-        }} href={url}>
         <Button
+        onClick={handleurl}
             variant="contained"
             className="courseBtn"
             style={{
@@ -306,7 +322,6 @@ export default function Coursepage(props) {
           >
             Buy Now
           </Button>
-        </a>
           <Button
             onClick={() => {
               setOpen(true);
@@ -332,15 +347,15 @@ export default function Coursepage(props) {
             className="course__container-rightVideo"
             style={{ paddingLeft: "1rem" }}
           >
-            <ReactPlayer
+       <ReactPlayer style={{overflow:'hidden'}}
               controls
               width="375px"
               height="220px"
-              url="https://youtu.be/inWWhr5tnEA"
+              url= {videourl}
             />
           </div>
           <div className="course__container-leftDesc">
-              <h4>What is this course all about?</h4>
+              <h4 style={{color:'#7289DA'}}>What is this course all about?</h4>
              <p>{body}</p>
           </div>
         </div>
@@ -360,7 +375,13 @@ export default function Coursepage(props) {
             </div>
             <div className="course__container-rightBox">
               <p>Prereqisites</p>
-              <h4>None</h4>
+              <h4>{
+                (title ==='Computer Vision and Image Processing' ?
+                'Python':(
+                  'None'
+                )
+                )
+                }</h4>
             </div>
           </div>
         </div>

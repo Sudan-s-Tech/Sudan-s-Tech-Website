@@ -74,7 +74,7 @@ a:link {
     /* margin-left: auto; move over to the right */
 }
 .fancy_card .summary {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
     text-transform: capitalize !important;
 }

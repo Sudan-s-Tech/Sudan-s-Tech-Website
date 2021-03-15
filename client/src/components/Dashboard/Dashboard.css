@@ -90,14 +90,11 @@ iframe {
 }
 .dashboardBody__progressBox-info {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 20px;
+  padding: 0px 20px;
   border-top: 1px solid black;
-  cursor: pointer;
-}
-.dashboardBody__progressBox-info:hover {
-  background-color: lightgray;
 }
 .dashboardBody__progressBox-info p {
   margin-bottom: 0;
@@ -105,6 +102,18 @@ iframe {
   font-size: 1rem !important;
   font-weight: 500;
   color: rgb(88, 88, 88);
+}
+.info__para{
+  border-bottom: 1px solid black;
+padding: 3px 0;
+}
+.info__para:last-child{
+  border-bottom:none;
+
+}
+.info__para:hover{
+ background-color: lightgray;
+
 }
 .dashboard__mid {
   display: flex;

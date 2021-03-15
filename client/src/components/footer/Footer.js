@@ -17,10 +17,10 @@ export default function Discord() {
         <div className="footerContainer__right1">
           <h5>Contact us </h5>
           <p>
-            <span>General Querry- </span>hello@Sudan'sTech.com
+            <span>General Querry- </span><a href="mailto:support@sudans.tech">support@sudans.tech</a>
           </p>
           <p>
-            <span>Sponsorship Querry- </span>sponsor@Sudan'sTech.com
+            <span>Sponsorship Querry- </span><a href="mailto:contact@sudans.tech">contact@sudans.tech</a>
           </p>
         </div>
         <div className="footerContainer__right2">

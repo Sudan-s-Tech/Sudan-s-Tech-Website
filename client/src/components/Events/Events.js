@@ -26,7 +26,7 @@ console.log(currentdate);
 
 export default function Events() {
     const [events, setEvent] = useState([]);
-    const [option, setOption] = useState("upcoming");
+    const [option, setOption] = useState("past");
 
     useEffect(async () => {
         axios.get("https://sudanstechapi.herokuapp.com/events").then((res) => {
