@@ -22,7 +22,7 @@ const today = new Date();
 const date =
     today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
 var currentdate = date;
-console.log(currentdate);
+// console.log(currentdate);
 
 export default function Events() {
     const [events, setEvent] = useState([]);

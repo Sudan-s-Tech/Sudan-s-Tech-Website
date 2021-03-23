@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState} from 'react'
 import { AccountContext } from './AccountContext';
 import {
     BoldLink,
@@ -36,14 +36,13 @@ function SignupForm() {
       })
         .then((res) => {
           if (res.status === 201) {
-            setmsg('Account created please sign in to continue')
+            alert('Account created please sign in to continue');
+            switchToSignin();
+
           }
         })
         .catch((err) => {
          if(err.response){
-              // console.log(err.response.data)
-          // console.log(err.response.status)
-          // console.log(err.response.headers)
            setmsg(err.response.data.message)
          }
         });
@@ -93,7 +92,6 @@ function SignupForm() {
           Already have an account?
           <BoldLink onClick={switchToSignin}>Signin</BoldLink>
         </MutedLink>
-      {/* <Marginer direction="vertical" margin="1em" /> */}
       <p style={{ color: "red",marginBottom:'0px',fontSize:'small',overflow:'hidden' }}>{msg}</p>
       <Marginer direction="vertical" margin="1em" />
       </BoxContainer>
