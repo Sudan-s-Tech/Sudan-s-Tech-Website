@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../Hero/Hero";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import Pic from "../../assets/contact.svg";
 import "./contact.css";
 import Button from "@material-ui/core/Button";
@@ -19,7 +19,7 @@ export default function Events() {
             <div className="container">
                 <div className="row" style={{ margin: "8% 0%" }}>
                     <div className="col-md-7">
-                        <img src={Pic} style={{ width: "80%" }} />
+                        <img src={Pic} alt='contactpic' style={{ width: "80%" }} />
                     </div>
                     <div className="col-md-5">
                         <input type="text" placeholder="Name" />

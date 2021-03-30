@@ -1,18 +1,7 @@
 import React from "react";
 import Hero from "../Hero/Hero";
-import { makeStyles } from "@material-ui/core/styles";
-import Sp1 from "../../assets/sp.png";
-import Sp2 from "../../assets/sp2.png";
 import '../Sponsors/Sponsor.css'
-const useStyles = makeStyles((theme) => ({
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 500,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
-}));
+
 export default function Sponsors() {
     return (
         <div>

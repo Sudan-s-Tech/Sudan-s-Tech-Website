@@ -4,13 +4,13 @@ import Modal from '@material-ui/core/Modal';
 import Home from "./components/Hero/Hero";
 import Features from "./components/Features/Features";
 import TechStack from "./components/Techstack/Techstack";
-import Discord from "./components/Discord/Discord";
+// import Discord from "./components/Discord/Discord";
 import Vision from "./components/Vision/Vision";
 import Impact from "./components/Impact/Impact";
 import Events from "./components/Events/Events";
 import Training from "./components/Training/Training";
 import Footer from "./components/footer/Footer";
-import Feedback from "./components/Feedback/Feedback";
+// import Feedback from "./components/Feedback/Feedback";
 import Contact from "./components/Contact/Contact";
 import Sponsors from "./components/Sponsors/Sponsors";
 import Coursepage from "./components/Coursepage/Course";
@@ -25,6 +25,7 @@ import { Button, Input, TextareaAutosize } from "@material-ui/core";
 import logo from '../src/assets/logo.svg'
 import axios from 'axios'
 import Success from "./components/success/Success";
+import Gallery from "./components/gallery/Gallery";
 function getModalStyle() {
   const top = 50 
   const left = 50 
@@ -140,6 +141,7 @@ function App() {
                     <Features />
                     <Vision />
                     <TechStack />
+                    <Gallery />
                     <Impact />
                     {/* <Feedback /> */}
                     <Testimonial />

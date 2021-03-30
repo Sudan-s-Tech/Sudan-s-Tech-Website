@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import EventCard from "./EventCard/Eventcard";
 import Hero from "../Hero/Hero";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
 import Page from "react-page-loading";
 
-const useStyles = makeStyles((theme) => ({
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 500,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
-}));
+// const useStyles = makeStyles((theme) => ({
+//     formControl: {
+//         margin: theme.spacing(1),
+//         minWidth: 500,
+//     },
+//     selectEmpty: {
+//         marginTop: theme.spacing(2),
+//     },
+// }));
 
 var arr = [];
 
@@ -34,7 +34,7 @@ export default function Events() {
         });
     }, []);
 
-    if (option == "ongoing") {
+    if (option === "ongoing") {
         arr = [];
         var items = [];
         for (let i in events) {
@@ -47,17 +47,17 @@ export default function Events() {
             ) {
                 items.push(events[i]);
             } else if (
-                (parseInt(events[i].enddate.split("-")[2]) ==
+                (parseInt(events[i].enddate.split("-")[2]) ===
                     parseInt(currentdate.split("-")[2]) &&
-                    parseInt(events[i].startdate.split("-")[2]) ==
+                    parseInt(events[i].startdate.split("-")[2]) ===
                         parseInt(currentdate.split("-")[2])) ||
-                (parseInt(events[i].enddate.split("-")[2]) ==
+                (parseInt(events[i].enddate.split("-")[2]) ===
                     parseInt(currentdate.split("-")[2]) &&
                     parseInt(events[i].startdate.split("-")[2]) <
                         parseInt(currentdate.split("-")[2])) ||
                 (parseInt(events[i].enddate.split("-")[2]) >
                     parseInt(currentdate.split("-")[2]) &&
-                    parseInt(events[i].startdate.split("-")[2]) ==
+                    parseInt(events[i].startdate.split("-")[2]) ===
                         parseInt(currentdate.split("-")[2]))
             ) {
                 if (
@@ -68,24 +68,24 @@ export default function Events() {
                 ) {
                     items.push(events[i]);
                 } else if (
-                    (parseInt(events[i].enddate.split("-")[1]) ==
+                    (parseInt(events[i].enddate.split("-")[1]) ===
                         parseInt(currentdate.split("-")[1]) &&
-                        parseInt(events[i].startdate.split("-")[1]) ==
+                        parseInt(events[i].startdate.split("-")[1]) ===
                             parseInt(currentdate.split("-")[1])) ||
-                    (parseInt(events[i].enddate.split("-")[1]) ==
+                    (parseInt(events[i].enddate.split("-")[1]) ===
                         parseInt(currentdate.split("-")[1]) &&
                         parseInt(events[i].startdate.split("-")[1]) <
                             parseInt(currentdate.split("-")[1])) ||
                     (parseInt(events[i].enddate.split("-")[1]) >
                         parseInt(currentdate.split("-")[1]) &&
-                        parseInt(events[i].startdate.split("-")[1]) ==
+                        parseInt(events[i].startdate.split("-")[1]) ===
                             parseInt(currentdate.split("-")[1]))
                 ) {
                     {
                         if (
-                            parseInt(events[i].enddate.split("-")[1]) ==
+                            parseInt(events[i].enddate.split("-")[1]) ===
                                 parseInt(currentdate.split("-")[1]) &&
-                            parseInt(events[i].startdate.split("-")[1]) ==
+                            parseInt(events[i].startdate.split("-")[1]) ===
                                 parseInt(currentdate.split("-")[1])
                         ) {
                             if (
@@ -96,7 +96,7 @@ export default function Events() {
                             )
                                 items.push(events[i]);
                         } else if (
-                            parseInt(events[i].enddate.split("-")[1]) ==
+                            parseInt(events[i].enddate.split("-")[1]) ===
                             parseInt(currentdate.split("-")[1])
                         ) {
                             if (
@@ -105,7 +105,7 @@ export default function Events() {
                             )
                                 items.push(events[i]);
                         } else if (
-                            parseInt(events[i].startdate.split("-")[1]) ==
+                            parseInt(events[i].startdate.split("-")[1]) ===
                             parseInt(currentdate.split("-")[1])
                         ) {
                             if (
@@ -125,7 +125,7 @@ export default function Events() {
 
     if (option === "upcoming") {
         arr = [];
-        var items = [];
+         items = [];
 
         for (let i in events) {
             if (
@@ -134,7 +134,7 @@ export default function Events() {
             ) {
                 items.push(events[i]);
             } else if (
-                parseInt(events[i].startdate.split("-")[2]) ==
+                parseInt(events[i].startdate.split("-")[2]) ===
                 parseInt(currentdate.split("-")[2])
             ) {
                 if (
@@ -144,7 +144,7 @@ export default function Events() {
                     items.push(events[i]);
                     // items.push(5);
                 } else if (
-                    parseInt(events[i].startdate.split("-")[1]) ==
+                    parseInt(events[i].startdate.split("-")[1]) ===
                     parseInt(currentdate.split("-")[1])
                 ) {
                     if (
@@ -182,7 +182,7 @@ export default function Events() {
     }
     if (option === "past") {
         arr = [];
-        var items = [];
+         items = [];
         for (let i in events) {
             if (
                 parseInt(events[i].enddate.split("-")[2]) <
@@ -191,7 +191,7 @@ export default function Events() {
                 items.push(events[i]);
                 console.log(events[i].enddate);
             } else if (
-                parseInt(events[i].enddate.split("-")[2]) ==
+                parseInt(events[i].enddate.split("-")[2]) ===
                 parseInt(currentdate.split("-")[2])
             ) {
                 if (
@@ -200,7 +200,7 @@ export default function Events() {
                 ) {
                     items.push(events[i]);
                 } else if (
-                    parseInt(events[i].enddate.split("-")[1]) ==
+                    parseInt(events[i].enddate.split("-")[1]) ===
                     parseInt(currentdate.split("-")[1])
                 ) {
                     if (
@@ -212,7 +212,7 @@ export default function Events() {
                 }
             }
         }
-        for (var it of items) {
+        for ( it of items) {
             arr.push(it);
         }
     }

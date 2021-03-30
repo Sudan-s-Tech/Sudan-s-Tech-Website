@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, Input, Link, TextareaAutosize } from "@material-ui/core";
+import { Button, Input, TextareaAutosize } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
@@ -52,15 +52,15 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     width: 460,
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #7289DA",
+    border: "2px solid #7289DA", 
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 6, 3),
   },
 }));
-var render;
-var arr;
+// var render;
+// var arr;
 export default function Coursepage(props) {
-  const [{ user,token}, dispatch] = useStateValue();
+  const [{ user}, dispatch] = useStateValue();
 
   const [email, setEmail] = useState("");
   const [username, setUserame] = useState();
@@ -234,9 +234,9 @@ export default function Coursepage(props) {
         });
     }
 useEffect(() => {
-  if(title=='Introduction To Php ( Basics to advance)'){
+  if(title === 'Introduction To Php ( Basics to advance)'){
     setVideourl('https://sudanstech.s3.amazonaws.com/PHP.mp4')
-  }else if (title=='Computer Vision and Image Processing') {
+  }else if (title === 'Computer Vision and Image Processing') {
     setVideourl('https://sudanstech.s3.amazonaws.com/OpenCV.mp4')
     setBtn('Buy now')
   }else if(title==='CyberSecurity Bootcamp'){

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { AccountContext } from "./AccountContext";
 import {
   BoldLink,

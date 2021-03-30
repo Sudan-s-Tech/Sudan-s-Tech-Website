@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
+// import { makeStyles } from "@material-ui/core/styles";
 // import Card from "@material-ui/core/Card";
 // import CardHeader from "@material-ui/core/CardHeader";
 // import CardMedia from "@material-ui/core/CardMedia";
@@ -9,36 +9,36 @@ import { makeStyles } from "@material-ui/core/styles";
 // import Typography from "@material-ui/core/Typography";
 // import Send from "@material-ui/icons/Send";
 // import { Link } from "react-router-dom";
-import { red } from "@material-ui/core/colors";
+// import { red } from "@material-ui/core/colors";
 import Button from "@material-ui/core/Button";
 
 import "./event.css";
-const useStyles = makeStyles((theme) => ({
-    root: {
-        maxWidth: 345,
-        marginTop: 250,
-    },
-    media: {
-        height: 0,
-        paddingTop: "56.25%", // 16:9
-    },
-    expand: {
-        transform: "rotate(0deg)",
-        marginLeft: "auto",
-        transition: theme.transitions.create("transform", {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: "rotate(180deg)",
-    },
-    avatar: {
-        backgroundColor: red[500],
-    },
-    button: {
-        margin: theme.spacing(1),
-    },
-}));
+// const useStyles = makeStyles((theme) => ({
+//     root: {
+//         maxWidth: 345,
+//         marginTop: 250,
+//     },
+//     media: {
+//         height: 0,
+//         paddingTop: "56.25%", // 16:9
+//     },
+//     expand: {
+//         transform: "rotate(0deg)",
+//         marginLeft: "auto",
+//         transition: theme.transitions.create("transform", {
+//             duration: theme.transitions.duration.shortest,
+//         }),
+//     },
+//     expandOpen: {
+//         transform: "rotate(180deg)",
+//     },
+//     avatar: {
+//         backgroundColor: red[500],
+//     },
+//     button: {
+//         margin: theme.spacing(1),
+//     },
+// }));
 
 export default function RecipeReviewCard(props) {
     // const [tag, setTag] = useState("");
@@ -48,7 +48,7 @@ export default function RecipeReviewCard(props) {
     //     setTag(props.tag);
     //     setColor(props.color);
     // }, []);
-    const classes = useStyles();
+    // const classes = useStyles();
 
     return (
         // <Card className={classes.root}>

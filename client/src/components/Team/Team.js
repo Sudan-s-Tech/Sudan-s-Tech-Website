@@ -6,14 +6,14 @@ import Anmol from "../../assets/Anmol.jpg";
 import Abir from "../../assets/Abir.png";
 import merrin from "../../assets/merrin.jpg";
 import Navya from "../../assets/Navya.jpg";
-import pankaj from "../../assets/pankaj.JPG";
-import photo from "../../assets/photo.jpg";
+// import pankaj from "../../assets/pankaj.JPG";
+// import photo from "../../assets/photo.jpg";
 import Rakshit from "../../assets/Rakshit.jpg";
 import reeti from "../../assets/reeti.jpg";
 import shrishti from "../../assets/shrishti.jpg";
 import sreeja from "../../assets/sreeja.jpg";
 import Yash from "../../assets/Yash.jpg";
-import image from "../../assets/job.svg"
+// import image from "../../assets/job.svg"
 import Hero from "../Hero/Hero";
 import Page from "react-page-loading";
 
@@ -94,7 +94,7 @@ export default function Team() {
                                     <h3>Shrishti Jalan</h3>
                                     <h5>Graphics Specialist</h5>
                                 </figcaption>
-                                <a href="#"></a>
+                                {/* <a href="#"></a> */}
                             </figure>
                         </div>
                         <div className="col-md-3">
@@ -104,7 +104,7 @@ export default function Team() {
                                     <h3>Ravula Sreeja</h3>
                                     <h5>Graphics Specialist</h5>
                                 </figcaption>
-                                <a href="#"></a>
+                                {/* <a href="#"></a> */}
                             </figure>
                         </div>
                         <div className="col-md-3">
