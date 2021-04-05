@@ -50,7 +50,7 @@ const[arr, setArr] = useState([])
 // console.log(item)
 axios({
   method: "get",
-  url:(`https://sudanstechapi.herokuapp.com/training/${item}`),
+  url:(`https://sudans-api.herokuapp.com/training/${item}`),
 })
 .then((res) => {
   // console.log(res)

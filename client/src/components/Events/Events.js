@@ -29,7 +29,7 @@ export default function Events() {
     const [option, setOption] = useState("past");
 
     useEffect(async () => {
-        axios.get("https://sudanstechapi.herokuapp.com/events").then((res) => {
+        axios.get("https://sudans-api.herokuapp.com/events").then((res) => {
             setEvent(res.data);
         });
     }, []);

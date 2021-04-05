@@ -25,7 +25,7 @@ export default function Events() {
 
     useEffect(async () => {
         axios
-            .get("https://sudanstechapi.herokuapp.com/trainings")
+            .get("https://sudans-api.herokuapp.com/trainings")
             .then((res) => {
                 setTraining(res.data);
             });

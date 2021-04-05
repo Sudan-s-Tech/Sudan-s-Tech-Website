@@ -121,7 +121,7 @@ export default function Coursepage(props) {
     var str = window.location.pathname.substring(100, 10);
     var s = str.replace(/%20/g, " ");
     // console.log(s);
-    axios.get("https://sudanstechapi.herokuapp.com/trainings").then((res) => {
+    axios.get("https://sudans-api.herokuapp.com/trainings").then((res) => {
       // Object.keys(res.data).map((i) => {
       //     if (res.data[i].title === s) {
       //         setCourse(res.data[i].items);
@@ -152,19 +152,20 @@ export default function Coursepage(props) {
       });
     });
   }, []);
-  useEffect(() => {
+  useEffect(async() => {
     var str = window.location.pathname.substring(100, 10);
     var s = str.replace(/%20/g, " ");
     // console.log(s);
     setTitle(s);
     // console.log(title);
     axios
-        .get("https://sudanstechapi.herokuapp.com/teacher", {
+        .get("https://sudans-api.herokuapp.com/teacher", {
             params: {
                 data: s,
             },
         })
         .then((res) => {
+          console.log(res)
             setTeacher(res.data.name);
             setBio(res.data.bio);
         });
