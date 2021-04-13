@@ -26,6 +26,7 @@ import logo from '../src/assets/logo.svg'
 import axios from 'axios'
 import Success from "./components/success/Success";
 import Gallery from "./components/gallery/Gallery";
+import CampusLeader from "./components/campusleader/CampusLeader";
 function getModalStyle() {
   const top = 50 
   const left = 50 
@@ -173,6 +174,10 @@ function App() {
         <Route path="/signin" exact={true}>
           <Nav />
           <SignIn />
+        </Route>
+        <Route path="/campusLeader" exact={true}>
+          <CampusLeader />
+          <Footer />
         </Route>
         <Route path="/dashboard" exact={true}>
           {/* <Nav /> */}

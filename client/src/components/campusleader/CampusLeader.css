@@ -1,0 +1,307 @@
+.campusLeader__hero{
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0%, 100% 84%, 0 100%);
+    color: white;
+    background-image: url('https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: 100% 100%;
+background-position: center;
+background-repeat: no-repeat;
+z-index: 999;
+}
+.campusLeader__hero ::before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background-image: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.2 )) ;
+z-index: -1;
+}
+html{
+    scroll-behavior: smooth;
+}
+.campusLeader__hero h4{
+font-size: 2.5rem;
+}
+.campusLeader__hero > p{
+font-family: none;
+color: white;
+font-weight: 400;
+font-family: cursive;
+font-size: 1.2rem;
+}
+.campus__btn{
+    font-weight: 700 !important;
+    text-transform: capitalize !important;
+    padding: 7px 35px !important;
+}
+.campusLeader__info{
+    padding:2rem 3rem;
+    
+}
+.campusLeader__info h4{
+    font-family: none;
+    margin: 3rem 0rem;
+    font-size: 2.1rem;
+    font-weight: 600;
+}
+.campus__infoContainer{
+    display: flex;
+    align-items: center;
+}
+.campus__infoLeft{
+   flex: 0.5;
+}
+.campus__infoRight{
+   flex: 0.5;
+   text-align: left;
+   margin-left: 1rem;
+
+}
+.campus__infoLeft img{
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+}
+.campus__infoRight h5{
+    /* font-family: none; */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.campus__infoRight p{
+    font-family: none;
+    font-size: 0.95rem;
+    font-family: sans-serif;
+}
+.campus__infoRight ul{
+   margin-top: 1.1rem;
+   list-style: armenian;
+}
+.campus__infoRight ul li{
+padding: 0.4rem 0rem;
+font-weight: medium;
+font-size: 0.95rem;
+list-style: armenian;
+}
+.campus__infoRight ul li span{
+font-weight: bolder;
+font-size: large;
+}
+.campus__benifits{
+    padding: 4rem 4rem;
+    position: relative;
+    background-image: url('https://images.pexels.com/photos/1104985/pexels-photo-1104985.png?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: 100% 100%;
+background-position: center;
+background-repeat: no-repeat;
+z-index: 999;
+clip-path: polygon(0 0, 100% 12%, 100% 100%, 0% 100%);
+}
+.campus__benifits::before{
+    content: '';
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5 )) ;
+z-index: -1;
+}
+.campus__benifits h4{
+ color: rgb(255, 255, 255);
+ text-transform: capitalize;
+ margin-bottom: 2.5rem;
+ font-size: 1.9rem;
+}
+.campus__cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.campus__card{
+    border: 2px solid rgb(39, 140, 187);
+    padding: 2rem 1rem 0 1rem;
+    margin: 0 30px;
+    width: 220px;
+    height: 230px;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+}
+.campus__card:hover{
+    border: 2px solid rgb(255, 255, 255);
+    transform: translateY(6px)
+}
+.campus__cardTop{
+margin-bottom: 1rem;
+}
+.campus__cardBottom{
+font-size: 1rem;
+color: white;
+font-weight: 600;
+}
+.MuiSvgIcon-root{
+ font-size: 2.9rem !important;
+ color:#fff;
+}
+
+.campus__contact{
+    padding: 2rem;
+}
+.campus__contact h4{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.contact__container{
+	display: flex;
+	padding: 10px;
+	border-radius: 15px;
+	height: auto;
+	backdrop-filter: blur(7px);
+	border: 1px solid rgba(226, 225, 225, 0.568);
+	box-shadow: -10px 9px 12px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -10px 9px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -10px 9px 12px 0px rgba(0,0,0,0.75);
+text-align: left;
+}
+.contactContainer__left{
+	color: #fafafa;
+	background-color: #7289DA;
+	flex: 0 1 40%;
+	padding: 30px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.contactContainer__left h4{
+	font-size: 1.8rem;
+	font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+.contactContainer__left p{
+	font-size: 0.9rem;
+	font-weight: 400;
+}
+form{
+	padding: 25px;
+	width: 100%;
+}
+.form__first{
+	display: flex;
+	flex: 0 0 100%;
+	width: 100%;
+}
+.form__first-group{
+	display: flex;
+	flex-direction: column;
+	padding-right:40px ;
+	flex: 0 1 100%;
+	margin-bottom: 20px;
+}
+.form__first-group label{
+font-size: 1rem;
+font-weight: 500;
+color:rgb(0, 0, 0);
+}
+.form__first-group input , .form__first-group textarea{
+	background: transparent;
+	border: none;
+	padding: 8px;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.781);
+	outline: none;
+	font-size: 1rem;
+	font-weight: 400;
+	cursor: pointer;
+	color: rgb(0, 0, 0);
+	transition: all 0.4s ease;
+} 
+.form__first-group input:hover{
+	border-bottom: 2px solid #7289DA;
+}
+.form__first-group textarea:hover{
+	border-bottom: 2px solid #7289DA;
+}
+.form__first-group input:focus{
+	border-bottom: 2px solid #7289DA;
+}
+.form__first-group textarea:focus{
+	border-bottom: 2px solid #7289DA;
+}
+.form__first-group p{
+	color: red;
+	margin-bottom: 0;
+}
+.form__btn{
+	background-color: #7289DA;
+	color: white;
+	padding: 6px 30px;
+	font-size: 1rem;
+	font-weight: 600;
+	border: none;
+	outline: none;
+	margin-left: auto;
+	transition: all 0.3s ease;
+}
+.form__btn:hover{
+	transform: scale(1.05);
+    cursor: pointer;
+}
+
+@media(max-width:900px){
+	.contactContainer__leftIcon{
+		padding: 0 0.3rem !important;
+	}
+}
+@media(max-width:760px){
+	.contact__container{
+		flex-direction: column;
+	}
+}
+@media(max-width:550px){
+	.form__first{
+		flex-direction: column;
+	}
+	.contact__container{
+		width: auto;
+	}
+form{
+	width: 100%;
+	padding: 20px 5px;
+}
+.contact__Packet h1{
+font-size: 2rem;
+}
+.contact__Packet::after{
+	background-position: center;
+}
+}
+
+
+@media (max-width:500px) {
+    .campus__infoContainer{
+        flex-direction: column;
+    }
+    .campus__infoLeft img{
+        width: 320px;
+        height: 400x;
+    }
+    .campus__infoRight{
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    .campusLeader__info h4{
+        font-size: 1.8rem;
+    }
+    .campus__benifits{
+        clip-path: unset;
+        padding: 2rem 2.8rem;
+    }
+}
