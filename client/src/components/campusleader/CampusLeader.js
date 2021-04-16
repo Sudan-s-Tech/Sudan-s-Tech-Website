@@ -8,8 +8,8 @@ function CampusLeader() {
     <div className="campusLeader">
       <Nav />
       <div className="campusLeader__hero">
-        <h4>Become a campus leader</h4>
-        <p>Join us in building a reliable and worthy community</p>
+        <h4>Want to become Campus Leader ?</h4>
+        <p>Come and Join us ! Be part of the Community which is for the students,by the students.</p>
         <Button
           style={{
             backgroundColor: "#7289DA",
