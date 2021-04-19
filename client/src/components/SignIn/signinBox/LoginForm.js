@@ -10,8 +10,11 @@ import {
 } from "./Common";
 import { Marginer } from "./Marginer";
 import axios from "axios";
+import loader from '../../../assets/loader.svg'
 import { useStateValue } from "../../../StateProvider";
 import { actionTypes } from "../../../reducer";
+
+
 
 
 function LoginForm() {
@@ -20,6 +23,7 @@ function LoginForm() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [msg, setmsg] = useState("");
+  const[loading,setLoading] = useState(false)
 
   // const googleSignin = () => {
   //   console.log("clicked");
@@ -35,6 +39,7 @@ function LoginForm() {
   //     .catch((err) => alert(err.message));
   //   };
   const signin = () => {
+    setLoading(true)
     let content = {
       email: email,
       password: password,
@@ -48,16 +53,16 @@ function LoginForm() {
       },
     })
       .then((res) => {
-        console.log(res);
         dispatch({
           type: actionTypes.SET_USER,
           user: res.data.user.name,
           token: res.data.token,
         });
+        setLoading(false)
         //  setToken(res.data.token)
       })
       .catch((e) => {
-        console.log(e);
+        setLoading(false)
         if (email === "") {
           setmsg("Email cant be empty");
         } else if (password === "") {
@@ -68,9 +73,12 @@ function LoginForm() {
       });
   };
 
-  return (
+  return (<>
     <BoxContainer>
-      <FormContainer>
+    {
+      (loading ? 
+        <img style={{width:'120px'}} src={loader} alt="loading" />:(
+          <FormContainer>
         <Input
           type="email"
           value={email}
@@ -88,10 +96,13 @@ function LoginForm() {
           placeholder="Password"
         />
       </FormContainer>
+        )
+        )
+      }
       <Marginer direction="vertical" margin="1.6em" />
       <SubmitButton type="submit" onClick={signin}>
-        Signin
-      </SubmitButton>
+      SignIn
+        </SubmitButton>
       <Marginer direction="vertical" margin="0.5em" />
       {/* <SubmitButton  type="submit" onClick={googleSignin}>
         Signin with google
@@ -114,6 +125,7 @@ function LoginForm() {
       </p>
       <Marginer direction="vertical" margin="0.6em" />
     </BoxContainer>
+    </>
   );
 }
 

@@ -167,10 +167,10 @@ function App() {
           {/* <Feedback /> */}
           <Footer />
         </Route>
-        <Route path="/team" exact={true}>
+        {/* <Route path="/team" exact={true}>
           <Team />
           <Footer />
-        </Route>
+        </Route> */}
         <Route path="/signin" exact={true}>
           <Nav />
           <SignIn />

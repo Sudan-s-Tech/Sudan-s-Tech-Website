@@ -59,11 +59,11 @@ export default function Discord() {
            </div>
        </div>
        <div className="footerBottom__icons">
-    <a href="https://www.instagram.com/sudans_tech/"> <span> <InstagramIcon style={{color:'red'}} className='footer__icon' /></span></a> 
-     <a href="https://www.linkedin.com/company/sudan-s-tech"> <span> <LinkedInIcon style={{color:'#0e76a8'}} className='footer__icon'/></span></a> 
-     <a href="https://www.facebook.com/Sudans-Tech-102013144941387/"> <span> <FacebookIcon style={{color:'#0F92F3'}} className='footer__icon'/></span></a> 
-     <a href="https://twitter.com/SudansTech1?s=09">  <span> <TwitterIcon style={{color:'#00acee'}} className='footer__icon'/></span></a> 
-    <a href="https://youtube.com/channel/UCws_V5zg2Kk7DZt7MAeEoxA"> <span> <YouTubeIcon style={{color:'#FF0000'}} className='footer__icon' /></span></a> 
+    <a href="https://www.instagram.com/sudans_tech/"> <span> <InstagramIcon style={{color:'red',width:'25px'}} className='footer__icon' /></span></a> 
+     <a href="https://www.linkedin.com/company/sudan-s-tech"> <span> <LinkedInIcon style={{color:'#0e76a8',width:'25px'}} className='footer__icon'/></span></a> 
+     <a href="https://www.facebook.com/Sudans-Tech-102013144941387/"> <span> <FacebookIcon style={{color:'#0F92F3',width:'25px'}} className='footer__icon'/></span></a> 
+     <a href="https://twitter.com/SudansTech1?s=09">  <span> <TwitterIcon style={{color:'#00acee',width:'25px'}} className='footer__icon'/></span></a> 
+    <a href="https://youtube.com/channel/UCws_V5zg2Kk7DZt7MAeEoxA"> <span> <YouTubeIcon style={{color:'#FF0000',width:'25px'}} className='footer__icon' /></span></a> 
        </div>
       </div>
     </div>

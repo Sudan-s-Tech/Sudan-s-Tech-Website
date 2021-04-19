@@ -1,7 +1,36 @@
+.popupContainer{
+    background-color: white;
+    margin:4px 10px;
+ border: 2px solid #7289DA;
+    border-radius: 8px;
+    animation: boxshadow 1s infinite alternate;
+}
+.popup{
+    padding: 5px;
+    color: #000 !important;
+}
+@keyframes boxshadow{
+    0%{
+    box-shadow: 0px 0px 0px 0px rgb(34, 134, 151);
+    transform: scale(1);
+    }
+    33%{
+    box-shadow: 0px 0px 4px 1px rgb(34, 134, 151);
+    transform: scale(1.01);
+    }
+    66%{
+    box-shadow: 0px 0px 6px 1.5px rgb(34, 134, 151);
+    transform: scale(1.02);
+    }
+    100%{
+    box-shadow: 0px 0px 8px 2px rgb(34, 134, 151);
+    transform: scale(1.03);
 
+    }
+}
 @media only screen and (min-width: 1300px) {
     .navbar-nav {
-        margin-left: 40.5%;
+        margin-left: 30%;
     }
 }
 .navbar-nav a{

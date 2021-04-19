@@ -67,7 +67,6 @@ function SignupForm() {
             placeholder="Email"
           />
           <Input
-            type="number"
             value={phone}
             onChange={(e) => {
               setphone(e.target.value);

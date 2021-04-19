@@ -190,9 +190,9 @@ text-align: left;
 	font-size: 0.9rem;
 	font-weight: 400;
 }
-form{
+.form{
 	padding: 25px;
-	width: 100%;
+	width: 80%;
 }
 .form__first{
 	display: flex;

@@ -165,7 +165,6 @@ export default function Coursepage(props) {
             },
         })
         .then((res) => {
-          console.log(res)
             setTeacher(res.data.name);
             setBio(res.data.bio);
         });

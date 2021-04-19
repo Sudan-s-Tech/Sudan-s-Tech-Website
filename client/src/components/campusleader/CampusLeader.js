@@ -131,7 +131,7 @@ function CampusLeader() {
               </p>
             </div>
           </div>
-          <form>
+          <form className='form'>
             <div className="form__first">
               <div className="form__first-group">
                 <label>Name </label>

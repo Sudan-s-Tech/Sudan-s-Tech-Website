@@ -8,7 +8,9 @@ import Hero from "../Hero/Hero";
 // import Select from "@material-ui/core/Select";
 // import NativeSelect from "@material-ui/core/NativeSelect";
 // import { Link } from "react-router-dom";
-import Page from "react-page-loading";
+// import Page from "react-page-loading";
+import loader from '../../assets/logo.svg'
+
 
 import axios from "axios";
 // const useStyles = makeStyles((theme) => ({
@@ -22,11 +24,13 @@ import axios from "axios";
 // }));
 export default function Events() {
     const [trainings, setTraining] = useState([]);
+    const[loading,setLoading] = useState(true)
 
     useEffect(async () => {
         axios
             .get("https://sudans-api.herokuapp.com/trainings")
             .then((res) => {
+                setLoading(false)
                 setTraining(res.data);
             });
     }, []);
@@ -43,8 +47,10 @@ export default function Events() {
                     "“Don’t‌ ‌decrease‌ ‌the‌ ‌goal.‌ ‌Increase‌ ‌the‌ ‌effort”.We‌ ‌Don't‌ ‌Only‌ ‌Provide‌ ‌Courses‌ ‌but‌ ‌Train‌ ‌you‌ ‌for‌ ‌some‌ ‌Real‌ ‌industry‌ ‌experience.‌ "
                 }
             />
-            <Page loader={"rotate-spin"} color={"#D864B4"} size={10}>
-                <div className="container" style={{ marginBottom: 100 }}>
+            {
+                (loading ? <><img style={{width:'120px'}} src={loader} alt="loading" />
+                     <h4>Loading...</h4></>:(
+                    <div className="container" style={{ marginBottom: 100 }}>
                     <div className="row" align="center">
                         {trainings.map((item) => {
                             return (
@@ -64,7 +70,8 @@ export default function Events() {
                         })}
                     </div>
                 </div>
-            </Page>
+                ))
+            }
         </div>
     );
 }
