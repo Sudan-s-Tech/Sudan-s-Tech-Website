@@ -65,14 +65,14 @@ export default function Team() {
                     <h2 className='Team__head'>Our Lead <span>Web Team</span></h2>
                     <div className="row team__people">
                         <div className="col-md-3">
-                            <figure className="snip1584">
-                                <img src={Abir} alt="" />
+                            {/*<figure className="snip1584">
+                                <img src={Abir} alt="" />  
                                 <figcaption>
                                     <h3>Abir Pal</h3>
-                                    <h5>Web Team Lead</h5>
+                                    <h5>Web Team Lead</h5> 
                                 </figcaption>
-                                {/* <a href="#"></a> */}
-                            </figure>
+                                <a href="#"></a> 
+                            </figure>*/}
                         </div>
                         <div className="col-md-3">
                             <figure className="snip1584">

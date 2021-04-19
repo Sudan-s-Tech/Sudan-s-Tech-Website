@@ -8,8 +8,8 @@ function CampusLeader() {
     <div className="campusLeader">
       <Nav />
       <div className="campusLeader__hero">
-        <h4>Become a campus leader</h4>
-        <p>Join us in building a reliable and worthy community</p>
+        <h4>Want to become Campus Leader ?</h4>
+        <p>Come and Join us ! Be part of the Community which is for the students,by the students.</p>
         <Button
           style={{
             backgroundColor: "#7289DA",
@@ -22,7 +22,7 @@ function CampusLeader() {
         </Button>
       </div>
       <div className="campusLeader__info">
-        <h4>What Does a Campus Leader Stand For?</h4>
+        <h4>What is a Campus Leader ?</h4>
         <div className="campus__infoContainer">
           <div className="campus__infoLeft">
             <img
@@ -33,19 +33,40 @@ function CampusLeader() {
           <div className="campus__infoRight">
             <h5>Who actually is a campus leader?</h5>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta
-              nostrum asperiores quisquam quibusdam quae! Dolore quos qui rerum,
-              aperiam accusamus tenetur nesciunt, necessitatibus facere nihil
-              pariatur consectetur! Blanditiis, cumque ex?
+             Campus Leaders at Sudan's Tech are Like minded people with a growth
+              mindset who want to add value to the community by spreading  Knowledge and 
+              awareness about the Community and Team up with  like-minded people to work
+              towards the Motive .These Leaders Possess many Qualities like energetic, passionate, 
+              brilliant and are  like minded College Superheroes who have the zeal to take initiative 
+              and Lead by Example.
             </p>
-            <h5>Here's what is the true spirit of campus leader:</h5>
+            <h5>What we Seek in Campus Leader ?</h5>
             <ul>
               <li>
-                <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Porro, natus. dolor sit amet consectetur adipisicing elit.
-                Por
+                An Initiative taker:
+                A Leader should always be the first one to take initiative and drive his Team towards the goals of organization.
               </li>
               <li>
+                Innovative:
+                 An innovative leader is not a creative genius with thought-provoking ideas but gives others the freedom to develop 
+                 their ideas. As the innovative leader, Steve Jobs himself said, 'Innovations distinguish between a leader and a follower'.
+              </li>
+              <li>
+               Visionary: 
+               A visionary leader is far-sighted and driven and inspired by what a company can become.Ensuring a vision for the future with 
+               perseverance and keeping everybody invested in the process is what a visionary leader does.
+              </li>
+              <li>
+               Self-motivated:
+               One of the essential leadership traits of good leaders is their ability to motivate others. Good leaders always motivate their 
+               Community Members and boost their morale when needed. 
+              </li>
+              <li>
+               A Community Builder: 
+               A true leader should identify the resources available within the community, and use them to help build a better Community & more
+               helpful one.
+              </li>
+              /*<li>
                 <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
                 elit. Porro, natus.
               </li>
@@ -60,23 +81,7 @@ function CampusLeader() {
               <li>
                 <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
                 elit. Porro, natus.
-              </li>
-              <li>
-                <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Porro, natus.
-              </li>
-              <li>
-                <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Porro, natus.
-              </li>
-              <li>
-                <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Porro, natus.
-              </li>
-              <li>
-                <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Porro, natus.
-              </li>
+              </li>*/
             </ul>
           </div>
         </div>
@@ -89,7 +94,7 @@ function CampusLeader() {
               <CardGiftcardIcon className="campus__icon" />
             </div>
             <div className="campus__cardBottom">
-              Sudans tech VIP Swags and an opportunity to get special editions.
+              LinkedIn recommendation to all eligible candidates after completion of program.
             </div>
           </div>
           <div className="campus__card">
@@ -97,7 +102,7 @@ function CampusLeader() {
               <CardGiftcardIcon className="campus__icon" />
             </div>
             <div className="campus__cardBottom">
-              Sudans tech VIP Swags and an opportunity to get special editions.
+             Opportunity to work with Team of Sudan's Tech ( Performance Based ).
             </div>
           </div>
           <div className="campus__card">
@@ -105,7 +110,7 @@ function CampusLeader() {
               <CardGiftcardIcon className="campus__icon" />
             </div>
             <div className="campus__cardBottom">
-              Sudans tech VIP Swags and an opportunity to get special editions.
+              Opportunity to interact and network with industry experts and professionals through various events
             </div>
           </div>
           <div className="campus__card">
@@ -113,7 +118,7 @@ function CampusLeader() {
               <CardGiftcardIcon className="campus__icon" />
             </div>
             <div className="campus__cardBottom">
-              Sudans tech VIP Swags and an opportunity to get special editions.
+             Certificate of Appreciation on Completing the Program Successfully.
             </div>
           </div>
         </div>
@@ -123,11 +128,12 @@ function CampusLeader() {
         <div className="contact__container">
           <div className="contactContainer__left">
             <div className="contactContainer__left-info">
-              <h4>Selection Information</h4>
+              <h4>Lead a community 
+                  at your campus<br/>
+                  powered by Sudan’s Tech
+              </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur magnam quis autem inventore laboriosam dicta dolorem
-                error ea, suscipit nobis ut, similique velit vitae explicabo.
+               If you feel you want to be a part of this initiative, you can get started by filling up this form.
               </p>
             </div>
           </div>
