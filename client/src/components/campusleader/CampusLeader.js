@@ -43,45 +43,34 @@ function CampusLeader() {
             <h5>What we Seek in Campus Leader ?</h5>
             <ul>
               <li>
-                An Initiative taker:
+                <span style={{fontWeight:'bold'}}>
+                An Initiative taker: </span>
                 A Leader should always be the first one to take initiative and drive his Team towards the goals of organization.
               </li>
               <li>
-                Innovative:
+              <span style={{fontWeight:'bold'}}>
+                Innovative: </span>
                  An innovative leader is not a creative genius with thought-provoking ideas but gives others the freedom to develop 
                  their ideas. As the innovative leader, Steve Jobs himself said, 'Innovations distinguish between a leader and a follower'.
               </li>
               <li>
-               Visionary: 
+              <span style={{fontWeight:'bold'}}>
+               Visionary: </span>
                A visionary leader is far-sighted and driven and inspired by what a company can become.Ensuring a vision for the future with 
                perseverance and keeping everybody invested in the process is what a visionary leader does.
               </li>
               <li>
-               Self-motivated:
+              <span style={{fontWeight:'bold'}}>
+               Self-motivated: </span>
                One of the essential leadership traits of good leaders is their ability to motivate others. Good leaders always motivate their 
                Community Members and boost their morale when needed. 
               </li>
               <li>
-               A Community Builder: 
+              <span style={{fontWeight:'bold'}}>
+               A Community Builder: </span>
                A true leader should identify the resources available within the community, and use them to help build a better Community & more
                helpful one.
               </li>
-              /*<li>
-                <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Porro, natus.
-              </li>
-              <li>
-                <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Porro, natus.
-              </li>
-              <li>
-                <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Porro, natus.
-              </li>
-              <li>
-                <span>"</span>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Porro, natus.
-              </li>*/
             </ul>
           </div>
         </div>
