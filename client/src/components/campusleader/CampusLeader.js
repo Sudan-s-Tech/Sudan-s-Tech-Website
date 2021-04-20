@@ -9,11 +9,11 @@ var base = new Airtable({apiKey: 'key9vZntNeQ60A0N5'}).base('appI2ac5ZJnnlNUJb')
 
 
 function CampusLeader() {
-  const [Name,setName] = useState("");
-  const [Email,setEmail] = useState("");
-  const [CollegeName,setCollegeName] = useState("");
-  const [Course_Year,setCourse_Year] = useState("");
-  const [LinkedinUrl,setLinkedinUrl] = useState("");
+  const [Name,setName] = useState(null);
+  const [Email,setEmail] = useState(null);
+  const [CollegeName,setCollegeName] = useState(null);
+  const [Course_Year,setCourse_Year] = useState(null);
+  const [LinkedinUrl,setLinkedinUrl] = useState(null);
   const [PhoneNo,setPhoneNo] = useState(null);
 
 
@@ -156,7 +156,7 @@ function CampusLeader() {
           <div className="contactContainer__left">
             <div className="contactContainer__left-info">
               <h4>Lead a community 
-                  at your campus<br/>
+                  at your campus
                   powered by Sudan’s Tech
               </h4>
               <p>
@@ -173,7 +173,6 @@ function CampusLeader() {
                   type="text"
                   value={Name}
                   onChange={(e)=>{
-                    e.preventDefault()
                     setName(e.target.value)
 
                   }}
@@ -186,7 +185,6 @@ function CampusLeader() {
                    type="email"
                    value={Email}
                    onChange={(e)=>{
-                    e.preventDefault()
                     setEmail(e.target.value)
 
                   }}
@@ -201,7 +199,6 @@ function CampusLeader() {
                   type="number"
                   value={PhoneNo}
                   onChange={(e)=>{
-                    e.preventDefault()
                     setPhoneNo(e.target.value)
                   }}
                 />
@@ -213,7 +210,6 @@ function CampusLeader() {
                   type="text"
                   value={CollegeName}
                   onChange={(e)=>{
-                    e.preventDefault()
                     setCollegeName(e.target.value)
 
                   }}
@@ -228,7 +224,6 @@ function CampusLeader() {
                   type="text"
                   value={Course_Year}
                   onChange={(e)=>{
-                    e.preventDefault()
                     setCourse_Year(e.target.value)
 
                   }}
@@ -241,7 +236,6 @@ function CampusLeader() {
                   type="url"
                   value={LinkedinUrl}
                   onChange={(e)=>{
-                    e.preventDefault()
                     setLinkedinUrl(e.target.value)
                   }}
                 />
