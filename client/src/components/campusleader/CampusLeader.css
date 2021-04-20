@@ -239,7 +239,7 @@ color:rgb(0, 0, 0);
 	color: red;
 	margin-bottom: 0;
 }
-.form__btn{
+.btn{
 	background-color: #7289DA;
 	color: white;
 	padding: 6px 30px;
@@ -250,7 +250,7 @@ color:rgb(0, 0, 0);
 	margin-left: auto;
 	transition: all 0.3s ease;
 }
-.form__btn:hover{
+.btn:hover{
 	transform: scale(1.05);
     cursor: pointer;
 }

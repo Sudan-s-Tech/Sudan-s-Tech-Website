@@ -1,9 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CampusLeader.css";
 import Nav from "../Navbar/Navbar";
 import { Button } from "@material-ui/core";
 import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: 'key9vZntNeQ60A0N5'}).base('appI2ac5ZJnnlNUJb');
+
+
+
 function CampusLeader() {
+  const [Name,setName] = useState("");
+  const [Email,setEmail] = useState("");
+  const [CollegeName,setCollegeName] = useState("");
+  const [Course_Year,setCourse_Year] = useState("");
+  const [LinkedinUrl,setLinkedinUrl] = useState("");
+  const [PhoneNo,setPhoneNo] = useState(null);
+
+
+  function sub(e){
+    e.preventDefault()
+    console.log("arrived")
+    base('Table 1').create([
+      {
+        "fields": {
+          "Name":Name,
+          "Email":Email,
+          "CollegeName":CollegeName,
+          "LinkedinUrl":LinkedinUrl,
+          "PhoneNo":PhoneNo,
+          "Course_Year":Course_Year,
+        }
+      }
+    ], function(err, records) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      records.forEach(function (record) {
+        console.log(record.getId());
+      });
+    });
+  }
+
   return (
     <div className="campusLeader">
       <Nav />
@@ -133,6 +171,12 @@ function CampusLeader() {
                 <input
                   name="name"
                   type="text"
+                  value={Name}
+                  onChange={(e)=>{
+                    e.preventDefault()
+                    setName(e.target.value)
+
+                  }}
                 />
               </div>
               <div className="form__first-group">
@@ -140,6 +184,12 @@ function CampusLeader() {
                 <input
                    name="email"
                    type="email"
+                   value={Email}
+                   onChange={(e)=>{
+                    e.preventDefault()
+                    setEmail(e.target.value)
+
+                  }}
                 />
               </div>
             </div>
@@ -149,6 +199,11 @@ function CampusLeader() {
                 <input
                   name="phone"
                   type="number"
+                  value={PhoneNo}
+                  onChange={(e)=>{
+                    e.preventDefault()
+                    setPhoneNo(e.target.value)
+                  }}
                 />
               </div>
               <div className="form__first-group">
@@ -156,6 +211,12 @@ function CampusLeader() {
                 <input
                   name="college"
                   type="text"
+                  value={CollegeName}
+                  onChange={(e)=>{
+                    e.preventDefault()
+                    setCollegeName(e.target.value)
+
+                  }}
                 />
               </div>
             </div>
@@ -165,6 +226,12 @@ function CampusLeader() {
                 <input
                   name="course"
                   type="text"
+                  value={Course_Year}
+                  onChange={(e)=>{
+                    e.preventDefault()
+                    setCourse_Year(e.target.value)
+
+                  }}
                 />
               </div>
               <div className="form__first-group">
@@ -172,11 +239,16 @@ function CampusLeader() {
                 <input
                   name="linkedin"
                   type="url"
+                  value={LinkedinUrl}
+                  onChange={(e)=>{
+                    e.preventDefault()
+                    setLinkedinUrl(e.target.value)
+                  }}
                 />
               </div>
             </div>
            
-            <button type="submit" className="form__btn">
+            <button type="submit" className="btn" onClick={sub}>
               Submit
             </button>
           </form>
