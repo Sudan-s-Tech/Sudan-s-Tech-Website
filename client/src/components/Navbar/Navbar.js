@@ -40,14 +40,13 @@ export default function Navbar() {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                     
-                        <NavLink exact to="" className='popupContainer' >
+                        <a target='_blank'  href='https://hackthemountain.tech/' className='popupContainer'>
                             <li>
-                                <a class="nav-link popup" href="#">
+                                <a class="nav-link popup" >
                                     HacktheMountain
                                 </a>
                             </li>
-                        </NavLink>
+                        </a>
                         <NavLink exact to="/" activeClassName='nav_active'>
                             <li>
                                 <a class="nav-link active" href="#">

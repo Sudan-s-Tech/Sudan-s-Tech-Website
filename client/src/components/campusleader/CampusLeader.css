@@ -12,7 +12,7 @@
     background-size: 100% 100%;
 background-position: center;
 background-repeat: no-repeat;
-z-index: 999;
+/* z-index: 999; */
 }
 .campusLeader__hero ::before{
 content: '';
@@ -189,6 +189,7 @@ text-align: left;
 .contactContainer__left p{
 	font-size: 0.9rem;
 	font-weight: 400;
+    color: rgb(36, 34, 34);
 }
 .form{
 	padding: 25px;

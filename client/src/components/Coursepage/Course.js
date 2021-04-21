@@ -67,7 +67,7 @@ export default function Coursepage(props) {
   const [message, setMessage] = useState();
   const [number, setNumber] = useState("");
   const submitForm = () => {
-    console.log("clicked");
+    // console.log("clicked");
     if (email === "") {
       alert("Please fill the form to expect a call");
     }

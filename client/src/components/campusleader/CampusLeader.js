@@ -1,46 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import "./CampusLeader.css";
 import Nav from "../Navbar/Navbar";
 import { Button } from "@material-ui/core";
 import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
-var Airtable = require('airtable');
-var base = new Airtable({apiKey: 'key9vZntNeQ60A0N5'}).base('appI2ac5ZJnnlNUJb');
+import PeopleIcon from '@material-ui/icons/People';
+import BusinessIcon from '@material-ui/icons/Business';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import useForm from "./useForm";
+import validate from './validate'
+
 
 
 
 function CampusLeader() {
-  const [Name,setName] = useState(null);
-  const [Email,setEmail] = useState(null);
-  const [CollegeName,setCollegeName] = useState(null);
-  const [Course_Year,setCourse_Year] = useState(null);
-  const [LinkedinUrl,setLinkedinUrl] = useState(null);
-  const [PhoneNo,setPhoneNo] = useState(null);
-
-
-  function sub(e){
-    e.preventDefault()
-    console.log("arrived")
-    base('Table 1').create([
-      {
-        "fields": {
-          "Name":Name,
-          "Email":Email,
-          "CollegeName":CollegeName,
-          "LinkedinUrl":LinkedinUrl,
-          "PhoneNo":PhoneNo,
-          "Course_Year":Course_Year,
-        }
-      }
-    ], function(err, records) {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      records.forEach(function (record) {
-        console.log(record.getId());
-      });
-    });
-  }
+  const{handleChange, values , submit , errors} = useForm(validate)
 
   return (
     <div className="campusLeader">
@@ -64,7 +37,7 @@ function CampusLeader() {
         <div className="campus__infoContainer">
           <div className="campus__infoLeft">
             <img
-              src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              src="https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               alt="thumbnail"
             />
           </div>
@@ -118,7 +91,7 @@ function CampusLeader() {
         <div className="campus__cards">
           <div className="campus__card">
             <div className="campus__cardTop">
-              <CardGiftcardIcon className="campus__icon" />
+              <LinkedInIcon className="campus__icon" />
             </div>
             <div className="campus__cardBottom">
               LinkedIn recommendation to all eligible candidates after completion of program.
@@ -126,7 +99,7 @@ function CampusLeader() {
           </div>
           <div className="campus__card">
             <div className="campus__cardTop">
-              <CardGiftcardIcon className="campus__icon" />
+              <PeopleIcon className="campus__icon" />
             </div>
             <div className="campus__cardBottom">
              Opportunity to work with Team of Sudan's Tech ( Performance Based ).
@@ -134,7 +107,7 @@ function CampusLeader() {
           </div>
           <div className="campus__card">
             <div className="campus__cardTop">
-              <CardGiftcardIcon className="campus__icon" />
+              <BusinessIcon className="campus__icon" />
             </div>
             <div className="campus__cardBottom">
               Opportunity to interact and network with industry experts and professionals through various events
@@ -171,24 +144,18 @@ function CampusLeader() {
                 <input
                   name="name"
                   type="text"
-                  value={Name}
-                  onChange={(e)=>{
-                    setName(e.target.value)
-
-                  }}
+                  onChange={handleChange} value={values.name}
                 />
+         {errors.name && <p className='error_msg'>{errors.name}</p>}
               </div>
               <div className="form__first-group">
                 <label>E-mail </label>
                 <input
                    name="email"
                    type="email"
-                   value={Email}
-                   onChange={(e)=>{
-                    setEmail(e.target.value)
-
-                  }}
+                   onChange={handleChange} value={values.email}
                 />
+         {errors.email && <p className='error_msg'>{errors.email}</p>}
               </div>
             </div>
             <div className="form__first">
@@ -197,23 +164,18 @@ function CampusLeader() {
                 <input
                   name="phone"
                   type="number"
-                  value={PhoneNo}
-                  onChange={(e)=>{
-                    setPhoneNo(e.target.value)
-                  }}
+            onChange={handleChange} value={values.phone}
                 />
+         {errors.phone && <p className='error_msg'>{errors.phone}</p>}
               </div>
               <div className="form__first-group">
                 <label>College-Name </label>
                 <input
                   name="college"
                   type="text"
-                  value={CollegeName}
-                  onChange={(e)=>{
-                    setCollegeName(e.target.value)
-
-                  }}
+                  onChange={handleChange} value={values.college}
                 />
+         {errors.college && <p className='error_msg'>{errors.college}</p>}
               </div>
             </div>
             <div className="form__first">
@@ -222,27 +184,22 @@ function CampusLeader() {
                 <input
                   name="course"
                   type="text"
-                  value={Course_Year}
-                  onChange={(e)=>{
-                    setCourse_Year(e.target.value)
-
-                  }}
+                  onChange={handleChange} value={values.course}
                 />
+         {errors.course && <p className='error_msg'>{errors.course}</p>}
               </div>
               <div className="form__first-group">
                 <label>LinkedIn-URL </label>
                 <input
                   name="linkedin"
                   type="url"
-                  value={LinkedinUrl}
-                  onChange={(e)=>{
-                    setLinkedinUrl(e.target.value)
-                  }}
+                  onChange={handleChange} value={values.linkedin}
                 />
+         {errors.linkedin && <p className='error_msg'>{errors.linkedin}</p>}
               </div>
             </div>
            
-            <button type="submit" className="btn" onClick={sub}>
+            <button type="submit" className="btn" onClick={submit}>
               Submit
             </button>
           </form>

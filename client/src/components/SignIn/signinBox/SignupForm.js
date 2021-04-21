@@ -15,40 +15,6 @@ import './signin.css'
 
 function SignupForm() {
     const { switchToSignin } = useContext(AccountContext);
-    // const [name, setname] = useState("");
-    // const [email, setemail] = useState("");
-    // const [phone, setphone] = useState("");
-    // const [password, setpassword] = useState("");
-    // const [msg, setmsg] = useState("");
-
-    // const signup = () => {
-    //   let content = {
-    //     name: name,
-    //     email: email,
-    //     phone: phone,
-    //     password: password,
-    //   }
-    //   axios({
-    //     method: "post",
-    //     url: "https://sudan-tech-backend.herokuapp.com/users/signup",
-    //     data:content,
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   })
-    //     .then((res) => {
-    //       if (res.status === 201) {
-    //         alert('Account created please sign in to continue');
-    //         switchToSignin();
-
-    //       }
-    //     })
-    //     .catch((err) => {
-    //      if(err.response){
-    //        setmsg(err.response.data.message)
-    //      }
-    //     });
-    // };
     const{handleChange, values , signup , errors} = useForm(validator)
     return (
         <BoxContainer>
