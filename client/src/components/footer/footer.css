@@ -88,6 +88,7 @@ hr {
   font-weight: 500;
   text-transform: capitalize;
   padding: 0 4px;
+  cursor: pointer;
 }
 .footerBottom__policies a:hover{
  text-decoration: underline;

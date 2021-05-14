@@ -43,7 +43,7 @@ if(errors ===""){
             //   console.error(err);
             //   return;
             // }
-            records.forEach(function (record) {
+            records.forEach(function(record) {
               console.log(record.getId());
             });
           });

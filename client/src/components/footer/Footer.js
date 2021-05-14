@@ -6,8 +6,9 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import YouTubeIcon from "@material-ui/icons/YouTube"
 import Logo from "../../assets/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 export default function Discord() {
+  let history = useHistory()
   return (
     <div className="footer-div">
       <div className="footer__container">
@@ -22,6 +23,13 @@ export default function Discord() {
           </p>
           <p>
             <span>Sponsorship Querry- </span><a href="mailto:contact@sudans.tech">contact@sudans.tech</a>
+          </p>
+          
+          <p>
+            <span>Address- </span><a href>VPO Chhan Rorian Tehsil-Marheen <br /> Distt-Kathua, 184144, J&C </a>
+          </p>
+          <p>
+            <span>Phone No- </span><a href>+91-8492894298</a>
           </p>
         </div>
         <div className="footerContainer__right2">
@@ -51,11 +59,17 @@ export default function Discord() {
        <div className="footerBottom__copywrite">
            <h5>Copyright &copy; 2021 All Rights Reserved By Sudan's Tech </h5>
            <div className="footerBottom__policies">
-             <a href="https://www.notion.so/Pricing-Policy-Refund-Policy-334875c77c11431abd1f9b1c6889b385">Privacy Policy & Refund Policy</a>
+             <a href onClick={()=>{
+history.push('/privacy-refund-policy')
+             }}>Privacy Policy & Refund Policy</a>
              <span>|</span>
-             <a href="https://www.notion.so/Privacy-Policy-for-Sudans-Technocrats-Foundation-7fc808e65f594fb08e036d08b692f60b">Privacy Policy</a>
+             <a href onClick={()=>{
+history.push('/privacy-policy')
+             }}>Privacy Policy</a>
              <span>|</span>
-             <a href=" https://www.notion.so/TERMS-AND-CONDITIONS-25e164397c644688a7601addaf6f6640">Terms & Condition</a>
+             <a onClick={()=>{
+history.push('/terms-condition')
+             }}href >Terms & Condition</a>
            </div>
        </div>
        <div className="footerBottom__icons">

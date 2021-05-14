@@ -1,0 +1,31 @@
+.privacyRefund{
+    /* height: 100vh; */
+    width: 100%;
+}
+.privacyHeader{
+   background: linear-gradient(rgb(43, 8, 124) 70%, transparent 30%);
+    height: 30vh;
+    display:flex
+}
+.privacyHeader img{
+   width: 150px;
+   margin-left:250px;
+   margin-top:60px;
+}
+.privacyRefund__desc{
+    width: 800px;
+    margin: auto;
+    text-align: left;
+    margin-top: 80px;
+}
+.privacyRefund__desc h5{
+   font-weight: bold;
+}
+@media(max-width:700px){
+    .privacyRefund__desc{
+        width: 320px; 
+    }
+    .privacyHeader img{
+        margin-left: 0;
+    }
+}

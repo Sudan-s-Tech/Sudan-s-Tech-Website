@@ -82,13 +82,13 @@ export default function Navbar() {
                                 </a>
                             </li>
                         </NavLink>
-                        <NavLink exact to="/campusLeader" activeClassName='nav_active'>
+                        {/* <NavLink exact to="/campusLeader" activeClassName='nav_active'>
                             <li>
                                 <a class="nav-link active" href="#">
                                 Campus Leader
                                 </a>
                             </li>
-                        </NavLink>
+                        </NavLink> */}
                         {/* <NavLink exact to="/team" activeClassName='nav_active'>
                             <li>
                                 <a class="nav-link active" href="#">

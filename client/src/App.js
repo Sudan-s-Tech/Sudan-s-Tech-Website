@@ -15,7 +15,7 @@ import Contact from "./components/Contact/Contact";
 import Sponsors from "./components/Sponsors/Sponsors";
 import Coursepage from "./components/Coursepage/Course";
 import Nav from "./components/Navbar/Navbar";
-import Team from "./components/Team/Team";
+// import Team from "./components/Team/Team";
 import Testimonial from "./components/Testimonial/Testimonial";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignIn from "./components/SignIn/SignIn";
@@ -26,7 +26,10 @@ import logo from '../src/assets/logo.svg'
 import axios from 'axios'
 import Success from "./components/success/Success";
 import Gallery from "./components/gallery/Gallery";
-import CampusLeader from "./components/campusleader/CampusLeader";
+// import CampusLeader from "./components/campusleader/CampusLeader";
+import PrivacyRefund from "./policies/PrivacyRefund";
+import Privacy from "./policies/Privacy";
+import Term from "./policies/Term";
 function getModalStyle() {
   const top = 50 
   const left = 50 
@@ -175,10 +178,10 @@ function App() {
           <Nav />
           <SignIn />
         </Route>
-        <Route path="/campusLeader" exact={true}>
+        {/* <Route path="/campusLeader" exact={true}>
           <CampusLeader />
           <Footer />
-        </Route>
+        </Route> */}
         <Route path="/dashboard" exact={true}>
           {/* <Nav /> */}
 
@@ -191,6 +194,18 @@ function App() {
         </Route>
         <Route path='/success'>
          <Success/>
+        </Route>
+        <Route path='/privacy-refund-policy'>
+        <Nav />
+         <PrivacyRefund />
+        </Route>
+        <Route path='/privacy-policy'>
+        <Nav />
+        <Privacy />
+        </Route>
+        <Route path='/terms-condition'>
+        <Nav />
+       <Term />
         </Route>
       </Router>
     </div>
