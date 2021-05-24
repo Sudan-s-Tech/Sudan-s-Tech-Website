@@ -20,6 +20,8 @@ import {  useHistory } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer";
 import logo from "../../assets/logo.svg";
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: 'key9vZntNeQ60A0N5'}).base('app5LPPvWIuT6dyRe');
 var sub_mods = [];
 
 var a;
@@ -74,6 +76,28 @@ export default function Coursepage(props) {
     if (number === "") {
       alert("Please fill the form to expect a call");
     } else {
+      console.log(username);
+      console.log(number);
+      console.log(message);
+      console.log(email);
+      base('Table 1').create([
+        {
+          "fields": {
+            "Name":username,
+            "email":email,
+            "number":number,
+            "message":message,
+          }
+        }
+      ], function(err, records) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        records.forEach(function (record) {
+          console.log(record.getId());
+        });
+      });
       alert("Thank you for submitting the form we will contact you shortly");
       setOpen(false);
       setEmail("");
