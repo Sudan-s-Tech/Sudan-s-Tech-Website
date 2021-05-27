@@ -3,7 +3,7 @@ import "./team.css";
 import mohit from "../../assets/mohit.jpg";
 import Avinash from "../../assets/Avinash.jpg";
 import Anmol from "../../assets/Anmol.jpg";
-import Abir from "../../assets/Abir.png";
+// import Abir from "../../assets/Abir.png";
 import merrin from "../../assets/merrin.jpg";
 import Navya from "../../assets/Navya.jpg";
 // import pankaj from "../../assets/pankaj.JPG";
@@ -36,7 +36,7 @@ export default function Team() {
                                 <img src={Avinash} alt="" />
                                 <figcaption>
                                     <h3>Avinash Koshal</h3>
-                                    <h5>Organizer Lead</h5>
+                                    <h5>Co Founder</h5>
                                 </figcaption>
                                 {/* <a href="#"></a> */}
                             </figure>
@@ -46,7 +46,7 @@ export default function Team() {
                                 <img src={mohit} alt="" />
                                 <figcaption>
                                     <h3>Mohit Sharma</h3>
-                                    <h5>Organizer Co-Lead</h5>
+                                    <h5>Founder </h5>
                                 </figcaption>
                                 {/* <a href="#"></a> */}
                             </figure>
@@ -56,7 +56,7 @@ export default function Team() {
                                 <img src={Anmol} alt="" />
                                 <figcaption>
                                     <h3>Anmol Reshi</h3>
-                                    <h5>Content Specialist</h5>
+                                    <h5>Managing Director</h5>
                                 </figcaption>
                                 {/* <a href="#"></a> */}
                             </figure>
