@@ -26,7 +26,7 @@ import logo from '../src/assets/logo.svg'
 import axios from 'axios'
 import Success from "./components/success/Success";
 import Gallery from "./components/gallery/Gallery";
-// import CampusLeader from "./components/campusleader/CampusLeader";
+import CampusLeader from "./components/campusleader/CampusLeader";
 import PrivacyRefund from "./policies/PrivacyRefund";
 import Privacy from "./policies/Privacy";
 import Term from "./policies/Term";
@@ -178,10 +178,10 @@ function App() {
           <Nav />
           <SignIn />
         </Route>
-        {/* <Route path="/campusLeader" exact={true}>
+        <Route path="/campusLeader" exact={true}>
           <CampusLeader />
           <Footer />
-        </Route> */}
+        </Route>
         <Route path="/dashboard" exact={true}>
           {/* <Nav /> */}
 

@@ -19,12 +19,12 @@ export default function Navbar() {
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <Link to="/">
-                    <a class="navbar-brand" href="#">
-                        <img
+                    <a class="navbar-brand" href>
+                        <img alt='logo'
                             src={logo}
                             style={{ width: "50px", paddingRight: 5 }}
                         />
-                        <b>Sudan's Tech</b>
+                        <b style={{color:'black'}}>Sudan's Tech</b>
                     </a>
                 </Link>
                 <button
@@ -42,53 +42,53 @@ export default function Navbar() {
                     <ul class="navbar-nav">
                         <a target='_blank'  href='https://hackthemountain.tech/' className='popupContainer'>
                             <li>
-                                <a class="nav-link popup" >
+                                <a className="nav-link popup" href>
                                     HacktheMountain
                                 </a>
                             </li>
                         </a>
                         <NavLink exact to="/" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link active" href>
                                     Home <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                         </NavLink>
                         <NavLink exact to="/Events" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link active" href>
                                     Events 
                                 </a>
                             </li>
                         </NavLink>
                         <NavLink exact to="/trainings" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link active" href>
                                     Trainings
                                 </a>
                             </li>
                         </NavLink>
                         <NavLink exact to="/contact" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link active" href>
                                    Contact us
                                 </a>
                             </li>
                         </NavLink>
                         <NavLink exact to="/sponsors" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link active" href>
                                 Sponsors
                                 </a>
                             </li>
                         </NavLink>
-                        {/* <NavLink exact to="/campusLeader" activeClassName='nav_active'>
+                        <NavLink exact to="/campusLeader" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link active" href>
                                 Campus Leader
                                 </a>
                             </li>
-                        </NavLink> */}
+                        </NavLink>
                         {/* <NavLink exact to="/team" activeClassName='nav_active'>
                             <li>
                                 <a class="nav-link active" href="#">
@@ -98,7 +98,7 @@ export default function Navbar() {
                         </NavLink> */}
                         <NavLink exact to="/signin" activeClassName='nav_active'>
                             <li>
-                                <a class="nav-link" style={{color:'black'}} href="#">
+                                <a class="nav-link" style={{color:'black'}} href>
                                     {user ? (
                                         'Dashboard'
                                     ):(

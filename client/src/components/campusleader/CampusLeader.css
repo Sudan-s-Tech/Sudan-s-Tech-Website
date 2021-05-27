@@ -8,7 +8,7 @@
     align-items: center;
     clip-path: polygon(0 0, 100% 0%, 100% 84%, 0 100%);
     color: white;
-    background-image: url(../../assets/pexels-fauxels-3184291.jpg);
+    background-image: url(../../assets/campus\ leader\ ngo.jpg);
     background-size: 100% 100%;
 background-position: center;
 background-repeat: no-repeat;
@@ -21,7 +21,7 @@ top: 0;
 left: 0;
 bottom: 0;
 right: 0;
-background-image: linear-gradient(to right, rgba(0,0,0,0.3 ), rgba(0,0,0,0.3 )) ;
+background-image: linear-gradient(to right, rgba(0,0,0,0.2 ), rgba(0,0,0,0.2 )) ;
 z-index: -1;
 }
 html{
@@ -44,7 +44,6 @@ font-size: 1.2rem;
 }
 .campusLeader__info{
     padding:2rem 3rem;
-    
 }
 .campusLeader__info h4{
     font-family: none;
@@ -97,7 +96,7 @@ font-size: large;
 .campus__benifits{
     padding: 4rem 4rem;
     position: relative;
-    background-image: url('https://images.pexels.com/photos/1104985/pexels-photo-1104985.png?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-image: url('../../assets/WhatsApp\ Image\ 2021-05-25\ at\ 10.54.54.jpeg');
     background-size: 100% 100%;
 background-position: center;
 background-repeat: no-repeat;
@@ -255,6 +254,21 @@ color:rgb(0, 0, 0);
 	transform: scale(1.05);
     cursor: pointer;
 }
+.campus__process{
+    min-height: 60vh;
+    background-color: white;
+}
+.campus__process h4{
+    font-size: 1.8rem;
+	font-weight: 700;
+    margin: 3.5rem 0;
+}
+.campus__process img{
+width: 700px;
+height: 200px;
+object-fit: contain;
+margin-bottom: 3rem;
+}
 
 @media(max-width:900px){
 	.contactContainer__leftIcon{
@@ -265,6 +279,18 @@ color:rgb(0, 0, 0);
 	.contact__container{
 		flex-direction: column;
 	}
+    .campus__process{
+        min-height: 30vh;
+    }
+    .campus__process img{
+    width: 350px;
+    height: 100px;
+    margin-bottom: 2rem;
+
+    }
+    .campus__process h4{
+        margin: 1.2rem 0;
+    }
 }
 @media(max-width:550px){
 	.form__first{

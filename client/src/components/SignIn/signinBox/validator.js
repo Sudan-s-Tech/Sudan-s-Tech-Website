@@ -18,7 +18,7 @@ export default function validator(values){
       if(!values.password.trim()){
           errors.password='password required'
       }else if(values.password.length < 8){
-          errors.password = 'Password must be of 6 character'
+          errors.password = 'Password must be of 8 character'
       }
   return errors;
 }

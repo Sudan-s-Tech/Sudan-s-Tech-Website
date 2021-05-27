@@ -1,6 +1,8 @@
 import React from "react";
 import "./CampusLeader.css";
 import Nav from "../Navbar/Navbar";
+import sideImg from "../../assets/illustration 2.png"
+import processImg from "../../assets/png illustrationsss.png"
 import { Button } from "@material-ui/core";
 import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
 import PeopleIcon from '@material-ui/icons/People';
@@ -37,7 +39,7 @@ function CampusLeader() {
         <div className="campus__infoContainer">
           <div className="campus__infoLeft">
             <img
-              src="https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              src={sideImg}
               alt="thumbnail"
             />
           </div>
@@ -122,6 +124,10 @@ function CampusLeader() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="campus__process">
+        <h4>How to become Campus Leader</h4>
+        <img src={processImg} alt="thumbnail"  />
       </div>
       <div className="campus__contact" id='contact'>
         <h4>Apply Now</h4>
