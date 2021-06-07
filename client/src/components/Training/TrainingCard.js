@@ -95,6 +95,9 @@ export default function RecipeReviewCard(props) {
                 class="card_image"
             /> */}
                 <div class="card_text">
+                    {props.live===true &&
+                    <p className='training__live'>Active</p>
+                    }
                     <div class="tags" style={{ fontWeight: 600,fontSize:'22px' }}>
                         {props.title}
                     </div>

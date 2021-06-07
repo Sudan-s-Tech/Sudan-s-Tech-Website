@@ -3,7 +3,7 @@
     width: 100%;
 }
 .privacyHeader{
-   background: linear-gradient(rgb(43, 8, 124) 70%, transparent 30%);
+    background: linear-gradient(#8a9fbf 70%, transparent 30%);
     height: 30vh;
     display:flex
 }

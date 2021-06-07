@@ -78,3 +78,13 @@ a:link {
     font-weight: 800;
     text-transform: capitalize !important;
 }
+.training__live{
+    font-weight: 600;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(6, 240, 57);
+    display: inline;
+    font-family: normal;
+    padding: 3px 30px;
+}
