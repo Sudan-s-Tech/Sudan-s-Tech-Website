@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+}
+/* .MuiButton-label {
+    color: #fff !important;
+} */
+.MediaItem {
+    display: 100%;
+}
+
+.MediaItem .title a {
+    color: #7289DA;
+    /* font-family: "Inconsolata", monospace !important; */
+}
+.MediaItem .meta {
+    /* font-family: "Inconsolata", monospace !important; */
+}
+.MediaItem .description {
+    /* font-family: "Inconsolata", monospace !important; */
+}
+.MediaItem .thumbnail img {
+    height: 100%;
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    width: auto;
+}
+.MediaItem .thumbnail img:hover {
+    height: 100%;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    width: auto;
+}
+.MediaItem .s-vflex-outer {
+    padding: 35px;
+    /* padding-top: 20px; */
+    position: relative;
+    z-index: 5;
+    flex-direction: column;
+    background: -webkit-radial-gradient(
+        circle at left,
+        rgba(0, 0, 0, 0.6) 0,
+        #000 25%
+    );
+    background: -moz-radial-gradient(
+        circle at left,
+        rgba(0, 0, 0, 0.6) 0,
+        #000 25%
+    );
+    background: -o-radial-gradient(
+        circle at left,
+        rgba(0, 0, 0, 0.6) 0,
+        #000 25%
+    );
+    background: -ms-radial-gradient(
+        circle at left,
+        rgba(0, 0, 0, 0.6) 0,
+        #000 25%
+    );
+    background: radial-gradient(circle at left, rgba(0, 0, 0, 0.6) 0, #000 25%);
+}
+.MediaItem .thumbnail-wrap {
+    overflow: hidden;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.s-vflex-inner,
+.s-vflex-outer {
+    /* font-family: "Inconsolata", monospace !important; */
+
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.MediaItem .cta {
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+}
+
+.Button {
+    margin-top: 20px;
+
+    background: #c94f17;
+    border-radius: 40px;
+    border: none;
+    color: #fff;
+    display: block;
+    line-height: 1.25;
+    padding: 10px 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+.ButtonSmall {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.ButtonRed {
+    background: #c02d28;
+}
+.MediaItem a {
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    -ms-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.MediaItem .Instructor {
+    overflow: hidden;
+    min-height: 80px;
+    position: relative;
+    padding-left: 95px;
+    display: flex;
+    gap: 20px;
+}
+
+.MediaItem {
+    color: #e6e6e6;
+    /*background: #181818;*/
+        background:#dec1c1;
+    margin-top: 28px;
+    padding-left: 100px;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    -o-transition: padding 0.3s;
+    -ms-transition: padding 0.3s;
+    transition: padding 0.3s;
+}
+.s-vflex,
+.s-vflex-outer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    /* display: box; */
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+}
+img .lazyloaded {
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    transition: opacity 1s;
+    opacity: 0.1;
+    -ms-filter: none;
+    filter: none;
+}
+
+.card-align{
+  
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+        1px 3px 8px rgba(39, 44, 49, 0.03);
+
+    overflow: hidden; /* otherwise header image won't respect rounded corners */
+    
+/*transition: all 0.5s ease; */
+}
