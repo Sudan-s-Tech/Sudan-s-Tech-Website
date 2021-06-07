@@ -2,6 +2,7 @@ import "./App.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Home from "./components/Hero/Hero";
+
 import Features from "./components/Features/Features";
 import TechStack from "./components/Techstack/Techstack";
 // import Discord from "./components/Discord/Discord";
@@ -30,6 +31,8 @@ import CampusLeader from "./components/campusleader/CampusLeader";
 import PrivacyRefund from "./policies/PrivacyRefund";
 import Privacy from "./policies/Privacy";
 import Term from "./policies/Term";
+import UpcomingEvents from "./components/UpcomingEvents/UpcomingEvents";
+
 function getModalStyle() {
   const top = 50 
   const left = 50 
@@ -142,6 +145,7 @@ function App() {
                             "Sudan’s Technocrats(Tech) Foundation,J&K First Ever Tech Community which aims to focus on reducing the Technology gap between Industry and Students of India and is Registered section-8 company Rules under govt. Of India .Sudan's Technocrats(Tech) Foundation is a non-profit initiative aimed at making use of 21st-century technologies and learning methods to foster a fresh breed of highly skilled young people empowered with technical and social skills."
                         }
                     />
+                    <UpcomingEvents/>
                     <Features />
                     <Vision />
                     <TechStack />
