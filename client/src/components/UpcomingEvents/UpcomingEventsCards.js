@@ -1,8 +1,10 @@
  import React from "react";
  import Button from "@material-ui/core/Button";
 import "./UpcomingEvents.css";
+import {useHistory} from 'react-router-dom'
 
  function UpcomingEventsCards(props){
+     let history= useHistory()
     return(
         <div
             className="MediaItem s-vflex state-"
@@ -24,7 +26,7 @@ import "./UpcomingEvents.css";
                 </div>
                 <div class="cta" style={{ marginTop: "2em",marginBottom:'1rem',height:'50px',overflow:'hidden' }}>
                     <Button onClick={()=>{
-                        window.open(props.link)
+                         history.push(`/register/${props.title}`)
                     }}
                         variant="outlined"
                         
