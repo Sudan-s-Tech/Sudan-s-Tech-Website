@@ -61,7 +61,7 @@ export default function Navbar() {
                                 </a>
                             </li>
                         </NavLink>
-                        <NavLink exact to="/trainings" activeClassName='nav_active'>
+                       <NavLink exact to="/trainings" activeClassName='nav_active'>
                             <li>
                                 <a class="nav-link active" href>
                                     Trainings
@@ -82,6 +82,13 @@ export default function Navbar() {
                                 </a>
                             </li>
                         </NavLink>
+                      {/* <NavLink exact to="/team" activeClassName='nav_active'>
+                            <li>
+                                <a class="nav-link active" href>
+                                Team
+                                </a>
+                            </li>
+                        </NavLink>*/}
                         <NavLink exact to="/campusLeader" activeClassName='nav_active'>
                             <li>
                                 <a class="nav-link active" href>
@@ -89,13 +96,7 @@ export default function Navbar() {
                                 </a>
                             </li>
                         </NavLink>
-                        {/* <NavLink exact to="/team" activeClassName='nav_active'>
-                            <li>
-                                <a class="nav-link active" href="#">
-                                   Team
-                                </a>
-                            </li>
-                        </NavLink> */}
+
                         <NavLink exact to="/signin" activeClassName='nav_active'>
                             <li>
                                 <a class="nav-link" style={{color:'black'}} href>
