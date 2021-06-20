@@ -66,6 +66,7 @@ export default function CenteredGrid(props) {
                                         marginTop: "2%",
                                         borderRadius: "20px",
                                     }}
+                                    onClick={()=> window.open('https://discord.gg/8pJZQAAFMT')}
                                 >
                                     <img
                                         alt=""
@@ -89,6 +90,7 @@ export default function CenteredGrid(props) {
                                         marginTop: "2%",
                                         borderRadius: "20px",
                                     }}
+                                    onClick={()=> window.open('https://github.com/Sudan-s-Tech')}
                                 >
                                     <img
                                         alt=""

@@ -26,7 +26,7 @@ export default function Discord() {
           </p>
           
           <p>
-            <span>Address- </span><a href>VPO Chhan Rorian Tehsil-Marheen <br /> Distt-Kathua, 184144, J&C </a>
+            <span>Address- </span><a href>VPO Chhan Rorian Tehsil-Marheen <br /> Distt-Kathua, 184144, J&K </a>
           </p>
           <p>
             <span>Phone No- </span><a href>+91-8492894298</a>
